@@ -9,6 +9,7 @@
   @include container(100%, 125px);
   @include e("brand") {
     @extend %nav-brand;
+  
   }
   @include e("links") {
     @include align-items($justify: flex-end);

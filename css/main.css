@@ -3,9 +3,11 @@
   padding-right: 1em; }
 
 .nav__brand {
-  width: auto;
+  width: 100px;
   height: 125px;
-  padding: 20px 25px; }
+  padding-left: 25px;
+  font-family: "Ultra", serif;
+  font-size: 4em; }
 
 .home button {
   width: 150px;
@@ -85,14 +87,15 @@ a {
     text-decoration: underline; }
 
 body {
-  color: #2F3835; }
+  color: #2F3835;
+  font-family: "Lato", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif; }
 
 /**
  * Basic typography style for copy text
  */
 body {
   color: #2F3835;
-  font: normal 125%/1.4 "Open Sans", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif; }
+  font: normal 125%/1.4 "Lato", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif; }
 
 /**
  * Clear inner floats
@@ -159,7 +162,7 @@ body {
 
 .container::after {
   content: "";
-  background-image: url("http://www.neportlandchiro.com/wp-content/uploads/2014/07/Portland-Oregon-skyline.jpg");
+  background-image: url("../img/home-background.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -205,7 +208,8 @@ body {
   margin: 0 auto;
   color: black; }
   .home h1 {
-    font-size: 4em; }
+    font-size: 4em;
+    font-family: "Ultra", serif; }
   .home h3 {
     font-size: 1.5em;
     padding-bottom: 2em; }

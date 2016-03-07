@@ -12,7 +12,7 @@
 
 .container::after {
   content: "";
-  @include bg-img("http://www.neportlandchiro.com/wp-content/uploads/2014/07/Portland-Oregon-skyline.jpg");
+  @include bg-img("../img/home-background.jpg");
   opacity: 0.5;
   top: 0;
   left: 0;

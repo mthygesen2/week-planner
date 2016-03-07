@@ -9,10 +9,12 @@
   color: black;
   h1 {
     font-size: 4em;
+    font-family: $bold-font-stack;
   }
   h3 {
     font-size: 1.5em;
     padding-bottom: 2em;
+
   }
   input {
     @include container(50%, 40px);
