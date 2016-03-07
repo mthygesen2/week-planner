@@ -8,11 +8,11 @@
   @include container();
   color: black;
   h1 {
-    font-size: 3em;
+    font-size: 4em;
   }
   h3 {
     font-size: 1.5em;
-    padding-bottom: 1em;
+    padding-bottom: 2em;
   }
   input {
     @include container(50%, 40px);

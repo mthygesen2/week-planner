@@ -8,6 +8,7 @@ footer {
   border-top:1px solid $text-color;
   ul {
     @include align-items(space-around, center);
-    @include container();
+    @include container(75%);
+    max-width: 1000px;
   }
 }
