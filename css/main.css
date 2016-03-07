@@ -1,0 +1,238 @@
+.nav__links a {
+  align-self: flex-end;
+  padding-right: 1em; }
+
+.nav__brand {
+  width: auto;
+  height: 125px;
+  padding: 20px 25px; }
+
+.home button {
+  width: 150px;
+  height: 40px;
+  padding: 0;
+  margin: 0 auto;
+  margin-top: 1em;
+  border: none;
+  background-color: #77c9ad; }
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/**
+ * Set up a decent box model on the root element
+ */
+html {
+  box-sizing: border-box; }
+
+/**
+ * Make all elements from the DOM inherit from the parent box-sizing
+ * Since `*` has a specificity of 0, it does not override the `html` value
+ * making all elements inheriting from the root box-sizing value
+ * See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ */
+*, *::before, *::after {
+  box-sizing: inherit; }
+
+/**
+ * Basic styles for links
+ */
+a {
+  color: #523D39;
+  text-decoration: none; }
+  a:hover, a:active, a:focus {
+    color: #FF634D;
+    text-decoration: underline; }
+
+body {
+  color: #2F3835; }
+
+/**
+ * Basic typography style for copy text
+ */
+body {
+  color: #2F3835;
+  font: normal 125%/1.4 "Open Sans", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif; }
+
+/**
+ * Clear inner floats
+ */
+.clearfix::after {
+  clear: both;
+  content: '';
+  display: table; }
+
+/**
+ * Main content containers
+ * 1. Make the container full-width with a maximum width
+ * 2. Center it in the viewport
+ * 3. Leave some space on the edges, especially valuable on small screens
+ */
+.container {
+  max-width: 1180px;
+  /* 1 */
+  margin-left: auto;
+  /* 2 */
+  margin-right: auto;
+  /* 2 */
+  padding-left: 20px;
+  /* 3 */
+  padding-right: 20px;
+  /* 3 */
+  width: 100%;
+  /* 1 */ }
+
+/**
+ * Hide text while making it readable for screen readers
+ * 1. Needed in WebKit-based browsers because of an implementation bug;
+ *    See: https://code.google.com/p/chromium/issues/detail?id=457146
+ */
+.hide-text {
+  overflow: hidden;
+  padding: 0;
+  /* 1 */
+  text-indent: 101%;
+  white-space: nowrap; }
+
+/**
+ * Hide element while making it readable for screen readers
+ * Shamelessly borrowed from HTML5Boilerplate:
+ * https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css#L119-L133
+ */
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px; }
+
+.container {
+  display: flex;
+  min-height: 100vh;
+  min-width: 100vw;
+  width: 100%;
+  flex-direction: column;
+  padding: 0; }
+
+.container::after {
+  content: "";
+  background-image: url("http://www.neportlandchiro.com/wp-content/uploads/2014/07/Portland-Oregon-skyline.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1; }
+
+.nav {
+  border-bottom: 1px solid #2F3835;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-flow: row nowrap;
+  width: 100%;
+  height: 125px;
+  padding: 0;
+  margin: 0 auto; }
+  .nav__links {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    flex-flow: row nowrap;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0 auto; }
+    .nav__links a {
+      align-self: center; }
+
+.home {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column nowrap;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0 auto;
+  color: black; }
+  .home h1 {
+    font-size: 3em; }
+  .home h3 {
+    font-size: 1.5em;
+    padding-bottom: 1em; }
+  .home input {
+    width: 50%;
+    height: 40px;
+    padding: 0;
+    margin: 0 auto; }
+
+footer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-flow: row nowrap;
+  width: 100%;
+  height: 75px;
+  padding: 0;
+  margin: 0 auto;
+  border-top: 1px solid #2F3835; }
+  footer ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-flow: row nowrap;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0 auto; }
+
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,23 @@
+///creates a sticky footer by making the main content flex:1 ///////
+.container {
+  display: flex;
+  min-height: 100vh;
+  min-width: 100vw;
+  width: 100%;
+  flex-direction: column;
+  padding: 0;
+}
+
+//////creates a background image with opacity////
+
+.container::after {
+  content: "";
+  @include bg-img("http://www.neportlandchiro.com/wp-content/uploads/2014/07/Portland-Oregon-skyline.jpg");
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}

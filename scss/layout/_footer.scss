@@ -1,0 +1,13 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the footer of the site/application.
+// -----------------------------------------------------------------------------
+
+footer {
+  @include align-items();
+  @include container(100%, 75px);
+  border-top:1px solid $text-color;
+  ul {
+    @include align-items(space-around, center);
+    @include container();
+  }
+}

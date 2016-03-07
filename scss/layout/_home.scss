@@ -1,0 +1,23 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the middle of the HOME page of the site/application.
+// -----------------------------------------------------------------------------
+
+.home {
+  flex: 1;
+  @include align-items(center, center, column nowrap);
+  @include container();
+  color: black;
+  h1 {
+    font-size: 3em;
+  }
+  h3 {
+    font-size: 1.5em;
+    padding-bottom: 1em;
+  }
+  input {
+    @include container(50%, 40px);
+  }
+  button {
+    @extend %button-search;
+  }
+}

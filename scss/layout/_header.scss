@@ -1,0 +1,21 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the header of the site/application.
+// -----------------------------------------------------------------------------
+
+///Nav height will effect the logo height ///
+.nav {
+  border-bottom: 1px solid $text-color;
+  @include align-items();
+  @include container(100%, 125px);
+  @include e("brand") {
+    @extend %nav-brand;
+  }
+  @include e("links") {
+    @include align-items($justify: flex-end);
+    @include container();
+    a {
+      @extend %nav-right;
+      align-self: center;
+    }
+  }
+}
