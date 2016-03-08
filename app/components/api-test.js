@@ -47,7 +47,10 @@ export default Ember.Component.extend({
     },
 
     sendRequestToService() {
-      this.get('yelpApi').yelpRequest();
+      var params = {
+        location: this.get('location')
+      }
+      this.get('yelpApi').yelpRequest(params);
     }
   }
 });
