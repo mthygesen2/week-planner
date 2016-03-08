@@ -24,6 +24,12 @@ module.exports = function(environment) {
 
     contentSecurityPolicy: {
       'default-src': "'none'",
+      'script-src': "'self' 'unsafe-eval' https://*.firebaseio.com",
+      'font-src': "'self'",
+      'connect-src': "'self' https://api.yelp.com",
+      'img-src': "'self' *",
+      'style-src': "'self' 'unsafe-inline'",
+      'default-src': "'none'",
       'script-src': "'self' 'unsafe-eval' https://*.firebaseio.com https://*.googleapis.com https://*.gstatic.com",
       'font-src': "'self' https://*.gstatic.com",
       'connect-src': "'self' wss://*.firebaseio.com",
