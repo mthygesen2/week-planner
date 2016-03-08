@@ -23,9 +23,16 @@
     @include align-items(flex-start, flex-start, row wrap);
     @include container(100%, 100%);
     @include e("row--double"){
-      @extend %row;
+      @extend %row-double;
+    }
+    @include e("row"){
+      @extend %row-small;
     }
   .card {
+    @include m("big") {
+      @extend %card-big;
+    }
+
     @extend %card-small;
     @include e("img") {
       @extend %card-img;
@@ -33,9 +40,6 @@
     @include e("text") {
       @extend %card-text;
     }
-  @include m("big") {
-    @extend %card-big;
-  }
 
   @include m("tall") {
     @extend %card-tall;

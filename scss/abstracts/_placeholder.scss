@@ -19,7 +19,35 @@
 }
 
 %row{
+ width: 100%;
+ @media screen and (min-width: 1024px){
+   @include align-items(flex-start, flex-start, row wrap);
+ }
 
+}
+
+%row-double{
+  @extend %row;
+  @media screen and (min-width: 1024px){
+    height: 200px;
+    .card--small{
+      @include align-items(flex-start, flex-start, column wrap);
+    }
+    & >*:nth-child(3){
+      order: -1;
+     color:red;
+    }
+  }
+}
+
+%row-small{
+  @extend %row;
+  @media screen and (min-width: 768px){
+    height: 200px;
+  & > * {
+    lost-column: 2/6 0 0 !important;
+  }
+}
 }
 
 %card {
@@ -36,6 +64,11 @@
   @media screen and (min-width: 767px){
     lost-column: 1/2 0 0;
   }
+  @media screen and (min-width: 1024px){
+    lost-column: 1/6 0 0;
+    height: 100%;
+
+  }
 }
 
 %card-big{
@@ -43,6 +76,10 @@
   @media screen and (min-width: 767px){
     lost-column: 1/1 0 0;
 
+  }
+  @media screen and (min-width: 1024px){
+    lost-column: 1/3 0 0;
+    height: 100%;
   }
 }
 
