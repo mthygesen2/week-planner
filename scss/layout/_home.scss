@@ -14,7 +14,6 @@
   h3 {
     font-size: 1.5em;
     padding-bottom: 2em;
-
   }
   input {
     @include container(50%, 40px);
@@ -22,4 +21,18 @@
   button {
     @extend %button-search;
   }
+}
+
+//////creates a background image with opacity////
+
+.home::after {
+  content: "";
+  @include bg-img("../img/home-background.jpg");
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
 }

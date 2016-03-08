@@ -57,7 +57,7 @@ background-size: cover;
   width: $width;
   height: $height;
   padding: $padding;
-  margin: 0 auto;
+  margin: 0;
 }
 
 @mixin align-items($justify: flex-start, $align: flex-start, $flex-flow: row nowrap) {

@@ -1,0 +1,47 @@
+
+.topPicks {
+  flex:1;
+  @include e("header") {
+    @include bg-img("../img/date.jpg");
+    @include container(100%, 400px);
+    @include align-items(center, center, column nowrap);
+    h1 {
+    font-family: $bold-font-stack;
+    font-size: 3.5em;
+    color: white;
+    text-align: center;
+    }
+    h3 {
+      font-size: 1.5em;
+      color: white;
+      text-align: center;
+    }
+  }
+}
+
+.gallery {
+    @include align-items(flex-start, flex-start, row wrap);
+    @include container(100%, 100%);
+    @include e("row--double"){
+      @extend %row;
+    }
+  .card {
+    @extend %card-small;
+    @include e("img") {
+      @extend %card-img;
+    }
+    @include e("text") {
+      @extend %card-text;
+    }
+  @include m("big") {
+    @extend %card-big;
+  }
+
+  @include m("tall") {
+    @extend %card-tall;
+  }
+
+  }
+
+
+}

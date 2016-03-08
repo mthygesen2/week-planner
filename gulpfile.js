@@ -8,17 +8,17 @@ lost = require('lost');
 gulp.task('styles', function () {
   var processors = [ autoprefixer, lost
   ];
-  return gulp.src('src/*.scss')
+  return gulp.src('scss/*.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(sourcemaps.init())
     .pipe(postcss(processors))
     .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest('./dest'));
+    .pipe(gulp.dest('./css'));
 });
 
 gulp.task("watch", function(){
 	console.log("Watching scss files for modifications");
-	gulp.watch('src/**/*.scss', ["styles"]);
+	gulp.watch('scss/**/*.scss', ["styles"]);
 });
 
 gulp.task('default', ['styles', 'watch']);

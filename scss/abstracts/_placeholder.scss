@@ -6,9 +6,6 @@
 
 ///Logo for Navbar on top left of home page///
 %nav-brand {
-  width: 100px;
-  height: 125px;
-  padding-left: 25px;
   font-family: $bold-font-stack;
   font-size: 4em;
 }
@@ -19,4 +16,51 @@
   margin-top: 1em;
   border: none;
   background-color: $mint-green;
+}
+
+%row{
+
+}
+
+%card {
+  height: 100%;
+  padding: .5em;
+  @include align-items(flex-start, center, row nowrap);
+  lost-column: 1/1;
+  border: 1px dotted black;
+  height: 200px;
+}
+
+%card-small{
+  @extend %card;
+  @media screen and (min-width: 767px){
+    lost-column: 1/2 0 0;
+  }
+}
+
+%card-big{
+  @extend %card;
+  @media screen and (min-width: 767px){
+    lost-column: 1/1 0 0;
+
+  }
+}
+
+%card-tall{
+
+}
+
+%card-img {
+  border: 1px dotted black;
+  lost-column: 1/2 0 0;
+  @include bg-img("../img/pips.jpg");
+  height: 100%;
+}
+
+%card-text{
+  text-align: center;
+  font-size: 0.8em;
+  lost-column: 1/2 0 0;
+  height: 100%;
+  @include align-items(space-between, center, column nowrap);
 }

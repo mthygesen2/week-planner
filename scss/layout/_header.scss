@@ -5,18 +5,17 @@
 ///Nav height will effect the logo height ///
 .nav {
   border-bottom: 1px solid $text-color;
-  @include align-items();
-  @include container(100%, 125px);
+  @include align-items(space-between, center);
+  @include container(100%, 100%, 1.5em);
   @include e("brand") {
     @extend %nav-brand;
-  
+
   }
   @include e("links") {
-    @include align-items($justify: flex-end);
-    @include container();
-    a {
-      @extend %nav-right;
-      align-self: center;
+    @include align-items(space-between, center);
+    @include container(auto);
+    a{
+      margin-left: 1em;
     }
   }
 }
