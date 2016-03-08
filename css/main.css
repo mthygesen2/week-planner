@@ -601,7 +601,7 @@ footer {
   .map__footer {
     border: 1px solid blue;
     width: 100%;
-    height: 250px;
+    height: 300px;
     padding: 1em;
     margin: 0;
     background: #aaa;
@@ -619,7 +619,8 @@ footer {
             align-items: flex-start;
     -webkit-flex-flow: row nowrap;
         -ms-flex-flow: row nowrap;
-            flex-flow: row nowrap; }
+            flex-flow: row nowrap;
+    overflow: scroll; }
 
 .venue {
   height: 100%;
@@ -648,10 +649,10 @@ footer {
 .venue:last-child {
   margin-right: 0; }
 
-.venue:nth-child(3n) {
+.venue:nth-child(0n) {
   float: right; }
 
-.venue:nth-child(3n) {
+.venue:nth-child(0n) {
   margin-right: 0; }
   .venue__img {
     background-image: url("../img/pips.jpg");
@@ -680,7 +681,7 @@ footer {
     color: white; }
     .venue__img h1 {
       font-size: 1.5em;
-      margin-top: 10%; }
+      margin-top: 8%; }
     .venue__img h4 {
       -webkit-align-self: flex-end;
           -ms-flex-item-align: end;

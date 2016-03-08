@@ -16,15 +16,16 @@
   }
   @include e("footer") {
     border: 1px solid blue;
-    @include container(100%, 250px, 1em);
+    @include container(100%, 300px, 1em);
     background: #aaa;
     @include align-items();
+    overflow: scroll;
   }
 }
 
 .venue {
   height: 100%;
-  lost-column: 1/3 3 1em;
+  lost-column: 1/3 0 1em;
   border: 1px solid black;
   @include align-items($flex-flow: column nowrap);
   @include e('img') {
@@ -34,7 +35,7 @@
     color: white;
     h1 {
       font-size: 1.5em;
-      margin-top: 10%;
+      margin-top: 8%;
     }
     h4 {
       align-self: flex-end;
