@@ -4,7 +4,7 @@ import Ember from 'ember';
 import oauthSignature from 'npm:oauth-signature'
 
 export default Ember.Service.extend({
-  yelpResult: '',
+  yelpResult: [],
 
 
   getSignature(url, parameters) {
@@ -25,7 +25,6 @@ export default Ember.Service.extend({
       callback: 'mycallback',
     };
     for (var attributeName in params) { parameters[attributeName] = params[attributeName]};
-
     var signature = this.getSignature(urlYelp, parameters);
     parameters.oauth_signature = signature;
     var result;

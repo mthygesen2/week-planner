@@ -1,5 +1,12 @@
-{{log model}}
 
 {{search-address standardGeocode="standardGeocode"}}
 <br>
 {{google-map}}
+
+<!-- Contet starts here -->
+{{log yelpApi.yelpResult}}
+{{#each yelpApi.yelpResult as |business|}}
+  <p>
+    {{business.display_phone}}
+  </p>
+{{/each}}
