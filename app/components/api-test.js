@@ -7,22 +7,7 @@ export default Ember.Component.extend({
   isShowes: false,
 
   actions: {
-    sendRequest(model) {
-      // var params = "Portland";
-      // var limit = '15';
-      // var date = Math.floor(Date.now()/1000);
-      // var nonce = (Math.floor(Math.random() * 1e12).toString());
-      // var signature = this.get('yelpApi').getSignature(nonce, date, params, limit);
-      // var url = 'https://api.yelp.com/v2/search?oauth_consumer_key=s5HPEtEzcXAopt3qEA8uyg&oauth_token=kVXVaCW2aHjC_nb4LHs1xdBfrJd7fzKH&oauth_signature_method=HMAC-SHA1&oauth_signature='+signature+ '&oauth_timestamp='+date+'&oauth_nonce='+nonce+'&location='+params+'&limit='+limit;
-      // return Ember.$.ajax(url, {
-      //   dataType: 'jsonp',
-      //   jsonpCallback: 'mycallback',
-      //   cache: true
-      // }).then(function(response) {
-      //   console.log(response);
-      //   console.log(JSON.stringify(response));
-      //   return response.result;
-      // });
+    sendRequest() {
       var params = {
         location: 'Portland',
       };
@@ -50,13 +35,19 @@ export default Ember.Component.extend({
       }).then(function(response) {
         // this.result = response;
         console.log(response);
+        result = response;
         // this.set('yelpResult', response);
         // this.set('isShowes', true);
         // console.log(JSON.stringify(response));
         return response.result;
       });
+      console.log(result);
       // console.log(result);
       // console.log(searchYelp(params));
+    },
+
+    sendRequestToService() {
+      this.get('yelpApi').yelpRequest();
     }
   }
 });
