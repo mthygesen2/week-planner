@@ -6,7 +6,7 @@
   flex: 1;
   @include align-items(center, center, column nowrap);
   @include container();
-  color: black;
+  color: $text-color;
   h1 {
     font-size: 4em;
     font-family: $bold-font-stack;

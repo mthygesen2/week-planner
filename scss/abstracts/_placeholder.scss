@@ -25,16 +25,16 @@
   h1 {
   font-family: $bold-font-stack;
   font-size: 3.5em;
-  color: $mid-grey;
+  color: $light-grey;
   text-align: center;
   line-height: 0.9;
-  text-shadow: 3px 3px $mint-green;
+  text-shadow: 3px 3px $green;
   }
   h3 {
     margin-top: 0.5em;
     font-size: 1.5em;
-    color: #e8e6e5;
-    text-shadow: 3px 3px $mint-green;
+    color: $light-grey;
+    text-shadow: 2px 2px $green;
   }
 }
 
@@ -71,7 +71,7 @@
 
 %topvenue--25{
   @extend %topvenue--50;
-  @media screen and (min-width: 1150px){
+  @media screen and (min-width: 1250px){
     lost-column: 1/4 4 1em;
   }
 }
