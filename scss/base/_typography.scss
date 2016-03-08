@@ -3,5 +3,11 @@
  */
 body {
   color: $text-color;
-  font: normal 125% / 1.4 $text-font-stack;
+  font: normal 90% / 1.4 $text-font-stack;
+  @media screen and (min-width: 600px) {
+    font: normal 100% / 1.4 $text-font-stack;
+  }
+  @media screen and (min-width: 1024px) {
+    font: normal 125% / 1.4 $text-font-stack;
+  }
 }

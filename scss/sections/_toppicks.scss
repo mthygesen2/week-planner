@@ -1,7 +1,5 @@
 
 .topPicks {
-  flex:1;
-  @include container(100%);
   @include e("header") {
     @include bg-img("../img/date.jpg");
     @extend %page-header;
@@ -18,12 +16,12 @@
     @include e("row") {
       @extend %row;
       .venue {
-        @extend %venue--quarter;
+        @extend %topvenue--25;
       }
       @include m("featured"){
       @extend %row;
       .venue{
-        @extend %venue--half;
+        @extend %topvenue--50;
       }
       }
     }

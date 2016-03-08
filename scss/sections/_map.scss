@@ -1,7 +1,5 @@
 
 .map {
-  flex:1;
-  @include container(80%);
   @include align-items($flex-flow: column nowrap);
   @include e("header") {
     @include bg-img("../img/date.jpg");
@@ -15,10 +13,16 @@
     max-height: 700px;
   }
   @include e("footer") {
-    border: 1px solid blue;
     @include container(100%, 100%, 1em);
-    background: #aaa;
-    @include align-items();
+    @include align-items($flex-flow: column nowrap);
+    @media screen and (min-width: 768px ){
+      @include align-items();
+      .venue {
+        @extend %mapvenue--md;
+        @extend %mapvenue--bg;
+        margin-bottom: 0;
+      }
+    }
     overflow: scroll;
   }
 }
