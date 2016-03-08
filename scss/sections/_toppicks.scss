@@ -1,7 +1,7 @@
 
 .topPicks {
   flex:1;
-  @include container(80%);
+  @include container(100%);
   @include e("header") {
     @include bg-img("../img/date.jpg");
     @extend %page-header;
@@ -12,42 +12,8 @@
 .gallery {
     @include align-items(flex-start, flex-start, row wrap);
     @include container(100%, 100%);
-    @include e("row--double"){
-      @extend %row-double;
-      .card {
-        @include m("big") {
-          @extend %card-big;
-          @extend %card-column;
-
-        }
-        @extend %card-small;
-        @extend %card-column;
-
-        @include e("img") {
-          @extend %card-img;
-        }
-        @include e("text") {
-          @extend %card-text;
-        }
-      }
-    }
+    padding: 1em 0;
     @include e("row") {
-      @extend %row-small;
-      .card {
-        @include m("big") {
-          @extend %card-big;
-
+      @extend %row;
         }
-        @extend %card-small;
-        @include e("img") {
-          @extend %card-img;
-        }
-        @include e("text") {
-          @extend %card-text;
-        }
-      }
     }
-
-
-
-}
