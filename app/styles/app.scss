@@ -1,4 +1,21 @@
+@import "ember-modal-dialog/ember-modal-structure";
+@import "ember-modal-dialog/ember-modal-appearance";
+
 .map-display {
     height: 600px;
     width: 600px;
   }
+
+.ember-modal-overlay-in-place {
+  height: initial;
+  opacity: initial;
+  position: initial;
+}
+
+.ember-modal-dialog-in-place {
+  position: initial;
+}
+
+#container-in-place {
+  border: 2px dotted #0f0;
+}

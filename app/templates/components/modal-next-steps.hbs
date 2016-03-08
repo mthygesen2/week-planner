@@ -1,0 +1,20 @@
+<div id="container-in-place" class="ember-modal-dialog-in-place">
+  <button {{action "showFirstQuestion"}}>Show Modal</button>
+  <h1>This is where modals go:</h1>
+
+
+    {{#if showFirstQuestion}}
+      {{#tether-dialog
+        close="toggleModal"
+        renderInPlace=true
+        targetAttachment='none'
+        container-class='ember-modal-dialog-in-place'
+        overlay-class='ember-modal-overlay-in-place'
+      }}
+        <button {{action 'no'}} type="button">No</button>
+
+        <button {{action 'yes'}} type="button">Yes</button>
+        <h1>This is first question!</h1>
+      {{/tether-dialog}}
+    {{/if}}
+</div>
