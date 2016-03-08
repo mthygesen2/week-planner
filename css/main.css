@@ -30,13 +30,15 @@
   .topPicks__header h1, .map__header h1 {
     font-family: "Ultra", serif;
     font-size: 3.5em;
-    color: white;
+    color: #c7c7c7;
     text-align: center;
-    line-height: 0.9; }
+    line-height: 0.9;
+    text-shadow: 3px 3px #77c9ad; }
   .topPicks__header h3, .map__header h3 {
     margin-top: 0.5em;
     font-size: 1.5em;
-    color: white; }
+    color: #e8e6e5;
+    text-shadow: 3px 3px #77c9ad; }
 
 .gallery__row, .gallery__row--featured {
   width: 100%;
@@ -82,7 +84,8 @@
   margin: 0;
   color: white; }
   .venue__img h1 {
-    font-size: 1.5em; }
+    font-size: 1.25em;
+    font-weight: bold; }
   .venue__img h4 {
     -webkit-align-self: flex-end;
         -ms-flex-item-align: end;
@@ -176,6 +179,8 @@
 
 .venue:nth-child(0n) {
   margin-right: 0; }
+  .venue__title {
+    width: 75%; }
   .venue__info {
     display: -webkit-box;
     display: -webkit-flex;
@@ -543,7 +548,7 @@ footer {
       -ms-flex-flow: column nowrap;
           flex-flow: column nowrap; }
   .map__header {
-    background-image: url("../img/date.jpg");
+    background-image: url("../img/drinks.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;

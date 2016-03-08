@@ -2,7 +2,7 @@
 .map {
   @include align-items($flex-flow: column nowrap);
   @include e("header") {
-    @include bg-img("../img/date.jpg");
+    @include bg-img("../img/drinks.jpg");
     @extend %page-header;
     @include container(100%, 250px);
   }
