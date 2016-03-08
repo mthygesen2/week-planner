@@ -1,12 +1,14 @@
 {{#each yelpApi.yelpResult as |business|}}
-  <div class="card--big">
-    <div class="card__img"></div>
-    <div class="card__text">
-      <h4>Pip's Doughnuts</h4>
-      <h5> Address 1234 St Portland Or</h5>
-      <p>
-        Today only....get a bunch of doughnuts.
-      </p>
-    </div>
+<div class="venue">
+  <div class="venue__img">
+    <img src="{{business.image_url}}" alt="" />
+    <h1>{{business.name}}</h1>
+    <h3>{{neighborhood-assembler business.location.neighborhoods}}</h3>
+    <h4>3.4</h4>
   </div>
+  <div class="venue__info">
+    <h3>Cuisines:</h3>
+    <h3>Info here.</h3>
+  </div>
+</div>
 {{/each}}
