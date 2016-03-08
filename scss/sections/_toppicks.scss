@@ -11,9 +11,20 @@
 
 .gallery {
     @include align-items(flex-start, flex-start, row wrap);
-    @include container(100%, 100%);
-    padding: 1em 0;
+    @include container(100%, 100%, 1em);
+    @media screen and (min-width: 1300px){
+      padding: 1em 0 0;
+    }
     @include e("row") {
       @extend %row;
-        }
+      .venue {
+        @extend %venue--quarter;
+      }
+      @include m("featured"){
+      @extend %row;
+      .venue{
+        @extend %venue--half;
+      }
+      }
+    }
     }

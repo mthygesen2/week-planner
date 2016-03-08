@@ -16,7 +16,7 @@
   }
   @include e("footer") {
     border: 1px solid blue;
-    @include container(100%, 300px, 1em);
+    @include container(100%, 100%, 1em);
     background: #aaa;
     @include align-items();
     overflow: scroll;
