@@ -1,21 +1,11 @@
 
 .topPicks {
   flex:1;
+  @include container(80%);
   @include e("header") {
     @include bg-img("../img/date.jpg");
+    @extend %page-header;
     @include container(100%, 400px);
-    @include align-items(center, center, column nowrap);
-    h1 {
-    font-family: $bold-font-stack;
-    font-size: 3.5em;
-    color: white;
-    text-align: center;
-    }
-    h3 {
-      font-size: 1.5em;
-      color: white;
-      text-align: center;
-    }
   }
 }
 
@@ -41,7 +31,7 @@
         }
       }
     }
-    @include e("row"){
+    @include e("row") {
       @extend %row-small;
       .card {
         @include m("big") {
