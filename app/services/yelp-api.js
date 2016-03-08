@@ -31,15 +31,16 @@ export default Ember.Service.extend({
   		oauth_consumer_key : 's5HPEtEzcXAopt3qEA8uyg',
   		oauth_token : 'kVXVaCW2aHjC_nb4LHs1xdBfrJd7fzKH',
   		oauth_nonce : nonce,
-  		// oauth_nonce : 'T9u0N8HPAR2',
-  		oauth_timestamp : new Date().getTime(),
+  		// oauth_nonce : 'zrl7Ufr2JTM',
+  		// oauth_timestamp : '1457409085',
+      oauth_timestamp : timestamp,
   		oauth_signature_method : 'HMAC-SHA1',
-  		oauth_version : '1.0',
       location: location,
+      callback: 'mycallback',
   	};
     var consumerSecret = 'BLtzvHCPEIe9pHqIh9OPId8jqf4';
 	  var tokenSecret = 'M9P4ZXaLGLPAC8sekCYIetzQdaQ';
-    return oauthSignature.generate(httpMethod, url, parameters, consumerSecret, tokenSecret);
+    return oauthSignature.generate(httpMethod, url, parameters, consumerSecret, tokenSecret, { encodeSignature: false});
     // return yelp;
   }
 
