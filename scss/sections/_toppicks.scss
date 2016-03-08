@@ -24,28 +24,40 @@
     @include container(100%, 100%);
     @include e("row--double"){
       @extend %row-double;
+      .card {
+        @include m("big") {
+          @extend %card-big;
+          @extend %card-column;
+
+        }
+        @extend %card-small;
+        @extend %card-column;
+
+        @include e("img") {
+          @extend %card-img;
+        }
+        @include e("text") {
+          @extend %card-text;
+        }
+      }
     }
     @include e("row"){
       @extend %row-small;
-    }
-  .card {
-    @include m("big") {
-      @extend %card-big;
+      .card {
+        @include m("big") {
+          @extend %card-big;
+
+        }
+        @extend %card-small;
+        @include e("img") {
+          @extend %card-img;
+        }
+        @include e("text") {
+          @extend %card-text;
+        }
+      }
     }
 
-    @extend %card-small;
-    @include e("img") {
-      @extend %card-img;
-    }
-    @include e("text") {
-      @extend %card-text;
-    }
-
-  @include m("tall") {
-    @extend %card-tall;
-  }
-
-  }
 
 
 }

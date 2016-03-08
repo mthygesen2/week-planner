@@ -29,13 +29,9 @@
 %row-double{
   @extend %row;
   @media screen and (min-width: 1024px){
-    height: 200px;
-    .card--small{
-      @include align-items(flex-start, flex-start, column wrap);
-    }
+      height: 400px;
     & >*:nth-child(3){
       order: -1;
-     color:red;
     }
   }
 }
@@ -44,30 +40,44 @@
   @extend %row;
   @media screen and (min-width: 768px){
     height: 200px;
-  & > * {
-    lost-column: 2/6 0 0 !important;
+    & > * {
+      lost-column: 2/6 0 0 !important;
+    }
   }
-}
 }
 
 %card {
+  @include align-items(flex-start, center, row nowrap);
   height: 100%;
   padding: .5em;
-  @include align-items(flex-start, center, row nowrap);
   lost-column: 1/1;
   border: 1px dotted black;
-  height: 200px;
+  height: 150px;
 }
 
 %card-small{
   @extend %card;
   @media screen and (min-width: 767px){
     lost-column: 1/2 0 0;
+    height: 200px;
   }
   @media screen and (min-width: 1024px){
     lost-column: 1/6 0 0;
     height: 100%;
+  }
+}
 
+%card-row{
+  @include align-items(flex-start, center, row nowrap);
+}
+
+%card-column {
+  @media screen and (min-width: 1024px){
+    @include align-items(flex-start, center, column nowrap);
+    & > .card__img, .card__text{
+      width: 100%;
+      height: 50%;
+    }
   }
 }
 
@@ -75,16 +85,12 @@
   @extend %card;
   @media screen and (min-width: 767px){
     lost-column: 1/1 0 0;
-
+    height: 200px;
   }
   @media screen and (min-width: 1024px){
     lost-column: 1/3 0 0;
     height: 100%;
   }
-}
-
-%card-tall{
-
 }
 
 %card-img {
