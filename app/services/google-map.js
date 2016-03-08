@@ -7,7 +7,7 @@ export default Ember.Service.extend({
   results: '',
   map: '',
   places: [["Cassidy's Restaurant", 45.522523, -122.685156], ["Lan Su Chinese Garden", 45.525464, -122.672964]],
-  
+
   findMap(container, options) {
     return new this.googleMaps.Map(container, options);
   },
