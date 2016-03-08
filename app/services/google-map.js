@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Service.extend({
+  meetupApi: Ember.inject.service(),
   googleMaps: window.google.maps,
   lat: '',
   lng: '',
