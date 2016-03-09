@@ -4,7 +4,7 @@ export default Ember.Route.extend({
   yelpApi: Ember.inject.service(),
   googleMap: Ember.inject.service(),
   meetupApi: Ember.inject.service()
-  model() {
+  //model() {
     // var url = "https://api.yelp.com/v2/search?oauth_consumer_key=s5HPEtEzcXAopt3qEA8uyg&oauth_token=kVXVaCW2aHjC_nb4LHs1xdBfrJd7fzKH&oauth_signature_method=HMAC-SHA1&oauth_signature=ljsO3PryyOVGZNKO6khIUNddgw0=&oauth_timestamp=1457398190&oauth_nonce=HaNuR9AXie1&location=Portland";
     // return Ember.$.ajax(url, {
     //   dataType: 'jsonp',
@@ -14,7 +14,7 @@ export default Ember.Route.extend({
     //   console.log(response);
     //   return response.result;
     // });
-  },
+  //},
 
 
   // initMap() {
@@ -31,7 +31,7 @@ export default Ember.Route.extend({
 
 
 
-actions: {
+//actions: {
     //  geocodeAddress(geocoder, resultsMap, address) {
     // //var address = document.getElementById('address').value;
     //   geocoder.geocode({'address': address}, function(results, status) {
@@ -47,6 +47,6 @@ actions: {
     //   });
     // }
 
-  }
+  // }
 
 });
