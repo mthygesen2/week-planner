@@ -19,6 +19,7 @@ export default Ember.Service.extend({
     }).then(function(response) {
       for (var item of response.response.groups[0].items){
         var venue = {
+          id: item.venue.id,
           name: item.venue.name,
           category: item.venue.categories[0].name,
           photo: item.venue.featuredPhotos.items[0].prefix + 'original' + item.venue.featuredPhotos.items[0].suffix || '',
@@ -27,13 +28,14 @@ export default Ember.Service.extend({
           hoursStatus: item.venue.hours.status,
           location: item.venue.location,
           rating: 9.6,
+          shortDescription: item.tips[0].text,
         }
         self.get('foursquareResult').pushObject(venue);
       }
       // self.set('foursquareResult', response.response.groups[0]);
       // console.log(JSON.stringify(self.get('yelpResult')));
       console.log(self.get('foursquareResult'));
-      // console.log(response.response.groups[0].items[1]);
+      console.log(JSON.stringify(response.response.groups[0]));
       return response.businesses;
     });
   }

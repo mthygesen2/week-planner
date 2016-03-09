@@ -1,18 +1,20 @@
 <div class="gallery">
-{{#each yelpApi.yelpResult as |business|}}
+{{#each foursquareApi.foursquareResult as |business|}}
 <div class="venue">
-  <div class="venue__img" style="background-image: url({{image-size business.image_url}})">
+  <div class="venue__img" style="background-image: url({{business.photo}})">
     <div class="venue__title">
       <h1>{{business.name}}</h1>
-      {{#each (neighborhood-assembler business.location.neighborhoods) as |neighborhood|}}
-        <h3>{{neighborhood}}</h3>
-      {{/each}}
+      <h3>{{business.category}}</h3>
     </div>
       <h4>{{business.rating}}</h4>
   </div>
   <div class="venue__info">
-    <h3>Cuisines: </h3>
-    <h3>Info here.</h3>
+    {{#if business.isOpenNow}}
+      <h3>{{business.hoursStatus}}</h3>
+    {{else}}
+      <h3>Is currently close</h3>
+    {{/if}}
+    <!-- <h3>{{business.shortDescription}}</h3> -->
   </div>
 </div>
 {{/each}}
