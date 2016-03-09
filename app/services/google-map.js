@@ -7,8 +7,7 @@ export default Ember.Service.extend({
   lng: '',
   results: '',
   map: '',
-  places: [["Cassidy's Restaurant", 45.522523, -122.685156], ["Lan Su Chinese Garden", 45.525464, -122.672964]],
-
+  places: [],
   findMap(container, options) {
     return new this.googleMaps.Map(container, options);
   },
@@ -20,23 +19,27 @@ export default Ember.Service.extend({
     var geocoder = new this.googleMaps.Geocoder();
     var self = this;
     var setMarker = this.setMarker(map);
+    // var findMeetups = this.meetupApi.findMeetups(this.lat, this.lng);
     geocoder.geocode({'address': address}, function(geoResults, status) {
       self.set('results', geoResults[0]);
-      console.log(self.get('results'));
+      //console.log(self.get('results'));
       if (status === google.maps.GeocoderStatus.OK) {
         //console.log(results);
         map.setCenter(geoResults[0].geometry.location)
-        // var marker = new google.maps.Marker({
-        //   map: map,
-        //   position: geoResults[0].geometry.location,
-        //   //icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png'
-        // });
         setMarker;
+        //findMeetups;
       } else {
         alert('Geocode was not successful for the following reason: ' + status);
       }
       self.set('lat', ((self.get('results.geometry.bounds.R.R') + self.get('results.geometry.bounds.R.j')) / 2));
       self.set('lng', ((self.get('results.geometry.bounds.j.R') + self.get('results.geometry.bounds.j.j')) / 2));
+
+      return new Promise(function() {
+          return {
+            lat: self.get('lat'),
+            lng: self.get('lng')
+          }
+        })
     });
   },
   setMarker(map) {
