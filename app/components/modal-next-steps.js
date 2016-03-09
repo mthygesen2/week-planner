@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   responseService: Ember.inject.service('user-responses'),
+  showQuestions: true,
   showQuestionOne: true,
   showQuestionTwo: false,
   showQuestionThree: false,
@@ -9,19 +10,20 @@ export default Ember.Component.extend({
 
   actions: {
     answerQuestionOne(response) {
-      var serviceAnswerParam = this.get('responseService.filters.criteriaOne.answer');
+      var serviceAnswerParam = this.get('responseService.filters.1.answer');
       serviceAnswerParam.addObject(response);
       if (response === false) {
+        this.set('showQuestionTwo', true);
         console.log('Remove results related to date night');
       } else {
+        this.set('showQuestionFive', true);
         console.log('Populate results for date night')
       }
       this.set('showQuestionOne', false);
-      this.set('showQuestionTwo', true);
     },
 
     answerQuestionTwo(response) {
-      var serviceAnswerParam = this.get('responseService.filters.criteriaTwo.answer');
+      var serviceAnswerParam = this.get('responseService.filters.2.answer');
       serviceAnswerParam.addObject(response);
       if (response === false) {
         console.log('Remove results related to question 2 params');
@@ -33,7 +35,7 @@ export default Ember.Component.extend({
     },
 
     answerQuestionThree(response) {
-      var serviceAnswerParam = this.get('responseService.filters.criteriaThree.answer');
+      var serviceAnswerParam = this.get('responseService.filters.3.answer');
       serviceAnswerParam.addObject(response);
       if (response === false) {
         console.log('Remove Group Hangouts');
@@ -45,7 +47,7 @@ export default Ember.Component.extend({
     },
 
     answerQuestionFour(response) {
-      var serviceAnswerParam = this.get('responseService.filters.criteriaFour.answer');
+      var serviceAnswerParam = this.get('responseService.filters.4.answer');
       serviceAnswerParam.addObject(response);
       if (response === false) {
         console.log('Remove Disco');
