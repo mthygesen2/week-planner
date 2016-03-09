@@ -37,7 +37,7 @@ export default Ember.Service.extend({
       cache: true
     }).then(function(response) {
       self.set('yelpResult', response.businesses);
-      console.log(JSON.stringify(self.get('yelpResult')));
+      // console.log(JSON.stringify(self.get('yelpResult')));
       console.log(self.get('yelpResult'));
       return response.businesses;
     });

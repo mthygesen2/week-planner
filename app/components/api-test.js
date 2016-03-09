@@ -8,7 +8,9 @@ export default Ember.Component.extend({
 
   actions: {
     sendRequestToService() {
-      var params = {};
+      var params = {
+        limit: 10
+      };
       if (this.get('location')) {
         params.location = this.get('location');
       }

@@ -2,17 +2,15 @@ import Ember from 'ember';
 
 export function neighborhoodAssembler(params/*, hash*/) {
   var neighborhoods = params[0];
-  var counter = 1;
-  var resultString = '';
-  console.log(neighborhoods)
-  for (var neighborhood of neighborhoods) {
-    resultString += neighborhood;
-    if (counter < neighborhoods.length) {
-      resultString += ' | ';
+  var result = [];
+  var i;
+  for (i = 0; i < neighborhoods.length; i++) {
+    if (i === 2) {
+      break;
     }
-    counter += 1;
+    result.push(neighborhoods[i]);
   }
-  return resultString;
+  return result;
 }
 
 export default Ember.Helper.helper(neighborhoodAssembler);
