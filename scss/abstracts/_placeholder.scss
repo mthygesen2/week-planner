@@ -87,6 +87,7 @@
 %mapvenue--md{
   @media screen and (min-width: 600px){
     lost-column: 1/2 0 1em;
+    margin-bottom: 0;
   }
 }
 
@@ -117,5 +118,24 @@
       font-size: 1.5em;
       color: orange;
     }
+  }
+}
+
+%scrollbar {
+  &::-webkit-scrollbar{
+    width: 0;
+    background-color:$light-grey;
+  }
+}
+
+%scrollbar-colored{
+  &::-webkit-scrollbar{
+    width: 0.5em;
+    background-color:$light-grey;
+  }
+  &::-webkit-scrollbar-thumb{
+    background-color: #77c9ad;
+    border-radius: 10px;
+    -webkit-box-shadow:0 0 2px gray inset;
   }
 }

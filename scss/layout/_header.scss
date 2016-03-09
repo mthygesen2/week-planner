@@ -2,11 +2,11 @@
 // This file contains all styles related to the header of the site/application.
 // -----------------------------------------------------------------------------
 
+$header-height: 75px;
 ///Nav height will effect the logo height ///
 .nav {
   border-bottom: 1px solid $text-color;
   @include align-items(space-between, center);
-  @include container(100%, 150px, 1em);
   @include e("brand") {
     @extend %nav-brand;
     animation-name: colorbrand;
@@ -19,6 +19,11 @@
       margin-left: 1em;
     }
   }
+  @include container(100%, 75px, 1em);
+  @media screen and (min-width: 600px) {
+    height: 100px;
+  }
+  // @include container(100%, 150px, 1em);
 }
 
 @-webkit-keyframes colorbrand {

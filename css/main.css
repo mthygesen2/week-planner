@@ -137,7 +137,8 @@
 @media screen and (min-width: 600px) {
   .map__footer .venue {
     flex: 0 0 auto;
-    width: calc(99.99% * 1/2 - (1em - 1em * 1/2)); }
+    width: calc(99.99% * 1/2 - (1em - 1em * 1/2));
+    margin-bottom: 0; }
   .map__footer .venue:nth-child(1n) {
     margin-right: 1em; }
   .map__footer .venue:last-child {
@@ -223,6 +224,19 @@
       font-size: 1.5em;
       color: orange; }
 
+.aside::-webkit-scrollbar, .topPicks::-webkit-scrollbar, .map::-webkit-scrollbar, .map__footer::-webkit-scrollbar {
+  width: 0;
+  background-color: #f3f3f3; }
+
+.map__footer::-webkit-scrollbar {
+  width: 0.5em;
+  background-color: #f3f3f3; }
+
+.map__footer::-webkit-scrollbar-thumb {
+  background-color: #77c9ad;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 0 2px gray inset; }
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -299,13 +313,13 @@ body {
 section {
   width: 100%;
   height: 100%;
-  padding: 0;
+  padding: 1em;
   margin: 0; }
   @media screen and (min-width: 768px) {
     section {
       width: 70%;
       height: 100%;
-      padding: 0;
+      padding: 1em;
       margin: 0; } }
 
 /**
@@ -407,7 +421,7 @@ body {
       -ms-flex-flow: row nowrap;
           flex-flow: row nowrap;
   width: 100%;
-  height: 150px;
+  height: 75px;
   padding: 1em;
   margin: 0; }
   .nav__brand {
@@ -437,6 +451,9 @@ body {
     margin: 0; }
     .nav__links a {
       margin-left: 1em; }
+  @media screen and (min-width: 600px) {
+    .nav {
+      height: 100px; } }
 
 @-webkit-keyframes colorbrand {
   25% {
@@ -498,7 +515,7 @@ body {
   z-index: -1; }
 
 .content {
-  height: calc(100vh - 250px);
+  height: calc(100vh - 150px);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -516,20 +533,19 @@ body {
           flex-flow: row nowrap;
   width: 100%;
   background: #f3f3f3;
-  padding: 1em; }
+  padding-bottom: 1em; }
 
 .aside {
-  overflow: scroll;
+  overflow: auto;
   width: 30%;
   height: 100%;
-  padding: 0;
+  padding: 1em;
   margin: 0;
-  padding: 0 0 1em 2em;
   -webkit-box-ordinal-group: 2;
   -webkit-order: 1;
       -ms-flex-order: 1;
           order: 1; }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     .aside {
       display: none; } }
   .aside__header {
@@ -648,7 +664,7 @@ body {
 
 footer {
   width: 100%;
-  height: 100px;
+  height: 75px;
   padding: 1em;
   margin: 0;
   border-top: 1px solid #2F3835; }
@@ -670,7 +686,7 @@ footer {
             flex-flow: row nowrap; }
 
 .topPicks {
-  overflow: scroll; }
+  overflow: auto; }
   .topPicks__header {
     background-image: url("../img/date.jpg");
     background-repeat: no-repeat;
@@ -680,7 +696,7 @@ footer {
     height: 350px;
     padding: 0;
     margin: 0;
-    margin-bottom: 2em; }
+    margin-bottom: 3em; }
 
 .gallery {
   display: -webkit-box;
@@ -698,13 +714,16 @@ footer {
   -webkit-flex-flow: row wrap;
       -ms-flex-flow: row wrap;
           flex-flow: row wrap;
+  -webkit-align-content: flex-start;
+      -ms-flex-line-pack: start;
+          align-content: flex-start;
   width: 100%;
-  height: 100%;
+  height: auto;
   padding: 0;
   margin: 0; }
 
 .map {
-  overflow: scroll;
+  overflow: auto;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -717,16 +736,17 @@ footer {
   -webkit-align-items: flex-start;
       -ms-flex-align: start;
           align-items: flex-start;
-  -webkit-flex-flow: column nowrap;
-      -ms-flex-flow: column nowrap;
-          flex-flow: column nowrap; }
+  -webkit-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  padding-bottom: 0; }
   .map__header {
     background-image: url("../img/drinks.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     width: 100%;
-    height: 250px;
+    height: 200px;
     padding: 0;
     margin: 0; }
   .map__google {
@@ -734,13 +754,13 @@ footer {
     width: 100%;
     height: 400px;
     padding: 0;
-    margin: 0; }
+    margin: 0;
+    margin: 1em 0; }
   .map__footer {
     width: 100%;
     height: auto;
     padding: 0;
     margin: 0;
-    padding: 0.5em 0;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -775,8 +795,8 @@ footer {
             -ms-flex-flow: row nowrap;
                 flex-flow: row nowrap; }
         .map__footer .venue {
-          margin-bottom: 0; } }
-    @media screen and (min-width: 768px) {
+          margin-bottom: 0.7em; } }
+    @media screen and (min-width: 1px) {
       .map__footer {
         overflow-y: hidden; } }
 
