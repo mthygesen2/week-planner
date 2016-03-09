@@ -6,7 +6,7 @@ export default Ember.Service.extend({
   lng: '',
   results: '',
   map: '',
-  places: [["Cassidy's Restaurant", 45.522523, -122.685156], ["Lan Su Chinese Garden", 45.525464, -122.672964]],
+  places: [],
 
   findMap(container, options) {
     return new this.googleMaps.Map(container, options);
@@ -40,14 +40,24 @@ export default Ember.Service.extend({
   },
   setMarker(map) {
     var places = this.get('places');
-    for(var i = 0; i < places.length; i++) {
+    for(var i = 0; i < places.length; i++){
       var place = places[i];
-
       var marker = new google.maps.Marker({
         map: map,
         position: {lat: place[1], lng: place[2]},
-        icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png'
+        //icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png'
+        title: place[0]
       });
+
+      marker.info = new google.maps.InfoWindow({
+        content: place[0] +
+        "<br>" +
+        place[3]
+      })
+      google.maps.event.addListener(marker, 'click', function() {
+        this.info.open(map, this);
+      });
+    //}
     }
   }
 });
