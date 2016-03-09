@@ -4,6 +4,7 @@
   @include e("header") {
     @include bg-img("../img/drinks.jpg");
     @extend %page-header;
+    margin-bottom: 2em;
     @include container(100%, 250px);
   }
   @include e("google") {

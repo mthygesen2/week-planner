@@ -35,10 +35,11 @@ a {
 body {
   color: $text-color;
   font-family: $text-font-stack;
+  background-color: $light-grey;
 }
 
 section {
-  flex:1;
+
   @include container(100%);
   @media screen and (min-width: 600px) {
     @include container(75%);

@@ -2,10 +2,10 @@
   font-family: "Ultra", serif;
   font-size: 4em; }
 
-.home button {
-  width: 150px;
+.home button, .aside__date button {
+  width: auto;
   height: 40px;
-  padding: 0;
+  padding: 0.5em;
   margin: 0;
   margin-top: 1em;
   border: none;
@@ -72,9 +72,28 @@
     -webkit-align-self: flex-end;
         -ms-flex-item-align: end;
             align-self: flex-end;
-    background: green;
+    background: #77c9ad;
     border-radius: 50%;
-    padding: 0.5em; }
+    padding: 0.5em;
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    margin: 0;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-flex-flow: row nowrap;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap; }
 
 @media screen and (min-width: 768px) {
   .gallery .venue {
@@ -195,7 +214,8 @@
     width: 100%;
     height: 40%;
     padding: 0.5em;
-    margin: 0; }
+    margin: 0;
+    background: white; }
     .venue__info i {
       -webkit-align-self: flex-end;
           -ms-flex-item-align: end;
@@ -273,13 +293,10 @@ a {
 
 body {
   color: #2F3835;
-  font-family: "Lato", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif; }
+  font-family: "Lato", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  background-color: #f3f3f3; }
 
 section {
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
   width: 100%;
   height: 100%;
   padding: 0;
@@ -367,9 +384,9 @@ body {
   min-height: 100vh;
   width: 100%;
   max-width: 1500px;
-  -webkit-flex-flow: column nowrap;
-      -ms-flex-flow: column nowrap;
-          flex-flow: column nowrap;
+  -webkit-flex-flow: column wrap;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
   padding: 0; }
 
 .nav {
@@ -467,15 +484,66 @@ body {
   position: absolute;
   z-index: -1; }
 
+.content {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-flex-flow: row nowrap;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  width: 100%;
+  background: #f3f3f3;
+  padding: 1em; }
+
 .aside {
   width: 25%;
   height: 100%;
   padding: 0;
   margin: 0;
-  -webkit-align-self: flex-end;
-      -ms-flex-item-align: end;
-          align-self: flex-end;
-  border: 1px solid red; }
+  -webkit-box-ordinal-group: 2;
+  -webkit-order: 1;
+      -ms-flex-order: 1;
+          order: 1; }
+  .aside__date {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-flex-flow: column nowrap;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    padding: 1em;
+    text-align: center; }
+    .aside__date h1 {
+      font-size: 1.3em;
+      line-height: 2;
+      font-family: "Ultra", serif; }
+    .aside__date ul {
+      margin: 1em auto;
+      font-weight: bolder; }
+    .aside__date button {
+      padding: 0 1em; }
 
 footer {
   width: 100%;
@@ -508,7 +576,8 @@ footer {
   width: 100%;
   height: 400px;
   padding: 0;
-  margin: 0; }
+  margin: 0;
+  margin-bottom: 2em; }
 
 .gallery {
   display: -webkit-box;
@@ -528,11 +597,8 @@ footer {
           flex-flow: row wrap;
   width: 100%;
   height: 100%;
-  padding: 1em;
+  padding: 0;
   margin: 0; }
-  @media screen and (min-width: 1300px) {
-    .gallery {
-      padding: 1em 0 0; } }
 
 .map {
   display: -webkit-box;
@@ -555,6 +621,7 @@ footer {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    margin-bottom: 2em;
     width: 100%;
     height: 250px;
     padding: 0;

@@ -4,14 +4,15 @@
     @include bg-img("../img/date.jpg");
     @extend %page-header;
     @include container(100%, 400px);
+    margin-bottom: 2em;
   }
 }
 
 .gallery {
     @include align-items(flex-start, flex-start, row wrap);
-    @include container(100%, 100%, 1em);
-    @media screen and (min-width: 1300px){
-      padding: 1em 0 0;
+    @include container(100%, 100%);
+    @media screen and (min-width: 1500px){
+      // padding: 1em 0 0;
     }
     .venue{
       @extend %topvenue--md;
