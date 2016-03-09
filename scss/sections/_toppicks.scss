@@ -13,16 +13,14 @@
     @media screen and (min-width: 1300px){
       padding: 1em 0 0;
     }
-    @include e("row") {
-      @extend %row;
-      .venue {
-        @extend %topvenue--25;
-      }
-      @include m("featured"){
-      @extend %row;
-      .venue{
+    .venue{
+      @extend %topvenue--md;
+      @extend %topvenue--25;
+      &:first-child{
         @extend %topvenue--50;
       }
+      &:nth-child(2){
+        @extend %topvenue--50;
       }
     }
     }
