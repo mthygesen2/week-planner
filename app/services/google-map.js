@@ -20,9 +20,9 @@ export default Ember.Service.extend({
     var geocoder = new this.googleMaps.Geocoder();
     var self = this;
     var setMarker = this.setMarker(map);
+
     geocoder.geocode({'address': address}, function(geoResults, status) {
       self.set('results', geoResults[0]);
-      console.log(self.get('results'));
       if (status === google.maps.GeocoderStatus.OK) {
         map.setCenter(geoResults[0].geometry.location)
         setMarker;
@@ -31,6 +31,13 @@ export default Ember.Service.extend({
       }
       self.set('lat', ((self.get('results.geometry.bounds.R.R') + self.get('results.geometry.bounds.R.j')) / 2));
       self.set('lng', ((self.get('results.geometry.bounds.j.R') + self.get('results.geometry.bounds.j.j')) / 2));
+
+      return new Promise(function() {
+          return {
+            lat: self.get('lat'),
+            lng: self.get('lng')
+          }
+        })
     });
   },
   setMarker(map) {
