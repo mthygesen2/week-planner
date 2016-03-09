@@ -3,45 +3,83 @@ import Ember from 'ember';
 export default Ember.Service.extend({
   filters: [
     {
-      "id": 1,
-      "question": 'Date Night?',
-      "answer": [],
+      'id': 1,
+      'isNext': [],
+      'question': 'Date Night?',
+      'answer': [],
+      'category': 'dateNight'
+    },
+      // Date night true:
+    {
+      'id': 2,
+      'isNext': [],
+      'question': 'Do you want to get dinner?',
+      'answer': [],
+      'category': 'dateNight'
     },
 
     {
-      "id": 2,
-      "question": 'Tech Meetup?',
-      "answer": [],
+      'id': 3,
+      'isNext': [],
+      'question': 'Drinks before dinner?',
+      'answer': [],
+      'category': 'dateNight'
     },
 
     {
-      "id": 3,
-      "question": 'Group Hangout?',
-      "answer": [],
+      'id': 4,
+      'isNext': [],
+      'question': 'Movie after dinner?',
+      'answer': [],
+      'category': 'dateNight'
     },
 
     {
-      "id": 4,
-      "question": 'Disco?',
-      "answer": [],
+      'id': 5,
+      'isNext': [],
+      'question': 'New release, or second run movie?',
+      'answer': [],
+      'category': 'dateNight'
     },
 
     {
-      "id": 5,
-      "question": 'Drinks before dinner?',
-      "answer": [],
+      'id': 6,
+      'isNext': [],
+      'question': 'Feel like dancing?',
+      'answer': [],
+      'category': 'dateNight'
+    },
+      // Date night false
+    {
+      'id': 7,
+      'isNext': [],
+      'question': 'Tech Meetup?',
+      'answer': [],
+      'category': 'techMeetup'
     },
 
     {
-      "id": 6,
-      "question": 'Movie after dinner?',
-      "answer": [],
+      'id': 8,
+      'isNext': [],
+      'question': 'Group Hangout?',
+      'answer': [],
+      'category': 'groupHangout'
     },
 
     {
-      "id": 7,
-      "question": 'New release, or second run movie?',
-      "answer": [],
+      'id': 9,
+      'isNext': [],
+      'question': 'Disco?',
+      'answer': [],
+      'category': 'disco'
+    },
+
+    {
+      'id': 10,
+      'isNext': [],
+      'question': 'Are you sure you want to go out tonight?',
+      'answer': [],
+      'category': 'none'
     },
   ]
 });

@@ -1,32 +1,186 @@
-{{#if showQuestions}}
-      {{#tether-dialog
-        close="toggleModal"
-        renderInPlace=true
-        targetAttachment='none'
-        container-class='ember-modal-dialog-in-place'
-        overlay-class='ember-modal-overlay-in-place'
-      }}
-
-      {{#with responseService.filters.firstObject as |firstQuestion|}}
-      <h2>{{firstQuestion.question}}</h2>
-      <button {{action 'answerQuestion' true firstQuestion.id}} type="button">Yes</button>
-      <button {{action 'answerQuestion' false firstQuestion.id}} type="button">No</button>
-      {{/with}}
-
-      {{log responseService.filters.answer}}
-      
-      {{#each responseService.filters as |question|}}
-        {{#with question.answer as |answer|}}
-        {{#if answer}}
-        <h2>{{question.question}}</h2>
-        <button {{action 'answerQuestion' true question.id}} type="button">Yes</button>
-        <button {{action 'answerQuestion' false question.id}} type="button">No</button>
-        {{/if}}
-        {{/with}}
-
-      {{/each}}
-
-      {{/tether-dialog}}
-{{else}}
-  <button {{action 'showQuestions'}} type="button">Show Modal</button>
+{{#if showModal}}
+<button {{action 'showQuestion1'}} type="button">Show Modal</button>
 {{/if}}
+
+{{#if showQuestion1}}
+  {{#with responseService.filters.[0] as |currentQuestion|}}
+    {{#tether-dialog
+      close="toggleModal"
+      renderInPlace=true
+      targetAttachment='none'
+      container-class='ember-modal-dialog-in-place'
+      overlay-class='ember-modal-overlay-in-place'
+    }}
+
+    <h2>{{currentQuestion.question}}</h2>
+    <button {{action (concat 'answerQuestion' currentQuestion.id) true}} type="button">Yes</button>
+    <button {{action (concat 'answerQuestion' currentQuestion.id) false}} type="button">No</button>
+
+    {{/tether-dialog}}
+  {{/with}}
+{{/if}}
+
+{{#if showQuestion2}}
+  {{#with responseService.filters.[1] as |currentQuestion|}}
+    {{#tether-dialog
+      close="toggleModal"
+      renderInPlace=true
+      targetAttachment='none'
+      container-class='ember-modal-dialog-in-place'
+      overlay-class='ember-modal-overlay-in-place'
+    }}
+    <h2>{{currentQuestion.question}}</h2>
+    <button {{action (concat 'answerQuestion' currentQuestion.id) true}} type="button">Yes</button>
+    <button {{action (concat 'answerQuestion' currentQuestion.id) false}} type="button">No</button>
+    {{/tether-dialog}}
+  {{/with}}
+{{/if}}
+
+{{#if showQuestion3}}
+  {{#with responseService.filters.[2] as |currentQuestion|}}
+    {{#tether-dialog
+      close="toggleModal"
+      renderInPlace=true
+      targetAttachment='none'
+      container-class='ember-modal-dialog-in-place'
+      overlay-class='ember-modal-overlay-in-place'
+    }}
+    <h2>{{currentQuestion.question}}</h2>
+    <button {{action (concat 'answerQuestion' currentQuestion.id) true}} type="button">Yes</button>
+    <button {{action (concat 'answerQuestion' currentQuestion.id) false}} type="button">No</button>
+    {{/tether-dialog}}
+  {{/with}}
+{{/if}}
+
+{{#if showQuestion4}}
+  {{#with responseService.filters.[3] as |currentQuestion|}}
+    {{#tether-dialog
+      close="toggleModal"
+      renderInPlace=true
+      targetAttachment='none'
+      container-class='ember-modal-dialog-in-place'
+      overlay-class='ember-modal-overlay-in-place'
+    }}
+    <h2>{{currentQuestion.question}}</h2>
+    <button {{action (concat 'answerQuestion' currentQuestion.id) true}} type="button">Yes</button>
+    <button {{action (concat 'answerQuestion' currentQuestion.id) false}} type="button">No</button>
+    {{/tether-dialog}}
+  {{/with}}
+{{/if}}
+
+{{#if showQuestion5}}
+  {{#with responseService.filters.[4] as |currentQuestion|}}
+    {{#tether-dialog
+      close="toggleModal"
+      renderInPlace=true
+      targetAttachment='none'
+      container-class='ember-modal-dialog-in-place'
+      overlay-class='ember-modal-overlay-in-place'
+    }}
+    <h2>{{currentQuestion.question}}</h2>
+    <button {{action (concat 'answerQuestion' currentQuestion.id) true}} type="button">Yes</button>
+    <button {{action (concat 'answerQuestion' currentQuestion.id) false}} type="button">No</button>
+    {{/tether-dialog}}
+  {{/with}}
+{{/if}}
+
+{{#if showQuestion6}}
+  {{#with responseService.filters.[5] as |currentQuestion|}}
+    {{#tether-dialog
+      close="toggleModal"
+      renderInPlace=true
+      targetAttachment='none'
+      container-class='ember-modal-dialog-in-place'
+      overlay-class='ember-modal-overlay-in-place'
+    }}
+    <h2>{{currentQuestion.question}}</h2>
+    <button {{action (concat 'answerQuestion' currentQuestion.id) true}} type="button">Yes</button>
+    <button {{action (concat 'answerQuestion' currentQuestion.id) false}} type="button">No</button>
+    {{/tether-dialog}}
+  {{/with}}
+{{/if}}
+
+{{#if showQuestion7}}
+  {{#with responseService.filters.[6] as |currentQuestion|}}
+    {{#tether-dialog
+      close="toggleModal"
+      renderInPlace=true
+      targetAttachment='none'
+      container-class='ember-modal-dialog-in-place'
+      overlay-class='ember-modal-overlay-in-place'
+    }}
+    <h2>{{currentQuestion.question}}</h2>
+    <button {{action (concat 'answerQuestion' currentQuestion.id) true}} type="button">Yes</button>
+    <button {{action (concat 'answerQuestion' currentQuestion.id) false}} type="button">No</button>
+    {{/tether-dialog}}
+  {{/with}}
+{{/if}}
+
+{{#if showQuestion8}}
+  {{#with responseService.filters.[7] as |currentQuestion|}}
+    {{#tether-dialog
+      close="toggleModal"
+      renderInPlace=true
+      targetAttachment='none'
+      container-class='ember-modal-dialog-in-place'
+      overlay-class='ember-modal-overlay-in-place'
+    }}
+    <h2>{{currentQuestion.question}}</h2>
+    <button {{action (concat 'answerQuestion' currentQuestion.id) true}} type="button">Yes</button>
+    <button {{action (concat 'answerQuestion' currentQuestion.id) false}} type="button">No</button>
+    {{/tether-dialog}}
+  {{/with}}
+{{/if}}
+
+{{#if showQuestion9}}
+  {{#with responseService.filters.[8] as |currentQuestion|}}
+    {{#tether-dialog
+      close="toggleModal"
+      renderInPlace=true
+      targetAttachment='none'
+      container-class='ember-modal-dialog-in-place'
+      overlay-class='ember-modal-overlay-in-place'
+    }}
+    <h2>{{currentQuestion.question}}</h2>
+    <button {{action (concat 'answerQuestion' currentQuestion.id) true}} type="button">Yes</button>
+    <button {{action (concat 'answerQuestion' currentQuestion.id) false}} type="button">No</button>
+    {{/tether-dialog}}
+  {{/with}}
+{{/if}}
+
+{{#if showQuestion10}}
+  {{#with responseService.filters.[9] as |currentQuestion|}}
+    {{#tether-dialog
+      close="toggleModal"
+      renderInPlace=true
+      targetAttachment='none'
+      container-class='ember-modal-dialog-in-place'
+      overlay-class='ember-modal-overlay-in-place'
+    }}
+    <h2>{{currentQuestion.question}}</h2>
+    <button {{action (concat 'answerQuestion' currentQuestion.id) true}} type="button">Yes</button>
+    <button {{action (concat 'answerQuestion' currentQuestion.id) false}} type="button">No</button>
+    {{/tether-dialog}}
+  {{/with}}
+{{/if}}
+
+
+
+
+{{!#each responseService.filters as |question|}}
+  {{!#if showQuestion1}}
+    {{!#tether-dialog
+      close="toggleModal"
+      renderInPlace=true
+      targetAttachment='none'
+      container-class='ember-modal-dialog-in-place'
+      overlay-class='ember-modal-overlay-in-place'
+    }}
+
+    <!-- <h2>{{question.question}}</h2>
+    <button {{action (concat 'answerQuestion' question.id) true question.id}} type="button">Yes</button>
+    <button {{action (concat 'answerQuestion' question.id) false question.id}} type="button">No</button> -->
+
+    {{!/tether-dialog}}
+  {{!/if}}
+{{!/each}}
