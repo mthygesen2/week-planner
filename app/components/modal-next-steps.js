@@ -17,6 +17,8 @@ export default Ember.Component.extend({
       this.set('showQuestion1', false);
       if (response === true) { // Populate results based on question
         this.set('showQuestion2', true);
+        
+
       } else { // Remove results based on question
         this.set('showQuestion6', true);
       }
@@ -115,6 +117,16 @@ export default Ember.Component.extend({
         console.log(this.get('responseService.filters.8.category'))
       } else { // Remove results based on question
         this.set('showQuestion10', true);
+      }
+    },
+
+    answerQuestion10(response, id) {
+      this.set('showQuestion10', false);
+
+      if (response === true) { // Populate results based on question
+        this.set('showQuestion1', true);
+      } else { // Remove results based on question
+        this.set('showQuestion6', true);
       }
     },
 

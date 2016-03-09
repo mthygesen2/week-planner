@@ -4,7 +4,6 @@ export default Ember.Service.extend({
   filters: [
     {
       'id': 1,
-      'isNext': [],
       'question': 'Date Night?',
       'answer': [],
       'category': 'dateNight'
@@ -12,7 +11,6 @@ export default Ember.Service.extend({
       // Date night true:
     {
       'id': 2,
-      'isNext': [],
       'question': 'Do you want to get dinner?',
       'answer': [],
       'category': 'dateNight'
@@ -20,7 +18,6 @@ export default Ember.Service.extend({
 
     {
       'id': 3,
-      'isNext': [],
       'question': 'Drinks before dinner?',
       'answer': [],
       'category': 'dateNight'
@@ -28,7 +25,6 @@ export default Ember.Service.extend({
 
     {
       'id': 4,
-      'isNext': [],
       'question': 'Movie after dinner?',
       'answer': [],
       'category': 'dateNight'
@@ -36,7 +32,6 @@ export default Ember.Service.extend({
 
     {
       'id': 5,
-      'isNext': [],
       'question': 'New release, or second run movie?',
       'answer': [],
       'category': 'dateNight'
@@ -44,7 +39,6 @@ export default Ember.Service.extend({
 
     {
       'id': 6,
-      'isNext': [],
       'question': 'Feel like dancing?',
       'answer': [],
       'category': 'dateNight'
@@ -52,7 +46,6 @@ export default Ember.Service.extend({
       // Date night false
     {
       'id': 7,
-      'isNext': [],
       'question': 'Tech Meetup?',
       'answer': [],
       'category': 'techMeetup'
@@ -60,7 +53,6 @@ export default Ember.Service.extend({
 
     {
       'id': 8,
-      'isNext': [],
       'question': 'Group Hangout?',
       'answer': [],
       'category': 'groupHangout'
@@ -68,7 +60,6 @@ export default Ember.Service.extend({
 
     {
       'id': 9,
-      'isNext': [],
       'question': 'Disco?',
       'answer': [],
       'category': 'disco'
@@ -76,7 +67,6 @@ export default Ember.Service.extend({
 
     {
       'id': 10,
-      'isNext': [],
       'question': 'Are you sure you want to go out tonight?',
       'answer': [],
       'category': 'none'
