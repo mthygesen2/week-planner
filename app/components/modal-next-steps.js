@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   responseService: Ember.inject.service('user-responses'),
+  yelpApi: Ember.inject.service(),
   showModal: true,
   showQuestion1: false,
 
@@ -17,7 +18,7 @@ export default Ember.Component.extend({
       this.set('showQuestion1', false);
       if (response === true) { // Populate results based on question
         this.set('showQuestion2', true);
-        
+        this.sendAction('updateRequestFromModal', 'term: fun,');
 
       } else { // Remove results based on question
         this.set('showQuestion6', true);
@@ -31,6 +32,7 @@ export default Ember.Component.extend({
 
       if (response === true) { // Populate results based on question
         this.set('showQuestion3', true);
+        this.sendAction('updateRequestFromModal', 'term: dinner,');
       } else { // Remove results based on question
         this.set('showQuestion6', true);
       }
