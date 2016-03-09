@@ -3,7 +3,7 @@
 // -----------------------------------------------------------------------------
 
 footer {
-  @include container(100%, 75px, 1em);
+  @include container(100%, 100%, 1em);
   border-top:1px solid $text-color;
   ul {
     @include align-items(space-between, center);
