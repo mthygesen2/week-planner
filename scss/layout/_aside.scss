@@ -2,11 +2,14 @@
 // This file contains styling for ASIDE
 // -----------------------------------------------------------------------------
 .content {
-  height: calc(100vh - 150px);
+  height: calc(100vh - 160px);
   @include align-items(flex-start, flex-start);
   width: 100%;
   background: $light-grey;
   padding-bottom: 1em;
+  @media screen and (min-width: 1200px) {
+    height: calc(100vh - 225px);
+  }
 }
 
 .aside {
