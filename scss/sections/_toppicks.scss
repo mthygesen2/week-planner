@@ -1,19 +1,19 @@
 
 .topPicks {
+  // height: 100%;
+  overflow: scroll;
   @include e("header") {
     @include bg-img("../img/date.jpg");
     @extend %page-header;
-    @include container(100%, 400px);
+    @include container(100%, 350px);
     margin-bottom: 2em;
+
   }
 }
 
 .gallery {
     @include align-items(flex-start, flex-start, row wrap);
     @include container(100%, 100%);
-    @media screen and (min-width: 1500px){
-      // padding: 1em 0 0;
-    }
     .venue{
       @extend %topvenue--md;
       @extend %topvenue--25;

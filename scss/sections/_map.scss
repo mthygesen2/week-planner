@@ -9,12 +9,11 @@
   }
   @include e("google") {
     border: 1px solid black;
-    flex: 1;
     @include container(100%, 500px);
-    // max-height: 100%;
   }
   @include e("footer") {
-    @include container(100%, 100%, 1em);
+    @include container(100%, auto);
+    padding: 1em 0 ;
     @include align-items($flex-flow: column nowrap);
     @media screen and (min-width: 768px ){
       @include align-items();
@@ -24,6 +23,12 @@
         margin-bottom: 0;
       }
     }
-    overflow: scroll;
+    overflow-x: scroll;
+    @media screen and (min-width: 768px){
+      overflow-y: hidden;
+    }
+    &::-webkit-scrollbar {
+}
+
   }
 }

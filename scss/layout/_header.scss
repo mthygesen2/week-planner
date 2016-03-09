@@ -6,7 +6,7 @@
 .nav {
   border-bottom: 1px solid $text-color;
   @include align-items(space-between, center);
-  @include container(100%, 100%, 1em);
+  @include container(100%, 150px, 1em);
   @include e("brand") {
     @extend %nav-brand;
 

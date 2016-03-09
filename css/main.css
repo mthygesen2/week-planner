@@ -303,7 +303,7 @@ section {
   margin: 0; }
   @media screen and (min-width: 768px) {
     section {
-      width: 75%;
+      width: 70%;
       height: 100%;
       padding: 0;
       margin: 0; } }
@@ -407,7 +407,7 @@ body {
       -ms-flex-flow: row nowrap;
           flex-flow: row nowrap;
   width: 100%;
-  height: 100%;
+  height: 150px;
   padding: 1em;
   margin: 0; }
   .nav__links {
@@ -485,10 +485,7 @@ body {
   z-index: -1; }
 
 .content {
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  height: calc(100vh - 250px);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -509,7 +506,8 @@ body {
   padding: 1em; }
 
 .aside {
-  width: 25%;
+  overflow: scroll;
+  width: 30%;
   height: 100%;
   padding: 0;
   margin: 0;
@@ -552,7 +550,7 @@ body {
     height: 162.5px;
     padding: 0;
     margin: 0;
-    border: 1px solid blue;
+    border: 1px solid black;
     margin-top: 1em; }
     .aside__drop__info {
       width: 100%;
@@ -601,7 +599,7 @@ body {
 
 footer {
   width: 100%;
-  height: 100%;
+  height: 100px;
   padding: 1em;
   margin: 0;
   border-top: 1px solid #2F3835; }
@@ -622,16 +620,18 @@ footer {
         -ms-flex-flow: row nowrap;
             flex-flow: row nowrap; }
 
-.topPicks__header {
-  background-image: url("../img/date.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  width: 100%;
-  height: 400px;
-  padding: 0;
-  margin: 0;
-  margin-bottom: 2em; }
+.topPicks {
+  overflow: scroll; }
+  .topPicks__header {
+    background-image: url("../img/date.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 350px;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 2em; }
 
 .gallery {
   display: -webkit-box;
@@ -682,19 +682,16 @@ footer {
     margin: 0; }
   .map__google {
     border: 1px solid black;
-    -webkit-box-flex: 1;
-    -webkit-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
     width: 100%;
     height: 500px;
     padding: 0;
     margin: 0; }
   .map__footer {
     width: 100%;
-    height: 100%;
-    padding: 1em;
+    height: auto;
+    padding: 0;
     margin: 0;
+    padding: 1em 0;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -710,7 +707,7 @@ footer {
     -webkit-flex-flow: column nowrap;
         -ms-flex-flow: column nowrap;
             flex-flow: column nowrap;
-    overflow: scroll; }
+    overflow-x: scroll; }
     @media screen and (min-width: 768px) {
       .map__footer {
         display: -webkit-box;
@@ -730,5 +727,8 @@ footer {
                 flex-flow: row nowrap; }
         .map__footer .venue {
           margin-bottom: 0; } }
+    @media screen and (min-width: 768px) {
+      .map__footer {
+        overflow-y: hidden; } }
 
 /*# sourceMappingURL=main.css.map */
