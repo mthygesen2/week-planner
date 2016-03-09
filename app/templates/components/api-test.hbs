@@ -1,6 +1,5 @@
 {{input value=location id=location }}
-<button {{action 'sendRequest' model}}>request</button>
-<button {{action 'sendRequestToService' model}}>request in service</button>
+<button {{action 'sendRequestToService'}}>request in service</button>
 {{#if isShowes}}
   <h1>yelpResult.total</h1>
 {{/if}}
