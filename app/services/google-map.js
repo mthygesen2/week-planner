@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Service.extend({
+
   googleMaps: window.google.maps,
   lat: '',
   lng: '',
@@ -23,13 +24,7 @@ export default Ember.Service.extend({
       self.set('results', geoResults[0]);
       console.log(self.get('results'));
       if (status === google.maps.GeocoderStatus.OK) {
-        //console.log(results);
         map.setCenter(geoResults[0].geometry.location)
-        // var marker = new google.maps.Marker({
-        //   map: map,
-        //   position: geoResults[0].geometry.location,
-        //   //icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png'
-        // });
         setMarker;
       } else {
         alert('Geocode was not successful for the following reason: ' + status);
