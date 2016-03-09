@@ -1,13 +1,13 @@
 import Ember from 'ember';
 
 export default Ember.Service.extend({
-  meetupApi: Ember.inject.service(),
   googleMaps: window.google.maps,
   lat: '',
   lng: '',
   results: '',
   map: '',
   places: [],
+
   findMap(container, options) {
     return new this.googleMaps.Map(container, options);
   },
@@ -19,15 +19,12 @@ export default Ember.Service.extend({
     var geocoder = new this.googleMaps.Geocoder();
     var self = this;
     var setMarker = this.setMarker(map);
-    // var findMeetups = this.meetupApi.findMeetups(this.lat, this.lng);
+
     geocoder.geocode({'address': address}, function(geoResults, status) {
       self.set('results', geoResults[0]);
-      //console.log(self.get('results'));
       if (status === google.maps.GeocoderStatus.OK) {
-        //console.log(results);
         map.setCenter(geoResults[0].geometry.location)
         setMarker;
-        //findMeetups;
       } else {
         alert('Geocode was not successful for the following reason: ' + status);
       }
@@ -44,14 +41,24 @@ export default Ember.Service.extend({
   },
   setMarker(map) {
     var places = this.get('places');
-    for(var i = 0; i < places.length; i++) {
+    for(var i = 0; i < places.length; i++){
       var place = places[i];
-
       var marker = new google.maps.Marker({
         map: map,
         position: {lat: place[1], lng: place[2]},
-        icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png'
+        //icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png'
+        title: place[0]
       });
+
+      marker.info = new google.maps.InfoWindow({
+        content: place[0] +
+        "<br>" +
+        place[3]
+      })
+      google.maps.event.addListener(marker, 'click', function() {
+        this.info.open(map, this);
+      });
+    //}
     }
   }
 });

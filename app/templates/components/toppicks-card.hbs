@@ -1,0 +1,21 @@
+<div class="gallery">
+{{#each foursquareApi.foursquareResult as |business|}}
+<div class="venue">
+  <div class="venue__img" style="background-image: url({{business.photo}})">
+    <div class="venue__title">
+      <h1>{{business.name}}</h1>
+      <h3>{{business.category}}</h3>
+    </div>
+      <h4>{{business.rating}}</h4>
+  </div>
+  <div class="venue__info">
+    {{#if business.isOpenNow}}
+      <h3>{{business.hoursStatus}}</h3>
+    {{else}}
+      <h3>Is currently close</h3>
+    {{/if}}
+    <!-- <h3>{{business.shortDescription}}</h3> -->
+  </div>
+</div>
+{{/each}}
+</div>
