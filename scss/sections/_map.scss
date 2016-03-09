@@ -1,23 +1,28 @@
 
 .map {
+  overflow: scroll;
   @include align-items($flex-flow: column nowrap);
   @include e("header") {
+    // THIS IMG SHOULD CHANGE WITH EACH QUESTION
     @include bg-img("../img/drinks.jpg");
     @extend %page-header;
-    margin-bottom: 2em;
+    // margin-bottom: 1em;
     @include container(100%, 250px);
   }
   @include e("google") {
+    // MAP GOES HERE
     border: 1px solid black;
-    @include container(100%, 500px);
+    @include container(100%, 400px);
   }
   @include e("footer") {
+    // THIS INCLUDES THE VENUE CARDS
     @include container(100%, auto);
-    padding: 1em 0 ;
+    padding: 0.5em 0;
     @include align-items($flex-flow: column nowrap);
-    @media screen and (min-width: 768px ){
+    @media screen and (min-width: 600px ){
       @include align-items();
       .venue {
+        // @extend %topvenue--md;
         @extend %mapvenue--md;
         @extend %mapvenue--bg;
         margin-bottom: 0;

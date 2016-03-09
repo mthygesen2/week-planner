@@ -2,7 +2,7 @@
   font-family: "Ultra", serif;
   font-size: 4em; }
 
-.home button {
+.home button, .aside__content button {
   width: auto;
   height: 40px;
   padding: 0.5em;
@@ -11,7 +11,7 @@
   border: none;
   background-color: #77c9ad; }
 
-.topPicks__header, .map__header {
+.final__header, .topPicks__header, .map__header {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -27,14 +27,14 @@
   -webkit-flex-flow: column nowrap;
       -ms-flex-flow: column nowrap;
           flex-flow: column nowrap; }
-  .topPicks__header h1, .map__header h1 {
+  .final__header h1, .topPicks__header h1, .map__header h1 {
     font-family: "Ultra", serif;
     font-size: 3.5em;
     color: #f3f3f3;
     text-align: center;
     line-height: 0.9;
     text-shadow: 3px 3px #1b9c45; }
-  .topPicks__header h3, .map__header h3 {
+  .final__header h3, .topPicks__header h3, .map__header h3 {
     margin-top: 0.5em;
     font-size: 1.5em;
     color: #f3f3f3;
@@ -95,7 +95,7 @@
         -ms-flex-flow: row nowrap;
             flex-flow: row nowrap; }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 600px) {
   .gallery .venue {
     flex: 0 0 auto;
     width: calc(99.99% * 1/2 - (1em - 1em * 1/2)); }
@@ -134,7 +134,7 @@
   .gallery .venue:nth-child(6n) {
     margin-right: 0; } }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 600px) {
   .map__footer .venue {
     flex: 0 0 auto;
     width: calc(99.99% * 1/2 - (1em - 1em * 1/2)); }
@@ -410,6 +410,11 @@ body {
   height: 150px;
   padding: 1em;
   margin: 0; }
+  .nav__brand {
+    -webkit-animation-name: colorbrand;
+            animation-name: colorbrand;
+    -webkit-animation-duration: 4s;
+            animation-duration: 4s; }
   .nav__links {
     display: -webkit-box;
     display: -webkit-flex;
@@ -432,6 +437,14 @@ body {
     margin: 0; }
     .nav__links a {
       margin-left: 1em; }
+
+@-webkit-keyframes colorbrand {
+  25% {
+    color: #77c9ad; }
+  50% {
+    color: #FF634D; }
+  100% {
+    color: #523D39; } }
 
 .home {
   -webkit-box-flex: 1;
@@ -545,6 +558,9 @@ body {
       font-weight: bolder; }
   .aside__content {
     text-align: center; }
+    .aside__content button {
+      width: 100px;
+      border-radius: 10px; }
   .aside__drop {
     width: 100%;
     height: 162.5px;
@@ -596,6 +612,39 @@ body {
       -webkit-flex-flow: row nowrap;
           -ms-flex-flow: row nowrap;
               flex-flow: row nowrap; }
+
+.final {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-flex-flow: column nowrap;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap; }
+  .final__header {
+    background-image: url("../img/final.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin-bottom: 2em;
+    width: 100%;
+    height: 250px;
+    padding: 0;
+    margin: 0; }
+  .final__google {
+    border: 1px solid black;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0; }
 
 footer {
   width: 100%;
@@ -655,6 +704,7 @@ footer {
   margin: 0; }
 
 .map {
+  overflow: scroll;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -675,7 +725,6 @@ footer {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    margin-bottom: 2em;
     width: 100%;
     height: 250px;
     padding: 0;
@@ -683,7 +732,7 @@ footer {
   .map__google {
     border: 1px solid black;
     width: 100%;
-    height: 500px;
+    height: 400px;
     padding: 0;
     margin: 0; }
   .map__footer {
@@ -691,7 +740,7 @@ footer {
     height: auto;
     padding: 0;
     margin: 0;
-    padding: 1em 0;
+    padding: 0.5em 0;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -708,7 +757,7 @@ footer {
         -ms-flex-flow: column nowrap;
             flex-flow: column nowrap;
     overflow-x: scroll; }
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 600px) {
       .map__footer {
         display: -webkit-box;
         display: -webkit-flex;

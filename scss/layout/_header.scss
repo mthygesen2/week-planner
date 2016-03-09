@@ -9,7 +9,8 @@
   @include container(100%, 150px, 1em);
   @include e("brand") {
     @extend %nav-brand;
-
+    animation-name: colorbrand;
+    animation-duration: 4s;
   }
   @include e("links") {
     @include align-items(space-between, center);
@@ -18,4 +19,10 @@
       margin-left: 1em;
     }
   }
+}
+
+@-webkit-keyframes colorbrand {
+    25%  {color: $mint-green;}
+    50%  {color: $green-complement;}
+    100% {color: $brand-color;}
 }

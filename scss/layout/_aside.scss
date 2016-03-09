@@ -33,8 +33,14 @@
   }
   @include e("content") {
   text-align: center;
+    button {
+      @extend %button-search;
+      width: 100px;
+      border-radius: 10px;
+    }
   }
 
+// THIS IS WHERE THE CARDS ARE DROPPED INTO
   @include e("drop") {
     @include container(100%, 162.5px);
     border: 1px solid black;
@@ -44,6 +50,7 @@
       @include align-items(space-between, center);
     }
   }
+  // THIS IS THE CARD THAT IS MODIFIED FOR ASIDE
   .venue {
     @include container(100%, 100%);
     h4, .venue__info{
