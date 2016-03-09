@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Mockup</title>
+    <title>Week&</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/main.css">
@@ -10,6 +10,7 @@
   </head>
   <body>
     <div class="container">
+  <!-- NavBar that goes on every page -->
       <nav class="nav">
         <a class="nav__brand" href="#">&</a>
         <div class="nav__links">
@@ -17,25 +18,61 @@
           <a href="#">Log in</a>
         </div>
       </nav>
+  <!-- End of Navbar` -->
+
+  <!-- Start of Content, this changes with every page -->
       <div class="content">
 
-
+<!-- ASIDE , this goes on every page except the first landing page -->
       <aside class="aside">
-        <div class="aside__date">
-          <h1>Date Night</h1>
+          <div class="aside__header">
+            <h1>Date Night</h1>
+            <p>
+              So you want to go out on a hot date? Here is what we suggest...
+            </p>
+            <ul>
+              <li>Drinks before dinner</li>
+              <li>Dinner of course</li>
+              <li>Today's events</li>
+              <li>Some dancing</li>
+            </ul>
+          </div>
+        <div class="aside__content">
           <p>
-            So you want to go out on a hot date? Here is what we suggest...
+            Drag and drop things you want to save for your night.
           </p>
-          <ul>
-            <li>Drinks before dinner</li>
-            <li>Dinner of course</li>
-            <li>Movie</li>
-            <li>Some dancing</li>
-          </ul>
-          <button type="button" name="button">I want to go on a Date Night!</button>
+          <div class="aside__drop">
+
+            <div class="venue">
+              <div class="venue__img">
+                <div class="venue__title">
+                  <h1>This is a BAR</h1>
+                  <h3>Neighborhood</h3>
+                </div>
+                <h4>3.4</h4>
+              </div>
+              <div class="venue__info">
+                <h3>Cuisines:</h3>
+                <h3>Info here.</h3>
+                <i class="fa fa-star"></i>
+              </div>
+              <div class="aside__drop__info">
+                <h3>Drinks before dinner</h3>
+                <i class="fa fa-times-circle"></i>
+              </div>
+            </div>
+          </div>
+          <div class="aside__drop">
+          </div>
+          <div class="aside__drop">
+          </div>
+          <div class="aside__drop">
+          </div>
+          <div class="aside__drop">
+          </div>
         </div>
       </aside>
-
+<!-- END of ASIDE -->
 <!-- main landing page section -->
       <!-- <section class="home">
         <h1>Week&</h1>
@@ -43,8 +80,10 @@
         <input type="text" name="name" placeholder="What's your location?">
         <button type="submit" name="button">Search!</button>
       </section> -->
+<!-- END of MAIN landing page -->
 
-      <section class="topPicks">
+<!-- TOPPICKS page, first page after main page with aside -->
+      <!-- <section class="topPicks">
         <header class="topPicks__header">
           <h1>Top Picks</h1>
           <h3>Our daily suggestions for the night</h3>
@@ -199,10 +238,11 @@
 
 
         </div>
-      </section>
+      </section> -->
+<!-- END of TOPPICKS page -->
 
-
-  <!-- <section class="map">
+<!-- MAP section, each question will bring up a map section with different cards, with ASIDE -->
+  <section class="map">
     <header class="map__header">
       <h1>Date Night</h1>
       <h3>Drinks before dinner?</h3>
@@ -268,8 +308,12 @@
         </div>
       </div>
     </div>
-  </section> -->
+  </section>
+<!-- END of MAP section -->
   </div>
+<!-- END of CONTENT -->
+
+<!-- FOOTER goes on every page -->
       <footer>
         <ul>
           <li><a href="#">About</a></li>
@@ -279,6 +323,7 @@
           <li><a href="#"><i class="fa fa-instagram"></i></a></li>
         </ul>
       </footer>
+<!-- END of FOOTER -->
     </div>
   </body>
 </html>

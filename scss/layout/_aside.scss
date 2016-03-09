@@ -11,10 +11,14 @@
 
 .aside {
   @include container(25%, 100%);
+  padding: 0 0 1em 2em;
   order: 1;
-  @include e("date") {
-    @include align-items(center, center, $flex-flow: column nowrap);
-    padding: 1em;
+  @media screen and (max-width: 768px){
+    display: none;
+  }
+  @include e("header") {
+    // @include container(100%, 400px);
+    @include align-items(flex-end, center, $flex-flow: column nowrap);
     text-align: center;
     h1 {
       font-size: 1.3em;
@@ -25,9 +29,31 @@
       margin: 1em auto;
       font-weight: bolder;
     }
-    button {
-      padding: 0 1em;
-      @extend %button-search;
+  }
+  @include e("content") {
+  text-align: center;
+  }
+
+  @include e("drop") {
+    @include container(100%, 162.5px);
+    border: 1px solid blue;
+    margin-top: 1em;
+    @include e("info"){
+      @include container(100%, auto, 0.5em)
+      @include align-items(space-between, center);
+      // h3{
+      //   display: inline;
+      // }
+    }
+  }
+  .venue {
+    @include container(100%, 100%);
+    h4, .venue__info{
+      display: none;
+    }
+    @include e("img") {
+      height: 100%;
+      @include align-items(center, center);
     }
   }
 }

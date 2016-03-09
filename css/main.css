@@ -2,7 +2,7 @@
   font-family: "Ultra", serif;
   font-size: 4em; }
 
-.home button, .aside__date button {
+.home button {
   width: auto;
   height: 40px;
   padding: 0.5em;
@@ -301,7 +301,7 @@ section {
   height: 100%;
   padding: 0;
   margin: 0; }
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: 768px) {
     section {
       width: 75%;
       height: 100%;
@@ -513,19 +513,23 @@ body {
   height: 100%;
   padding: 0;
   margin: 0;
+  padding: 0 0 1em 2em;
   -webkit-box-ordinal-group: 2;
   -webkit-order: 1;
       -ms-flex-order: 1;
           order: 1; }
-  .aside__date {
+  @media screen and (max-width: 768px) {
+    .aside {
+      display: none; } }
+  .aside__header {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
     -webkit-box-align: center;
     -webkit-align-items: center;
         -ms-flex-align: center;
@@ -533,17 +537,67 @@ body {
     -webkit-flex-flow: column nowrap;
         -ms-flex-flow: column nowrap;
             flex-flow: column nowrap;
-    padding: 1em;
     text-align: center; }
-    .aside__date h1 {
+    .aside__header h1 {
       font-size: 1.3em;
       line-height: 2;
       font-family: "Ultra", serif; }
-    .aside__date ul {
+    .aside__header ul {
       margin: 1em auto;
       font-weight: bolder; }
-    .aside__date button {
-      padding: 0 1em; }
+  .aside__content {
+    text-align: center; }
+  .aside__drop {
+    width: 100%;
+    height: 162.5px;
+    padding: 0;
+    margin: 0;
+    border: 1px solid blue;
+    margin-top: 1em; }
+    .aside__drop__info {
+      width: 100%;
+      height: auto;
+      padding: 0.5em;
+      margin: 0;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-flex-flow: row nowrap;
+          -ms-flex-flow: row nowrap;
+              flex-flow: row nowrap; }
+  .aside .venue {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0; }
+    .aside .venue h4, .aside .venue .venue__info {
+      display: none; }
+    .aside .venue__img {
+      height: 100%;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-flex-flow: row nowrap;
+          -ms-flex-flow: row nowrap;
+              flex-flow: row nowrap; }
 
 footer {
   width: 100%;
@@ -635,8 +689,7 @@ footer {
     width: 100%;
     height: 500px;
     padding: 0;
-    margin: 0;
-    max-height: 700px; }
+    margin: 0; }
   .map__footer {
     width: 100%;
     height: 100%;

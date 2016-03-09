@@ -41,7 +41,7 @@ body {
 section {
 
   @include container(100%);
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: 768px) {
     @include container(75%);
   }
 }
