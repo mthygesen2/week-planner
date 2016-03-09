@@ -1,25 +1,23 @@
-{{log responseService}}
-
 {{#each responseService.filters as |question|}}
-  {{#if showQuestionsAAAAA}}
-    {{#tether-dialog
-      close="toggleModal"
-      renderInPlace=true
-      targetAttachment='none'
-      container-class='ember-modal-dialog-in-place'
-      overlay-class='ember-modal-overlay-in-place'
-    }}
-      <h2>{{question.question}}</h2>
+  {{#if showQuestions}}
+      {{#tether-dialog
+        close="toggleModal"
+        renderInPlace=true
+        targetAttachment='none'
+        container-class='ember-modal-dialog-in-place'
+        overlay-class='ember-modal-overlay-in-place'
+      }}
+        <h2>{{question.question}}</h2>
 
-      <button {{action 'answerQuestion' true}} type="button">Yes</button>
-      <button {{action 'answerQuestion' false}} type="button">No</button>
-    {{/tether-dialog}}
+        <button {{action 'answerQuestion' true question.id}} type="button">Yes</button>
+        <button {{action 'answerQuestion' false question.id}} type="button">No</button>
+      {{/tether-dialog}}
   {{/if}}
 {{/each}}
 
 
 <div id="container-in-place" class="ember-modal-dialog-in-place">
-  {{#if showQuestionOne}}
+  {{#if showQuestionOneAAAA}}
     {{#tether-dialog
       close="toggleModal"
       renderInPlace=true

@@ -9,15 +9,16 @@ export default Ember.Component.extend({
   showQuestionFour: false,
 
   actions: {
-    answerQuestionOne(response) {
-      var serviceAnswerParam = this.get('responseService.filters.1.answer');
-      serviceAnswerParam.addObject(response);
+    answerQuestion(response, id) {
+      var answerParam = this.get('responseService.filters.' + id + '.answer');
+      answerParam.addObject(response);
+      console.log(this.get('responseService.filters.' + id + '.answer'));
       if (response === false) {
         this.set('showQuestionTwo', true);
-        console.log('Remove results related to date night');
+        // Remove results related to date night
       } else {
         this.set('showQuestionFive', true);
-        console.log('Populate results for date night')
+        // Populate results for date night
       }
       this.set('showQuestionOne', false);
     },
@@ -26,9 +27,9 @@ export default Ember.Component.extend({
       var serviceAnswerParam = this.get('responseService.filters.2.answer');
       serviceAnswerParam.addObject(response);
       if (response === false) {
-        console.log('Remove results related to question 2 params');
+        // Remove results related to question 2 params'
       } else {
-        console.log('Populate tech meetups');
+        // Populate tech meetups
       }
       this.set('showQuestionTwo', false);
       this.set('showQuestionThree', true);
@@ -38,9 +39,9 @@ export default Ember.Component.extend({
       var serviceAnswerParam = this.get('responseService.filters.3.answer');
       serviceAnswerParam.addObject(response);
       if (response === false) {
-        console.log('Remove Group Hangouts');
+        // Remove Group Hangouts
       } else {
-        console.log('Populate Group Hangouts')
+        // Populate Group Hangouts
       }
       this.set('showQuestionThree', false);
       this.set('showQuestionFour', true);
@@ -50,9 +51,9 @@ export default Ember.Component.extend({
       var serviceAnswerParam = this.get('responseService.filters.4.answer');
       serviceAnswerParam.addObject(response);
       if (response === false) {
-        console.log('Remove Disco');
+        // Remove Disco
       } else {
-        console.log('Populate Disco');
+        // Populate Disco
       }
       this.set('showQuestionFour', false);
     },
