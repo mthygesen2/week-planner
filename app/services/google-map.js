@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Service.extend({
+
   googleMaps: window.google.maps,
   lat: '',
   lng: '',
