@@ -6,17 +6,6 @@
     width: 600px;
   }
 
-<<<<<<< HEAD
-.ember-modal-overlay-in-place {
-  height: initial;
-  opacity: initial;
-  position: initial;
-}
-
-.ember-modal-dialog-in-place {
-  position: initial;
-}
-=======
   .nav__brand {
     font-family: "Ultra", serif;
     font-size: 4em; }
@@ -631,4 +620,13 @@
             margin-bottom: 0; } }
 
   /*# sourceMappingURL=main.css.map */
->>>>>>> e1d2f735ee21e52d18c8b0f6ebfe3187cb0e66fc
+
+  .ember-modal-overlay-in-place {
+    height: initial;
+    opacity: initial;
+    position: initial;
+  }
+
+  .ember-modal-dialog-in-place {
+    position: initial;
+  }
