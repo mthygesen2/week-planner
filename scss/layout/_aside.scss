@@ -2,53 +2,58 @@
 // This file contains styling for ASIDE
 // -----------------------------------------------------------------------------
 .content {
-  // height: 100%;
-// height: calc(100vh - 160px);
   height: 100%;
   @include align-items(flex-start, flex-start);
   width: 100%;
-  background: $light-grey;
+
   padding-bottom: 1em;
-  @media screen and (min-width: 1200px) {
-    // height: calc(100vh - 225px);
-  }
 }
 
 .aside {
-  overflow: auto;
-  @extend %scrollbar;
   @include container(30%, 100%, 1em);
   order: 1;
   @media screen and (max-width: 767px){
     display: none;
   }
   @include e("header") {
-    @include align-items(flex-end, center, $flex-flow: column nowrap);
+    @include container(100%, 50vh, 1em);
+    @include align-items(space-between, center, $flex-flow: column nowrap);
     text-align: center;
     h1 {
       font-size: 1.3em;
-      line-height: 2;
+      line-height: 1;
       font-family: $bold-font-stack;
+    }
+    @include e("icon"){
+      @include container(auto, 175px);
+
+      // @media screen and (min-width: 1250px) {
+      //   @include container(80%, 225px);
+      //
+      // }
     }
     ul {
       margin: 1em auto;
-      font-weight: bolder;
+
+    font-size: 1.2em;
+    font-weight: bolder;
+    letter-spacing: 1.2;
+      font-family: $bold-font-stack;
     }
   }
   @include e("content") {
   text-align: center;
     button {
       @extend %button-search;
-      width: 100px;
-      border-radius: 10px;
+
     }
   }
 
 // THIS IS WHERE THE CARDS ARE DROPPED INTO
   @include e("drop") {
-    @include container(100%, 162.5px);
+    @include container(100%, 250px);
     border: 1px solid black;
-    margin-top: 1em;
+    margin-bottom: 4em;
     @include e("info"){
       @include container(100%, auto, 0.5em)
       @include align-items(space-between, center);
@@ -56,6 +61,7 @@
   }
   // THIS IS THE CARD THAT IS MODIFIED FOR ASIDE
   .venue {
+    @extend %shadow;
     @include container(100%, 100%);
     h4, .venue__info{
       display: none;

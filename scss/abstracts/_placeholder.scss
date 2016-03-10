@@ -12,10 +12,12 @@
 
 ///Button for home page search///
 %button-search {
-  @include container(auto, 40px, 0.5em);
+  @include container(100px, 40px, 0.5em);
   margin-top: 1em;
   border: none;
-  background-color: $mint-green;
+  background-color: #5C4862;
+  color: white;
+  border-radius: 10px;
 }
 
 ////page header
@@ -38,6 +40,12 @@
   }
 }
 
+///////box shadow
+%shadow {
+  -webkit-box-shadow: 10px 10px 5px -4px rgba(145,145,145,1);
+  -moz-box-shadow: 10px 10px 5px -4px rgba(145,145,145,1);
+  box-shadow: 10px 10px 5px -4px rgba(145,145,145,1);
+}
 
 
 %row{
@@ -111,7 +119,7 @@
   @include e('info') {
     @include align-items(center, flex-start, column nowrap);
     @include container(100%, 40%, 0.5em);
-    background: white;
+    background: lighten($light-grey, 10%);
     i {
       align-self: flex-end;
       font-size: 1.5em;

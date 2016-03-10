@@ -1,10 +1,11 @@
 
+.category{
+  margin:1em auto;
+  font-family: $bold-font-stack;
+}
 .map {
   @include align-items(flex-start, center ,row wrap);
   padding-bottom: 0;
-  .category{
-    margin:auto;
-  }
   @include e("header") {
     // THIS IMG SHOULD CHANGE WITH EACH QUESTION
     @include bg-img("../img/drinks.jpg");
@@ -18,10 +19,7 @@
     // MAP GOES HERE
     border: 1px solid black;
     @include container(100%, 50vh);
-    margin: 1em 0;
-    // @media screen and (min-height: 800px) {
-    //   height: 800px
-    // }
+    // margin: 1em 0;
   }
   @include e("footer") {
     // THIS INCLUDES THE VENUE CARDS
@@ -40,6 +38,7 @@
     @media screen and (min-width: 600px ){
       @include align-items();
       .venue {
+        @extend %shadow;
         @extend %mapvenue--md;
         @extend %mapvenue--bg;
         margin-bottom: 0.7em;
@@ -51,4 +50,5 @@
 #spin {
   margin: auto;
   @extend %button-search;
+  border-radius: 10px;
 }
