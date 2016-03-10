@@ -23,12 +23,13 @@ export default Ember.Component.extend({
       };
       var self = this;
       this.get('foursquareApi').foursquareRequest('explore', paramsDrinks).then(function(){
-        self.get('foursquareApi').foursquareRequest('explore', paramsDinners);
-      }).then(function(){
-        self.get('foursquareApi').foursquareRequest('explore', paramsArts);
-      }).then(function() {
-        self.sendAction('getLocation');
+        self.get('foursquareApi').foursquareRequest('explore', paramsDinners).then(function() {
+          self.get('foursquareApi').foursquareRequest('explore', paramsArts).then(function() {
+            self.sendAction('getLocation');
+          });
+        });
       });
+
     }
   }
 });
