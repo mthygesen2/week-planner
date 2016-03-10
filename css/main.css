@@ -346,7 +346,6 @@ body {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: 100vh;
   width: 100%;
   max-width: 1500px;
   -webkit-flex-flow: column wrap;

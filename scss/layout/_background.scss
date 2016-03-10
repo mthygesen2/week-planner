@@ -1,7 +1,6 @@
 ///creates a sticky footer by making the main content flex:1 ///////
 .container {
   display: flex;
-  height: 100vh;
   width: 100%;
   max-width: 1500px;
   flex-flow: column wrap;

@@ -3,7 +3,7 @@
 // -----------------------------------------------------------------------------
 .content {
   height: 100%;
-  @include align-items(flex-start, flex-start);
+  @include align-items(flex-start, flex-start, row nowrap);
   width: 100%;
   padding-bottom: 1em;
 }
