@@ -9,11 +9,18 @@ var items = [{
 }]
 export default Ember.Route.extend({
   yelpApi: Ember.inject.service(),
+  foursquareApi: Ember.inject.service(),
   googleMap: Ember.inject.service(),
   meetupApi: Ember.inject.service()
   model() {
     return items;
   }
+  actions: {
+    getLocation() {
+      this.transitionTo('top-picks');
+    }
+  }
+
   //model() {
     // var url = "https://api.yelp.com/v2/search?oauth_consumer_key=s5HPEtEzcXAopt3qEA8uyg&oauth_token=kVXVaCW2aHjC_nb4LHs1xdBfrJd7fzKH&oauth_signature_method=HMAC-SHA1&oauth_signature=ljsO3PryyOVGZNKO6khIUNddgw0=&oauth_timestamp=1457398190&oauth_nonce=HaNuR9AXie1&location=Portland";
     // return Ember.$.ajax(url, {
@@ -60,4 +67,5 @@ export default Ember.Route.extend({
   // }
 
 
+>>>>>>> 43a25b2c00bf1fc42e89cfd5aac038631ee2fd6a
 });
