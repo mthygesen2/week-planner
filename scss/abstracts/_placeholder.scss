@@ -29,13 +29,13 @@
   color: $light-grey;
   text-align: center;
   line-height: 0.9;
-  text-shadow: 3px 3px $green;
+  text-shadow: 1px 1px 2px black;
   }
   h3 {
     margin-top: 0.5em;
     font-size: 1.5em;
     color: $light-grey;
-    text-shadow: 2px 2px $green;
+    text-shadow: 1px 1px 2px black;
   }
 }
 
@@ -54,7 +54,7 @@
 }
 
 %venue__img{
-  @include bg-img("../img/pips.jpg");
+  @include bg-img("../img/drinks.jpg");
   @include align-items(flex-end, flex-start, column wrap);
   @include container(100%, 60%, 0.5em);
   color: white;
@@ -113,6 +113,8 @@
     @extend %venue__img;
   }
   @include e("title"){
+    color: white;
+    text-shadow: 1px 1px 2px black;
     width: 75%;
   }
   @include e('info') {

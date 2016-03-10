@@ -51,7 +51,6 @@
   @include e("drop") {
     @include container(100%, 250px);
     border: 1px solid black;
-    margin-bottom: 1em;
     @include e("info"){
       @include container(100%, auto, 0.5em)
       @include align-items(space-between, center);

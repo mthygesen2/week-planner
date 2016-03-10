@@ -3,6 +3,7 @@
 // -----------------------------------------------------------------------------
 
 footer {
+  background-color: $light-grey;
   @include container(100%, 75px, 1em);
   border-top:1px solid $text-color;
   ul {

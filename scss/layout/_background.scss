@@ -2,9 +2,16 @@
 .container {
   display: flex;
   width: 100%;
-  max-width: 1500px;
+  max-width: 1600px;
   flex-flow: column wrap;
   padding: 0;
+  background: $light-grey;
+}
+
+.header {
+  @include bg-img("../img/date.jpg");
+  @extend %page-header;
+  @include container(100%, auto, 3em);
 }
 
 video#bgvid {

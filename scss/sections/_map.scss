@@ -6,15 +6,6 @@
 .map {
   @include align-items(flex-start, center ,row wrap);
   padding-bottom: 0;
-  @include e("header") {
-    // THIS IMG SHOULD CHANGE WITH EACH QUESTION
-    @include bg-img("../img/drinks.jpg");
-    @extend %page-header;
-    @include container(100%, auto, 1em);
-    // @media screen and (min-height: 1250px) {
-    //   height: 300px
-    // }
-  }
   @include e("google") {
     // MAP GOES HERE
     border: 1px solid black;
@@ -30,7 +21,7 @@
       padding: .5em;
       border: none;
       background-color: transparent;
-      color: $mint-green;
+      color: $text-color;
       border-radius: 50%;
     }
     @include container(100%, 250px);
@@ -49,7 +40,7 @@
 
 #spin {
   margin: auto;
-  margin-top: 4em;
+  margin-top: 3em;
   @extend %button-search;
   border-radius: 10px;
 }
