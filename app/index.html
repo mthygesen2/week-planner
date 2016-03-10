@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="styles/app.scss">
+    <link rel="stylesheet" href="styles/main.css">
     <link href='https://fonts.googleapis.com/css?family=Lato|Ultra' rel='stylesheet' type='text/css'>
 
     {{content-for "head"}}
@@ -27,48 +27,48 @@
     <!-- <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script> -->
     <!-- <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script> -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.slick/1.5.9/slick.min.js"></script>
-      <script type="text/javascript">
-      Ember.$(document).ready(function(){
+    <script type="text/javascript">
+    Ember.$(document).ready(function(){
 
-        $('#spin').click(function() {
-          $('.map__footer').slick('slickPlay');
-          console.log($('.map__footer').slick('slickCurrentSlide'));
-          setTimeout(function(){ $('.map__footer').slick('slickPause')}, Math.random() * 3000);
-        });
-        $('.map__footer').slick({
-          centerMode: true,
-          infinite: true,
-          autoplaySpeed: 60,
-          speed: 500,
-          prevArrow : '<button type="button" class="slick-prev"> <</button>',
-          nextArrow : '<button type="button" class="slick-next"> ></button>',
-          swipeToSlide: true,
-          slidesToShow: 3,
-          responsive: [
-            {
-              breakpoint: 1250,
-              settings: {
-                arrows: false,
-                centerMode: true,
-                centerPadding: '40px',
-                slidesToShow: 2,
-                slidesToScroll: 2
-              }
-            },
-            {
-              breakpoint: 600,
-              settings: {
-                arrows: false,
-                centerMode: true,
-                centerPadding: '40px',
-                slidesToShow: 1
-              }
-            }
-          ]
-        });
+      $('#spin').click(function() {
+        $('.map__footer').slick('slickPlay');
+        console.log($('.map__footer').slick('slickCurrentSlide'));
+        setTimeout(function(){ $('.map__footer').slick('slickPause')}, Math.random() * 3000);
       });
-      </script>
-
+      $('.map__footer').slick({
+        centerMode: true,
+        infinite: true,
+        autoplaySpeed: 60,
+        speed: 500,
+        prevArrow : '<button type="button" class="slick-prev"> <</button>',
+        nextArrow : '<button type="button" class="slick-next"> ></button>',
+        swipeToSlide: true,
+        slidesToShow: 3,
+        responsive: [
+          {
+            breakpoint: 1250,
+            settings: {
+              arrows: false,
+              centerMode: true,
+              centerPadding: '40px',
+              slidesToShow: 2,
+              slidesToScroll: 2
+            }
+          },
+          {
+            breakpoint: 600,
+            settings: {
+              arrows: false,
+              centerMode: true,
+              centerPadding: '40px',
+              slidesToShow: 1
+            }
+          }
+        ]
+      });
+    });
+    </script>
     {{content-for "body-footer"}}
   </body>
+
 </html>

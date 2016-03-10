@@ -1,10 +1,10 @@
 import Ember from 'ember';
 
 export default Ember.Service.extend({
-  items: [],
+  businesses: [],
   location: '',
 
-  add(item) {
-    this.get('items').addObject(item);
+  add(business) {
+    this.get('businesses').addObject(item);
   }
 });
