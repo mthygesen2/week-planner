@@ -8,6 +8,7 @@ export default Ember.Route.extend({
 
   actions: {
     updateRequestFromModal(userSelection) {
+      console.log(userSelection);
       var params = {
         userSelection,
         limit: 10,
@@ -17,10 +18,10 @@ export default Ember.Route.extend({
     },
 
     meetupRequestToService() {
-      console.log(this.get('foursquareApi.response'));
+      console.log(this.get('googleMap.results'));
       var params = {
-        lat: this.get('foursquareApi.response.geocode.center.lat'),
-        lng: this.get('foursquareApi.response.geocode.center.lng')
+        lat: this.get('googleMap.results.lat'),
+        lng: this.get('googleMap.results.lng')
       };
       this.get('meetupApi').findMeetups(params.lat, params.lng);
     }
