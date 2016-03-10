@@ -1,6 +1,6 @@
 
 .category{
-  margin:1em auto;
+  margin: 1em auto;
   font-family: $bold-font-stack;
 }
 .map {
@@ -33,7 +33,7 @@
       color: $mint-green;
       border-radius: 50%;
     }
-    @include container(100%, auto);
+    @include container(100%, 250px);
     @include align-items($flex-flow: row nowrap);
     @media screen and (min-width: 600px ){
       @include align-items();
@@ -49,6 +49,7 @@
 
 #spin {
   margin: auto;
+  margin-top: 4em;
   @extend %button-search;
   border-radius: 10px;
 }

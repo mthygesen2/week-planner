@@ -6,33 +6,46 @@
   flex: 1;
   @include align-items(center, center, column nowrap);
   @include container();
-  color: $text-color;
+  color: black;
   h1 {
     font-size: 4em;
     font-family: $bold-font-stack;
+    span {
+      color: $text-color;
+    }
   }
   h3 {
     font-size: 1.5em;
     padding-bottom: 2em;
   }
+  form {
+    @include container(75%, auto);
+    @media screen and (min-width: 1024px) {
+
+      @include container(50%, auto);
+    }
+  }
   input {
-    @include container(50%, 40px);
+    @include container(75%, 40px);
   }
   button {
     @extend %button-search;
+    margin-top: 1em;
+    background-color: $mint-green;
+    width: 20%;
   }
 }
 
 //////creates a background image with opacity////
 
-.home::after {
-  content: "";
-  @include bg-img("../img/home-background.jpg");
-  opacity: 0.5;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  z-index: -1;
-}
+// .home::after {
+//   content: "";
+//   @include bg-img("../img/home-background.jpg");
+//   opacity: 0.5;
+//   top: 0;
+//   left: 0;
+//   bottom: 0;
+//   right: 0;
+//   position: absolute;
+//   z-index: -1;
+// }

@@ -5,7 +5,6 @@
   height: 100%;
   @include align-items(flex-start, flex-start);
   width: 100%;
-
   padding-bottom: 1em;
 }
 
@@ -33,8 +32,7 @@
       // }
     }
     ul {
-      margin: 1em auto;
-
+    margin: 1em auto;
     font-size: 1.2em;
     font-weight: bolder;
     letter-spacing: 1.2;
@@ -45,7 +43,7 @@
   text-align: center;
     button {
       @extend %button-search;
-
+      margin: 3em auto;
     }
   }
 
@@ -53,7 +51,7 @@
   @include e("drop") {
     @include container(100%, 250px);
     border: 1px solid black;
-    margin-bottom: 4em;
+    margin-bottom: 1em;
     @include e("info"){
       @include container(100%, auto, 0.5em)
       @include align-items(space-between, center);

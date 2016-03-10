@@ -21,22 +21,29 @@
       </nav>
   <!-- End of Navbar` -->
   <!-- main landing page section -->
-        <!-- <section class="home">
-          <h1>Week&</h1>
+        <video autoplay loop muted poster="polina.jpg" id="bgvid">
+          <source src="polina.webm" type="video/webm">
+          <source src="img/video.mp4" type="video/mp4">
+      </video>
+        <section class="home">
+          <h1>Week<span class="end">&<span></h1>
           <h3>Let's plan your perfect night</h3>
-          <input type="text" name="name" placeholder="What's your location?">
-          <button type="submit" name="button">Search!</button>
-        </section> -->
+          <form>
+            <input type="text" name="name" placeholder="What's your location?">
+            <button type="submit" name="button">Search!</button>
+
+          </form>
+        </section>
   <!-- END of MAIN landing page -->
   <!-- Start of Content, this changes with every page -->
-  <header class="map__header">
+  <!-- <header class="map__header">
     <h1>City Name, Country</h1>
     <h3>Plan the perfect night</h3>
   </header>
-      <div class="content">
+      <div class="content"> -->
 
 <!-- ASIDE , this goes on every page except the first landing page -->
-      <aside class="aside">
+      <!-- <aside class="aside">
           <div class="aside__header">
             <h1>Date Night</h1>
             <p>
@@ -54,7 +61,7 @@
 
           </div>
         <div class="aside__content">
-          <h1 class="category">Your choices</h1>
+          <h1 class="category">Drinks</h1>
           <div class="aside__drop">
 
             <div class="venue">
@@ -76,19 +83,21 @@
               </div>
             </div>
           </div>
+          <h1 class="category">Dinner</h1>
           <div class="aside__drop">
           </div>
+          <h1 class="category">Dancing</h1>
           <div class="aside__drop">
           </div>
           <button type="button" name="button">Reset</button>
           <button type="button" name="button">Next</button>
         </div>
-      </aside>
+      </aside> -->
 <!-- END of ASIDE -->
 
 
 <!-- MAP section, each question will bring up a map section with different cards, with ASIDE -->
-  <section class="map">
+  <!-- <section class="map">
 
     <div class="map__google">
       google map
@@ -275,7 +284,7 @@
       </div>
     </div>
     <button id='spin' type="button" name="button">I'm feeling lucky</button>
-  </section>
+  </section> -->
 <!-- END of MAP section -->
 
 <!-- FINAL map section includes ASIDE -->
@@ -289,7 +298,7 @@
     </div>
   </section> -->
 <!-- END OF FINAL -->
-  </div>
+
 <!-- END of CONTENT -->
 
 <!-- FOOTER goes on every page -->
@@ -318,11 +327,10 @@
   centerMode: true,
   infinite: true,
   autoplaySpeed: 60,
-  speed: 500,
+  // speed: 500,
   prevArrow : '<button type="button" class="slick-prev"> <</button>',
   nextArrow : '<button type="button" class="slick-next"> ></button>',
-
-swipeToSlide: true,
+  swipeToSlide: true,
   slidesToShow: 3,
   responsive: [
     {
@@ -330,7 +338,6 @@ swipeToSlide: true,
       settings: {
         arrows: false,
         centerMode: true,
-        centerPadding: '40px',
         slidesToShow: 2,
         slidesToScroll: 2
       }
@@ -340,7 +347,6 @@ swipeToSlide: true,
       settings: {
         arrows: false,
         centerMode: true,
-        centerPadding: '40px',
         slidesToShow: 1
       }
     }
