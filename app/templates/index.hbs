@@ -1,11 +1,10 @@
-<br>
-{{modal-next-steps updateRequestFromModal="updateRequestFromModal"}}
-{{google-map}}
 
-<!-- Contet starts here -->
-{{log yelpApi.yelpResult}}
-{{#each yelpApi.yelpResult as |business|}}
-  <p>
-    {{business.display_phone}}
-  </p>
-{{/each}}
+<!-- <section class="home"> -->
+  {{welcome-page getLocation="getLocation"}}
+<!-- </section> -->
+<!-- <section class="home">
+  <h1>Week&</h1>
+  <h3>Let's plan your perfect night</h3>
+  {{input value=location id=location placeholder="What's your location?"}}
+  <button {{action 'getLocation'}} name="button">Search!</button>
+</section> -->

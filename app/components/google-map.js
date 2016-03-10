@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   map: Ember.inject.service('google-map'),
+  meetupApi: Ember.inject.service(),
   actions: {
     showMap(resultsMap) {
       var address = this.get('address');
@@ -9,18 +10,26 @@ export default Ember.Component.extend({
       var results = '';
       var container = this.$('.map-display')[0];
       var map = this.get('map');
+      var meetupApi = this.get('meetupApi')
+      var self = this;
       var options = {
         zoom: 13,
         //center: {lat: -34.397, lng: 150.644}
       };
-      map.findAddress(container, options, address);
-      //setMarker(45.522523, -122.685156);
-      },
+      //map.findAddress(container, options, address)
+      //console.log(self.get('meetupApi'));
+      // var promise = new Promise(function() {
+      //   map.findAddress(container, options, address);
+      // }).then(function(values) {
+      //   console.log('inside promise');
+      //   var meetup = self.get('meetupApi');
+      //   meetup.findMeetups(values.lat, values.lng);
+      // });
+      map.findAddress(container, options, address).then(function(values) {
+        var meetup = self.get('meetupApi');
+        meetup.findMeetups(values.lat, values.lng);
+      })
 
-      populatePlaces() {
-        var address = this.get('google-map.results.geometry.location');
-        var places = this.get('places');
-      }
-
-    }
+    },
+  }
 });

@@ -10,13 +10,16 @@ export default Ember.Service.extend({
     params.venuePhotos = 1;
     params.v = 20160309;
     var self = this;
-    Ember.$.ajax({
+    console.log(params)
+    // debugger;
+    return Ember.$.ajax({
       url: url,
       data: params,
       dataType: 'jsonp',
       jsonpCallback: 'mycallback',
       cache: true
     }).then(function(response) {
+      console.log(response);
       for (var item of response.response.groups[0].items){
         var venue = {
           id: item.venue.id,
@@ -27,7 +30,7 @@ export default Ember.Service.extend({
           isOpenNow: item.venue.hours.isOpen,
           hoursStatus: item.venue.hours.status,
           location: item.venue.location,
-          rating: 9.6,
+          rating: item.venue.rating,
           shortDescription: item.tips[0].text,
         }
         self.get('foursquareResult').pushObject(venue);
@@ -36,7 +39,7 @@ export default Ember.Service.extend({
       // console.log(JSON.stringify(self.get('yelpResult')));
       console.log(self.get('foursquareResult'));
       // console.log(JSON.stringify(response.response.groups[0]));
-      return response.businesses;
+      return response;
     });
   }
 });
