@@ -18,7 +18,7 @@ export default Ember.Route.extend({
 
   actions: {
     getLocation() {
-      this.transitionTo('top-picks');
+      this.transitionTo('main');
     }
   }
 
