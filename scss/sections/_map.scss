@@ -1,26 +1,24 @@
 
 .map {
-  overflow: auto;
-  @include align-items($flex-flow: row wrap);
+  @include align-items(flex-start, center ,row wrap);
   padding-bottom: 0;
-  @extend %scrollbar;
   @include e("header") {
     // THIS IMG SHOULD CHANGE WITH EACH QUESTION
     @include bg-img("../img/drinks.jpg");
     @extend %page-header;
-    @include container(100%,200px);
-    @media screen and (min-height: 1250px) {
-      height: 300px
-    }
+    @include container(100%, auto, 1em);
+    // @media screen and (min-height: 1250px) {
+    //   height: 300px
+    // }
   }
   @include e("google") {
     // MAP GOES HERE
     border: 1px solid black;
-    @include container(100%, 400px);
+    @include container(100%, 50vh);
     margin: 1em 0;
-    @media screen and (min-height: 1250px) {
-      height: 500px
-    }
+    // @media screen and (min-height: 800px) {
+    //   height: 800px
+    // }
   }
   @include e("footer") {
     // THIS INCLUDES THE VENUE CARDS
@@ -53,4 +51,9 @@
     }
 
   }
+}
+
+#spin {
+  margin: auto;
+  @extend %button-search;
 }

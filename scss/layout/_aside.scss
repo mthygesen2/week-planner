@@ -3,13 +3,14 @@
 // -----------------------------------------------------------------------------
 .content {
   // height: 100%;
-  height: calc(100vh - 160px);
+// height: calc(100vh - 160px);
+  height: 100%;
   @include align-items(flex-start, flex-start);
   width: 100%;
   background: $light-grey;
   padding-bottom: 1em;
   @media screen and (min-width: 1200px) {
-    height: calc(100vh - 225px);
+    // height: calc(100vh - 225px);
   }
 }
 

@@ -19,10 +19,7 @@
       margin-left: 1em;
     }
   }
-  @include container(100%, 85px, 1em);
-  @media screen and (min-width: 1200px) {
-    height: $nav-height-large;
-  }
+  @include container(100%, 100px, 1em);
   // @include container(100%, 150px, 1em);
 }
 

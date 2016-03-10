@@ -29,6 +29,10 @@
         </section> -->
   <!-- END of MAIN landing page -->
   <!-- Start of Content, this changes with every page -->
+  <header class="map__header">
+    <h1>Date Night</h1>
+    <h3>Drinks before dinner?</h3>
+  </header>
       <div class="content">
 
 <!-- ASIDE , this goes on every page except the first landing page -->
@@ -246,12 +250,68 @@
 
 <!-- MAP section, each question will bring up a map section with different cards, with ASIDE -->
   <section class="map">
-    <header class="map__header">
-      <h1>Date Night</h1>
-      <h3>Drinks before dinner?</h3>
-    </header>
+
     <div class="map__google">
       google map
+    </div>
+
+    <div class="map__footer">
+      <div class="venue">
+        <div class="venue__img">
+          <div class="venue__title">
+            <h1>This is a BAR1</h1>
+            <h3>Neighborhood</h3>
+          </div>
+          <h4>3.4</h4>
+        </div>
+        <div class="venue__info">
+          <h3>Cuisines:</h3>
+          <h3>Info here.</h3>
+          <i class="fa fa-star"></i>
+        </div>
+      </div>
+      <div class="venue">
+        <div class="venue__img">
+          <div class="venue__title">
+            <h1>This is a BAR2</h1>
+            <h3>Neighborhood</h3>
+          </div>
+          <h4>3.4</h4>
+        </div>
+        <div class="venue__info">
+          <h3>Cuisines:</h3>
+          <h3>Info here.</h3>
+          <i class="fa fa-star"></i>
+        </div>
+      </div>
+      <div class="venue">
+        <div class="venue__img">
+          <div class="venue__title">
+            <h1>This is a BAR3</h1>
+            <h3>Neighborhood</h3>
+          </div>
+          <h4>3.4</h4>
+        </div>
+        <div class="venue__info">
+          <h3>Cuisines:</h3>
+          <h3>Info here.</h3>
+          <i class="fa fa-star"></i>
+        </div>
+      </div>
+      <div class="venue">
+        <div class="venue__img">
+          <div class="venue__title">
+            <h1>This is a BAR4</h1>
+            <h3>Neighborhood</h3>
+          </div>
+          <h4>3.4</h4>
+        </div>
+        <div class="venue__info">
+          <h3>Cuisines:</h3>
+          <h3>Info here.</h3>
+          <i class="fa fa-star"></i>
+        </div>
+      </div>
     </div>
 
     <div class="map__footer">
@@ -312,6 +372,65 @@
         </div>
       </div>
     </div>
+    <div class="map__footer">
+      <div class="venue">
+        <div class="venue__img">
+          <div class="venue__title">
+            <h1>This is a BAR</h1>
+            <h3>Neighborhood</h3>
+          </div>
+          <h4>3.4</h4>
+        </div>
+        <div class="venue__info">
+          <h3>Cuisines:</h3>
+          <h3>Info here.</h3>
+          <i class="fa fa-star"></i>
+        </div>
+      </div>
+      <div class="venue">
+        <div class="venue__img">
+          <div class="venue__title">
+            <h1>This is a BAR</h1>
+            <h3>Neighborhood</h3>
+          </div>
+          <h4>3.4</h4>
+        </div>
+        <div class="venue__info">
+          <h3>Cuisines:</h3>
+          <h3>Info here.</h3>
+          <i class="fa fa-star"></i>
+        </div>
+      </div>
+      <div class="venue">
+        <div class="venue__img">
+          <div class="venue__title">
+            <h1>This is a BAR</h1>
+            <h3>Neighborhood</h3>
+          </div>
+          <h4>3.4</h4>
+        </div>
+        <div class="venue__info">
+          <h3>Cuisines:</h3>
+          <h3>Info here.</h3>
+          <i class="fa fa-star"></i>
+        </div>
+      </div>
+      <div class="venue">
+        <div class="venue__img">
+          <div class="venue__title">
+            <h1>This is a BAR</h1>
+            <h3>Neighborhood</h3>
+          </div>
+          <h4>3.4</h4>
+        </div>
+        <div class="venue__info">
+          <h3>Cuisines:</h3>
+          <h3>Info here.</h3>
+          <i class="fa fa-star"></i>
+        </div>
+      </div>
+    </div>
+    <button id='spin' type="button" name="button">I'm feeling lucky</button>
   </section>
 <!-- END of MAP section -->
 
@@ -349,8 +468,14 @@
       infinite: true,
       slidesToShow: 3,
       slidesToScroll: 1,
+      autoplaySpeed: 60,
       prevArrow : '<button type="button" class="slick-prev"> <</button>',
       nextArrow : '<button type="button" class="slick-next"> ></button>'
+    });
+    $('#spin').click(function() {
+      $('.map__footer').slick('slickPlay');
+      console.log($('.map__footer').slick('slickCurrentSlide'));
+      setTimeout(function(){ $('.map__footer').slick('slickPause')}, Math.random() * 1600);
     });
     </script>
   </body>

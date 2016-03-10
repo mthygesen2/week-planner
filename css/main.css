@@ -2,7 +2,7 @@
   font-family: "Ultra", serif;
   font-size: 4em; }
 
-.home button, .aside__content button {
+.home button, .aside__content button, #spin {
   width: auto;
   height: 40px;
   padding: 0.5em;
@@ -223,7 +223,7 @@
       font-size: 1.5em;
       color: orange; }
 
-.aside::-webkit-scrollbar, .topPicks::-webkit-scrollbar, .map::-webkit-scrollbar, .map__footer::-webkit-scrollbar {
+.aside::-webkit-scrollbar, .topPicks::-webkit-scrollbar, .map__footer::-webkit-scrollbar {
   width: 0;
   background-color: #f3f3f3; }
 
@@ -411,7 +411,7 @@ body {
       -ms-flex-flow: row nowrap;
           flex-flow: row nowrap;
   width: 100%;
-  height: 85px;
+  height: 100px;
   padding: 1em;
   margin: 0; }
   .nav__brand {
@@ -441,9 +441,6 @@ body {
     margin: 0; }
     .nav__links a {
       margin-left: 1em; }
-  @media screen and (min-width: 1200px) {
-    .nav {
-      height: 150px; } }
 
 @-webkit-keyframes colorbrand {
   25% {
@@ -505,7 +502,7 @@ body {
   z-index: -1; }
 
 .content {
-  height: calc(100vh - 160px);
+  height: 100%;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -524,9 +521,6 @@ body {
   width: 100%;
   background: #f3f3f3;
   padding-bottom: 1em; }
-  @media screen and (min-width: 1200px) {
-    .content {
-      height: calc(100vh - 225px); } }
 
 .aside {
   overflow: auto;
@@ -716,7 +710,6 @@ footer {
   margin: 0; }
 
 .map {
-  overflow: auto;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -725,10 +718,10 @@ footer {
   -webkit-justify-content: flex-start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  -webkit-box-align: start;
-  -webkit-align-items: flex-start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-flex-flow: row wrap;
       -ms-flex-flow: row wrap;
           flex-flow: row wrap;
@@ -739,22 +732,16 @@ footer {
     background-position: center;
     background-size: cover;
     width: 100%;
-    height: 200px;
-    padding: 0;
+    height: auto;
+    padding: 1em;
     margin: 0; }
-    @media screen and (min-height: 1250px) {
-      .map__header {
-        height: 300px; } }
   .map__google {
     border: 1px solid black;
     width: 100%;
-    height: 400px;
+    height: 50vh;
     padding: 0;
     margin: 0;
     margin: 1em 0; }
-    @media screen and (min-height: 1250px) {
-      .map__google {
-        height: 500px; } }
   .map__footer {
     width: 100%;
     height: auto;
@@ -810,5 +797,8 @@ footer {
     @media screen and (min-width: 1px) {
       .map__footer {
         overflow-y: hidden; } }
+
+#spin {
+  margin: auto; }
 
 /*# sourceMappingURL=main.css.map */
