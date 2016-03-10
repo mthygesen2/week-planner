@@ -99,7 +99,7 @@
 
 .venue {
   height: 250px;
-  lost-column: 1/1 0 1em;
+  lost-column: 1/1 0 0;
   margin-bottom: 1em;
   @include align-items($flex-flow: column nowrap);
   @include e('img') {

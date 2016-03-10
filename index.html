@@ -30,22 +30,21 @@
   <!-- END of MAIN landing page -->
   <!-- Start of Content, this changes with every page -->
   <header class="map__header">
-    <h1>Date Night</h1>
-    <h3>Drinks before dinner?</h3>
+    <h1>City Name, Country</h1>
+    <h3>Plan the perfect night</h3>
   </header>
       <div class="content">
 
 <!-- ASIDE , this goes on every page except the first landing page -->
       <aside class="aside">
           <div class="aside__header">
-            <h1>Date Night</h1>
+            <h1>Date Night Template</h1>
             <p>
               So you want to go out on a hot date? Here is what we suggest...
             </p>
             <ul>
               <li>Drinks before dinner</li>
               <li>Dinner of course</li>
-              <li>Maybe a movie?</li>
               <li>Some dancing</li>
             </ul>
           </div>
@@ -255,6 +254,8 @@
       google map
     </div>
 
+
+    <h1 class="category">Drinks</h1>
     <div class="map__footer">
       <div class="venue">
         <div class="venue__img">
@@ -314,6 +315,7 @@
       </div>
     </div>
 
+    <h1 class="category">Dinner</h1>
     <div class="map__footer">
       <div class="venue">
         <div class="venue__img">
@@ -372,6 +374,8 @@
         </div>
       </div>
     </div>
+
+    <h1 class="category">Dancing</h1>
     <div class="map__footer">
       <div class="venue">
         <div class="venue__img">
@@ -475,7 +479,7 @@
     $('#spin').click(function() {
       $('.map__footer').slick('slickPlay');
       console.log($('.map__footer').slick('slickCurrentSlide'));
-      setTimeout(function(){ $('.map__footer').slick('slickPause')}, Math.random() * 1600);
+      setTimeout(function(){ $('.map__footer').slick('slickPause')}, Math.random() * 3000);
     });
     </script>
   </body>

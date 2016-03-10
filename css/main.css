@@ -164,7 +164,7 @@
 .venue {
   height: 250px;
   flex: 0 0 auto;
-  width: calc(99.99% * 1/1 - (1em - 1em * 1/1));
+  width: calc(99.999999% * 1/1);
   margin-bottom: 1em;
   display: -webkit-box;
   display: -webkit-flex;
@@ -183,7 +183,7 @@
           flex-flow: column nowrap; }
 
 .venue:nth-child(1n) {
-  margin-right: 1em; }
+  margin-right: 0; }
 
 .venue:last-child {
   margin-right: 0; }
@@ -726,6 +726,8 @@ footer {
       -ms-flex-flow: row wrap;
           flex-flow: row wrap;
   padding-bottom: 0; }
+  .map .category {
+    margin: auto; }
   .map__header {
     background-image: url("../img/drinks.jpg");
     background-repeat: no-repeat;
@@ -759,9 +761,9 @@ footer {
     -webkit-align-items: flex-start;
         -ms-flex-align: start;
             align-items: flex-start;
-    -webkit-flex-flow: column nowrap;
-        -ms-flex-flow: column nowrap;
-            flex-flow: column nowrap;
+    -webkit-flex-flow: row nowrap;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
     overflow-x: scroll; }
     .map__footer .slick-prev, .map__footer .slick-next {
       -webkit-align-self: center;
@@ -770,7 +772,7 @@ footer {
       font-size: 1.3em;
       font-weight: bold;
       padding: .5em;
-      margin-right: 0.4em;
+      margin-right: .5em;
       border: none;
       background-color: transparent;
       color: #77c9ad;

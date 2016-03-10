@@ -2,6 +2,9 @@
 .map {
   @include align-items(flex-start, center ,row wrap);
   padding-bottom: 0;
+  .category{
+    margin:auto;
+  }
   @include e("header") {
     // THIS IMG SHOULD CHANGE WITH EACH QUESTION
     @include bg-img("../img/drinks.jpg");
@@ -27,14 +30,14 @@
       font-size: 1.3em;
       font-weight: bold;
       padding: .5em;
-      margin-right: 0.4em;
+      margin-right: .5em;
       border: none;
       background-color: transparent;
       color: $mint-green;
       border-radius: 50%;
     }
     @include container(100%, auto);
-    @include align-items($flex-flow: column nowrap);
+    @include align-items($flex-flow: row nowrap);
     @media screen and (min-width: 600px ){
       @include align-items();
       .venue {
