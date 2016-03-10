@@ -3,9 +3,10 @@
   display: flex;
   width: 100%;
   max-width: 1600px;
-  flex-flow: column wrap;
+  flex-flow: row wrap;
   padding: 0;
   background: $light-grey;
+  justify-content: space-between;
 }
 
 .header {

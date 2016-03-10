@@ -5,7 +5,6 @@
 
 ///Nav height will effect the logo height ///
 .nav {
-  background-color: $light-grey;
   @include align-items(space-between, center);
   @include e("brand") {
     @extend %nav-brand;
@@ -20,7 +19,6 @@
     }
   }
   @include container(100%, 100px, 1em);
-  // @include container(100%, 150px, 1em);
 }
 
 @-webkit-keyframes colorbrand {
