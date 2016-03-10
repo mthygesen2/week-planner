@@ -2,6 +2,9 @@ import Ember from 'ember';
 
 export default Ember.Service.extend({
   foursquareResult: [],
+  foursquareDrinks: [],
+  foursquareDinners: [],
+  foursquareArts: [],
 
   foursquareRequest(queryType, params) {
     var url = 'https://api.foursquare.com/v2/venues/' + queryType;
@@ -10,7 +13,6 @@ export default Ember.Service.extend({
     params.venuePhotos = 1;
     params.v = 20160309;
     var self = this;
-    console.log(params)
     // debugger;
     return Ember.$.ajax({
       url: url,
@@ -19,7 +21,7 @@ export default Ember.Service.extend({
       jsonpCallback: 'mycallback',
       cache: true
     }).then(function(response) {
-      console.log(response);
+      // console.log(response);
       for (var item of response.response.groups[0].items){
         var venue = {
           id: item.venue.id,
@@ -33,11 +35,17 @@ export default Ember.Service.extend({
           rating: item.venue.rating,
           shortDescription: item.tips[0].text,
         }
-        self.get('foursquareResult').pushObject(venue);
+        if (params.section === 'drinks') {
+          self.get('foursquareDrinks').pushObject(venue);
+        } else if (params.section === 'food'){
+          self.get('foursquareDinners').pushObject(venue);
+        } else {
+          self.get('foursquareArts').pushObject(venue);
+        }
       }
       // self.set('foursquareResult', response.response.groups[0]);
       // console.log(JSON.stringify(self.get('yelpResult')));
-      console.log(self.get('foursquareResult'));
+      // console.log(self.get('foursquareResult'));
       // console.log(JSON.stringify(response.response.groups[0]));
       return response;
     });
