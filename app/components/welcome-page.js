@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   foursquareApi: Ember.inject.service(),
+  selectedItems: Ember.inject.service(),
 
   actions: {
     getLocation() {
@@ -21,6 +22,7 @@ export default Ember.Component.extend({
         section: 'arts',
         near: location,
       };
+      this.get('selectedItems').location = location;
       var self = this;
       this.get('foursquareApi').foursquareRequest('explore', paramsDrinks).then(function(){
         self.get('foursquareApi').foursquareRequest('explore', paramsDinners).then(function() {
