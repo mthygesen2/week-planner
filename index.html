@@ -5,6 +5,7 @@
     <title>Week&</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.5.9/slick.css"/>
     <link rel="stylesheet" href="css/main.css">
     <link href='https://fonts.googleapis.com/css?family=Lato|Ultra' rel='stylesheet' type='text/css'>
   </head>
@@ -40,7 +41,7 @@
             <ul>
               <li>Drinks before dinner</li>
               <li>Dinner of course</li>
-              <li>Today's events</li>
+              <li>Maybe a movie?</li>
               <li>Some dancing</li>
             </ul>
           </div>
@@ -48,6 +49,7 @@
           <p>
             Drag and drop things you want to save for your night.
           </p>
+          <button type="button" name="button">Last</button>
           <button type="button" name="button">Next</button>
           <div class="aside__drop">
 
@@ -339,5 +341,17 @@
       </footer>
 <!-- END of FOOTER -->
     </div>
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+<script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.slick/1.5.9/slick.min.js"></script>
+    <script type="text/javascript">
+    $('.map__footer').slick({
+      infinite: true,
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      prevArrow : '<button type="button" class="slick-prev"> <</button>',
+      nextArrow : '<button type="button" class="slick-next"> ></button>'
+    });
+    </script>
   </body>
 </html>

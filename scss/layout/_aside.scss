@@ -2,6 +2,7 @@
 // This file contains styling for ASIDE
 // -----------------------------------------------------------------------------
 .content {
+  // height: 100%;
   height: calc(100vh - 160px);
   @include align-items(flex-start, flex-start);
   width: 100%;

@@ -93,14 +93,13 @@
 
 %mapvenue--bg{
   @media screen and (min-width: 1250px){
-    lost-column: 1/3 0 1em;
+    lost-column: 1/3 0 0.5em;
   }
 }
 
 .venue {
   height: 250px;
   lost-column: 1/1 0 1em;
-  border: 1px solid black;
   margin-bottom: 1em;
   @include align-items($flex-flow: column nowrap);
   @include e('img') {
@@ -125,17 +124,5 @@
   &::-webkit-scrollbar{
     width: 0;
     background-color:$light-grey;
-  }
-}
-
-%scrollbar-colored{
-  &::-webkit-scrollbar{
-    width: 0.5em;
-    background-color:$light-grey;
-  }
-  &::-webkit-scrollbar-thumb{
-    background-color: #77c9ad;
-    border-radius: 10px;
-    -webkit-box-shadow:0 0 2px gray inset;
   }
 }
