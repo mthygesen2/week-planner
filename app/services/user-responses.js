@@ -32,7 +32,7 @@ export default Ember.Service.extend({
 
     {
       'id': 5,
-      'question': 'New release, or second run movie?',
+      'question': 'Second run movie?',
       'answer': [],
       'category': 'dateNight'
     },

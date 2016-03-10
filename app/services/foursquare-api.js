@@ -35,7 +35,7 @@ export default Ember.Service.extend({
       // self.set('foursquareResult', response.response.groups[0]);
       // console.log(JSON.stringify(self.get('yelpResult')));
       console.log(self.get('foursquareResult'));
-      console.log(JSON.stringify(response.response.groups[0]));
+      // console.log(JSON.stringify(response.response.groups[0]));
       return response.businesses;
     });
   }
