@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Service.extend({
-  foursquareResult: [],
+  // foursquareResult: [],
   foursquareDrinks: [],
   foursquareDinners: [],
   foursquareArts: [],
@@ -21,19 +21,38 @@ export default Ember.Service.extend({
       jsonpCallback: 'mycallback',
       cache: true
     }).then(function(response) {
-      // console.log(response);
+      console.log(response);
       for (var item of response.response.groups[0].items){
-        var venue = {
-          id: item.venue.id,
-          name: item.venue.name,
-          category: item.venue.categories[0].name,
-          photo: item.venue.featuredPhotos.items[0].prefix + 'original' + item.venue.featuredPhotos.items[0].suffix || '',
-          contact: item.venue.contact.formatedPhone,
-          isOpenNow: item.venue.hours.isOpen,
-          hoursStatus: item.venue.hours.status,
-          location: item.venue.location,
-          rating: item.venue.rating,
-          shortDescription: item.tips[0].text,
+        var venue = {};
+        if ('venue' in item) {
+          venue.id = item.venue.id;
+          venue.name = item.venue.name;
+          venue.category = item.venue.categories[0].name;
+          venue.photo = item.venue.featuredPhotos.items[0].prefix + 'original' + item.venue.featuredPhotos.items[0].suffix || '';
+          venue.contact = item.venue.contact.formatedPhone;
+          venue.location = item.venue.location;
+          venue.rating = item.venue.rating;
+          venue.shortDescription = item.tips[0].text;
+          if ("hours" in item.venue) {
+            venue.isOpen = item.venue.hours.isOpen;
+            venue.hoursStatus = item.venue.hours.status;
+          };
+          if ("url" in item.venue) {
+            venue.url = item.venue.url;
+          };
+          if ('price' in item.venue) {
+            venue.price = item.venue.price.currency;
+            for (var i = 0; i<item.venue.price.tier-1; i++) {
+              venue.price += item.venue.price.currency;
+            }
+          } else {
+            venue.price = 'not available';
+          }
+
+        }
+
+         else {
+          console.log('do not see it')
         }
         if (params.section === 'drinks') {
           self.get('foursquareDrinks').pushObject(venue);
