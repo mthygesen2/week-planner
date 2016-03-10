@@ -22,6 +22,10 @@ export default Ember.Component.extend({
         section: 'arts',
         near: location,
       };
+      //clear foursquare results for new search
+      this.set('foursquareApi.foursquareDrinks', []);
+      this.set('foursquareApi.foursquareDinners', []);
+      this.set('foursquareApi.foursquareArts', []);
       this.get('selectedItems').location = location;
       var self = this;
       this.get('foursquareApi').foursquareRequest('explore', paramsDrinks).then(function(){
