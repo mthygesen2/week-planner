@@ -5,14 +5,31 @@ export default Ember.Component.extend({
 
   actions: {
     getLocation() {
-      var params = {
-        limit: 10,
-        near: this.get('location'),
+      var location = this.get('location');
+      var paramsDrinks = {
+        limit: 15,
+        section: 'drinks',
+        near: location,
+      };
+      var paramsDinners = {
+        limit: 15,
+        section: 'food',
+        near: location,
+      };
+      var paramsArts = {
+        limit: 15,
+        section: 'arts',
+        near: location,
       };
       var self = this;
-      this.get('foursquareApi').foursquareRequest('explore', params).then(function() {
-        self.sendAction('getLocation');
+      this.get('foursquareApi').foursquareRequest('explore', paramsDrinks).then(function(){
+        self.get('foursquareApi').foursquareRequest('explore', paramsDinners).then(function() {
+          self.get('foursquareApi').foursquareRequest('explore', paramsArts).then(function() {
+            self.sendAction('getLocation');
+          });
+        });
       });
+
     }
   }
 });
