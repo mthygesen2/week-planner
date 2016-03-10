@@ -21,7 +21,6 @@
   form {
     @include container(75%, auto);
     @media screen and (min-width: 1024px) {
-
       @include container(50%, auto);
     }
   }
@@ -35,17 +34,3 @@
     width: 20%;
   }
 }
-
-//////creates a background image with opacity////
-
-// .home::after {
-//   content: "";
-//   @include bg-img("../img/home-background.jpg");
-//   opacity: 0.5;
-//   top: 0;
-//   left: 0;
-//   bottom: 0;
-//   right: 0;
-//   position: absolute;
-//   z-index: -1;
-// }

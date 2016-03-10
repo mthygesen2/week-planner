@@ -15,6 +15,7 @@
   @include e("footer") {
     // THIS INCLUDES THE VENUE CARDS
     .slick-prev, .slick-next {
+      outline: none;
       align-self: center;
       font-size: 1.3em;
       font-weight: bold;
