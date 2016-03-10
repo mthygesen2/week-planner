@@ -13,7 +13,7 @@
 
 .gallery {
     @include align-items(flex-start, flex-start, row wrap);
-    align-content: flex-start;
+
     @include container(100%, auto);
     .venue{
       @extend %topvenue--md;
@@ -25,4 +25,10 @@
         @extend %topvenue--50;
       }
     }
+    }
+
+    .slick.active {
+      .venue__info {
+        background: red;
+      }
     }

@@ -30,7 +30,6 @@
       font-size: 1.3em;
       font-weight: bold;
       padding: .5em;
-      margin-right: .5em;
       border: none;
       background-color: transparent;
       color: $mint-green;
@@ -46,13 +45,6 @@
         margin-bottom: 0.7em;
       }
     }
-    overflow-x: scroll;
-    @extend %scrollbar;
-    @media screen and (min-width: 1px){
-      @extend %scrollbar-colored;
-      overflow-y: hidden;
-    }
-
   }
 }
 
