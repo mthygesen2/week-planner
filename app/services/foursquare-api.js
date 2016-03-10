@@ -22,44 +22,48 @@ export default Ember.Service.extend({
       cache: true
     }).then(function(response) {
       console.log(response);
-      for (var item of response.response.groups[0].items){
-        var venue = {};
-        if ('venue' in item) {
-          venue.id = item.venue.id;
-          venue.name = item.venue.name;
-          venue.category = item.venue.categories[0].name;
-          venue.photo = item.venue.featuredPhotos.items[0].prefix + 'original' + item.venue.featuredPhotos.items[0].suffix || '';
-          venue.contact = item.venue.contact.formatedPhone;
-          venue.location = item.venue.location;
-          venue.rating = item.venue.rating;
-          venue.shortDescription = item.tips[0].text;
-          if ("hours" in item.venue) {
-            venue.isOpen = item.venue.hours.isOpen;
-            venue.hoursStatus = item.venue.hours.status;
-          };
-          if ("url" in item.venue) {
-            venue.url = item.venue.url;
-          };
-          if ('price' in item.venue) {
-            venue.price = item.venue.price.currency;
-            for (var i = 0; i<item.venue.price.tier-1; i++) {
-              venue.price += item.venue.price.currency;
+      if ('groups' in response.response) {
+        if ('items' in response.response.groups[0]) {
+          for (var item of response.response.groups[0].items){
+            var venue = {};
+            if ('venue' in item) {
+              venue.id = item.venue.id;
+              venue.name = item.venue.name;
+              venue.category = item.venue.categories[0].name;
+              if ('featuredPhotos' in item.venue) {
+                venue.photo = item.venue.featuredPhotos.items[0].prefix + 'original' + item.venue.featuredPhotos.items[0].suffix || '';
+              }
+              venue.contact = item.venue.contact.formatedPhone;
+              venue.location = item.venue.location;
+              venue.rating = item.venue.rating;
+              if ('tips' in item) {
+                venue.shortDescription = item.tips[0].text;
+              }
+              if ("hours" in item.venue) {
+                venue.isOpen = item.venue.hours.isOpen;
+                venue.hoursStatus = item.venue.hours.status;
+              };
+              if ("url" in item.venue) {
+                venue.url = item.venue.url;
+              };
+              if ('price' in item.venue) {
+                venue.price = item.venue.price.currency;
+                for (var i = 0; i<item.venue.price.tier-1; i++) {
+                  venue.price += item.venue.price.currency;
+                }
+              } else {
+                venue.price = 'not available';
+              }
+
             }
-          } else {
-            venue.price = 'not available';
+            if (params.section === 'drinks') {
+              self.get('foursquareDrinks').pushObject(venue);
+            } else if (params.section === 'food'){
+              self.get('foursquareDinners').pushObject(venue);
+            } else {
+              self.get('foursquareArts').pushObject(venue);
+            }
           }
-
-        }
-
-         else {
-          console.log('do not see it')
-        }
-        if (params.section === 'drinks') {
-          self.get('foursquareDrinks').pushObject(venue);
-        } else if (params.section === 'food'){
-          self.get('foursquareDinners').pushObject(venue);
-        } else {
-          self.get('foursquareArts').pushObject(venue);
         }
       }
       // self.set('foursquareResult', response.response.groups[0]);
