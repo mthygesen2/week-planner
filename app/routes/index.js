@@ -9,26 +9,16 @@ var items = [{
 }]
 export default Ember.Route.extend({
   googleMap: Ember.inject.service(),
-  meetupApi: Ember.inject.service()
+  meetupApi: Ember.inject.service(),
   yelpApi: Ember.inject.service(),
   foursquareApi: Ember.inject.service(),
   model() {
     return items;
-  }
+  },
 
   actions: {
     getLocation() {
       this.transitionTo('top-picks');
-    },
-
-    updateRequestFromModal(userSelection) {
-      console.log(userSelection);
-      var params = {
-        userSelection,
-        limit: 10,
-        near: this.get('googleMap.results.formatted_address'),
-      };
-      this.get('foursquareApi').foursquareRequest('explore', params);
     },
   }
 

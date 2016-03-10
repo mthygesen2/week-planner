@@ -101,6 +101,7 @@ export default Ember.Component.extend({
 
       if (response === true) { // Populate results based on question
         // this.sendAction('meetupRequest', 'tech');
+        this.sendAction('meetupRequestToService');
         console.log(this.get('responseService.filters.6.category'))
       } else { // Remove results based on question
         this.set('showQuestion8', true);
