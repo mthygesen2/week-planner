@@ -12,8 +12,8 @@ export default Ember.Service.extend({
   },
   addDrink(business) {
     this.set('drink', business);
-    console.log('added mat ego');
-    console.log(this.get('drink'));
+    // console.log('added mat ego');
+    // console.log(this.get('drink'));
   },
   addDinner(business) {
     this.set('dinner', business);

@@ -11,9 +11,9 @@ export default Ember.Component.extend({
       var selectedArt = this.get('selectedItems').art;
       var map = this.get('googleMap');
 
-      console.log("In the to Final route");
-      console.log(map);
-      console.log(map.dinner);
+      // console.log("In the to Final route");
+      // console.log(map);
+      // console.log(map.dinner);
 
       map.set('dinner', selectedDinner);
       map.set('drink', selectedDrink);
