@@ -45,7 +45,7 @@
             {{aside-card business=selectedItems.art}}
           </div>
         <button type="button" name="button" {{action 'resetFavorites'}}>Reset</button>
-        <button type="button" name="button">Next</button>
+        {{#link-to 'final'}} <button type="button" name="button">Next</button>{{/link-to}}
       </div>
     </aside>
 <!-- END of ASIDE -->
@@ -55,14 +55,13 @@
 <section class="map">
 
   <div class="map__google">
-    google map
+    {{google-map}}
   </div>
 
 
   <h1 class="category">Drinks</h1>
   <div class="map__footer" id="1">
     {{#each foursquareApi.foursquareDrinks as |business|}}
-
       {{card-tile business=business}}
     {{/each}}
 
