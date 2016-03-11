@@ -1,5 +1,4 @@
 <!-- <div style="width: calc(99.99% * 1,5 - (1em - 1em * 1/2)); height: 250px;"> -->
-
   <div class="card">
     <div class="face front">
       <div class="venue__img" style="background-image: url({{business.photo}});">
@@ -13,8 +12,6 @@
         <h3>Price: {{business.price}}</h3>
         <h5><a href="{{business.url}}">{{business.url}}</a></h5>
         <i class="fa fa-star" {{action 'save' business}}></i>
-        <h3><a href="{{business.url}}">{{business.url}}</a></h3>
-        <i class="fa fa-star" {{action "addFavorite" business}}></i>
       </div>
     </div>
     <div class="face back">

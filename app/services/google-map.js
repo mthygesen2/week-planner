@@ -133,5 +133,6 @@ setTimeout(function(){
       });
     //}
     }
+    this.set('places', '');
   }
 });
