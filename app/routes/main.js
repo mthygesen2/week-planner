@@ -5,7 +5,7 @@ export default Ember.Route.extend({
 
 
   actions: {
-    toFinalMap() {
+    toFinal() {
       this.transitionTo('final');
     }
   }

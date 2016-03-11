@@ -649,8 +649,16 @@ video#bgvid {
       -webkit-flex-flow: row nowrap;
           -ms-flex-flow: row nowrap;
               flex-flow: row nowrap; }
+      .aside__final {
+        flex-flow: column nowrap;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        color: white;
+      }
 
 .final {
+  width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -678,14 +686,14 @@ video#bgvid {
     margin: 0; }
   .final__google {
     border: 1px solid black;
-    height: 100vh;
-    width: 100%;
+    width: 75vw;
+    height: 75vh;
     padding: 0;
     margin: 0; }
-  .map-div {
-    height: 600px;
-    width: 600px;
-  }
+  // .map-div {
+  //   height: 600px;
+  //   width: 600px;
+  // }
 
 footer {
   width: 100%;
