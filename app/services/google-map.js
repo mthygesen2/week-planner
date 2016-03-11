@@ -137,46 +137,58 @@ export default Ember.Service.extend({
     var dinner = this.get('dinner');
     var drink = this.get('drink');
     var art = this.get('art');
-    var dinnerMarker = new google.maps.Marker({
-      map: map,
-      position: {lat: dinner.location.lat, lng: dinner.location.lng},
-      icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
-    });
-    var drinkMarker = new google.maps.Marker({
-      map: map,
-      position: {lat: drink.location.lat, lng: drink.location.lng},
-      icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
-    });
-    var artMarker = new google.maps.Marker({
-      map: map,
-      position: {lat: art.location.lat, lng: art.location.lng},
-      icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
-    });
 
-    dinnerMarker.info = new google.maps.InfoWindow({
-      content:'<b>' + dinner.name + '</b> <br>' +
-      dinner.location.address + '<br>'
-      + dinner.category
-    });
+    if (dinner.name) {
+      var dinnerMarker = new google.maps.Marker({
+        map: map,
+        position: {lat: dinner.location.lat, lng: dinner.location.lng},
+        icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
+      });
 
-    drinkMarker.info = new google.maps.InfoWindow({
-      content:'<b>' + drink.name + '</b> <br>' +
-      drink.location.address + '<br>'
-      + drink.category
-    });
-    artMarker.info = new google.maps.InfoWindow({
-      content:'<b>' + art.name + '</b> <br>' +
-      art.location.address + '<br>'
-      + art.category
-    });
-    google.maps.event.addListener(dinnerMarker, 'click', function() {
-      this.info.open(map, this);
-    });
-    google.maps.event.addListener(drinkMarker, 'click', function() {
-      this.info.open(map, this);
-    });
-    google.maps.event.addListener(artMarker, 'click', function() {
-      this.info.open(map, this);
-    });
+      dinnerMarker.info = new google.maps.InfoWindow({
+        content:'<b>' + dinner.name + '</b> <br>' +
+        dinner.location.address + '<br>'
+        + dinner.category
+      });
+
+      google.maps.event.addListener(dinnerMarker, 'click', function() {
+        this.info.open(map, this);
+      });
+    }
+
+    if (drink.name) {
+
+      var drinkMarker = new google.maps.Marker({
+        map: map,
+        position: {lat: drink.location.lat, lng: drink.location.lng},
+        icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
+      });
+      drinkMarker.info = new google.maps.InfoWindow({
+        content:'<b>' + drink.name + '</b> <br>' +
+        drink.location.address + '<br>'
+        + drink.category
+      });
+      google.maps.event.addListener(drinkMarker, 'click', function() {
+        this.info.open(map, this);
+      });
+    }
+
+    if(art.name) {
+
+      var artMarker = new google.maps.Marker({
+        map: map,
+        position: {lat: art.location.lat, lng: art.location.lng},
+        icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
+      });
+
+      artMarker.info = new google.maps.InfoWindow({
+        content:'<b>' + art.name + '</b> <br>' +
+        art.location.address + '<br>'
+        + art.category
+      });
+      google.maps.event.addListener(artMarker, 'click', function() {
+        this.info.open(map, this);
+      });
+    }
   }
 });
