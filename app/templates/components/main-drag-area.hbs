@@ -1,6 +1,13 @@
-
-<header class="map__header">
-  <h1>City Name, Country</h1>
+<div class="container">
+  <nav class="nav">
+    <a class="nav__brand" href="#">&</a>
+    <div class="nav__links">
+      <a href="#">Inspiration</a>
+      <a href="#">Log in</a>
+    </div>
+  </nav>
+<header class="header">
+  <h1>{{selectedItems.location}}</h1>
   <h3>Plan the perfect night</h3>
 </header>
     <div class="content">
@@ -24,39 +31,20 @@
 
         </div>
       <div class="aside__content">
-        <h1 class="category">Your choices</h1>
-
-
-          <div class="aside__drop">
-            <div class="venue">
-              {{#if selectedItems.favoriteDinner}}
-              <div class="venue__img">
-                <div class="venue__title">
-                  <h1>This is a BAR</h1>
-                  <h3>Neighborhood</h3>
-                </div>
-                <h4>3.4</h4>
-              </div>
-              <div class="venue__info">
-                <h3>Cuisines:</h3>
-                <h3>Info here.</h3>
-                <i class="fa fa-star"></i>
-              </div>
-              <div class="aside__drop__info">
-                <h3>Drinks before dinner</h3>
-                <i {{action "remove" business}} class="fa fa-times-circle"></i>
-              </div>
-              {{/if}}
-            </div>
-          </div>
+        <h1 class="category"><i class="fa fa-glass"></i>Your choices</h1>
 
           <div class="aside__drop">
+            {{aside-card business=selectedItems.drink}}
           </div>
-
-            <div class="aside__drop">
-            </div>
-
-        <button type="button" name="button">Reset</button>
+          <h1 class="category"><i class="fa fa-cutlery"></i></h1>
+          <div class="aside__drop">
+            {{aside-card business=selectedItems.dinner}}
+          </div>
+          <h1 class="category"><i class="fa fa-users"></i></h1>
+          <div class="aside__drop">
+            {{aside-card business=selectedItems.art}}
+          </div>
+        <button type="button" name="button" {{action 'resetFavorites'}}>Reset</button>
         {{#link-to 'final'}} <button type="button" name="button">Next</button>{{/link-to}}
       </div>
     </aside>
@@ -72,40 +60,44 @@
 
 
   <h1 class="category">Drinks</h1>
-  <div class="map__footer">
-    {{log foursquareApi.foursquareDrinks}}
-
-    <!-- {{card-tile businesses=foursquareApi.foursquareDrinks}} -->
+  <div class="map__footer" id="1">
     {{#each foursquareApi.foursquareDrinks as |business|}}
-    <div class="venue">
-        {{card-tile business=business}}
-    </div>
+      {{card-tile business=business}}
     {{/each}}
 
   </div>
 
   <h1 class="category">Dinner</h1>
-    <div class="map__footer">
-      {{#each foursquareApi.foursquareDinners as |business|}}
-        <div class="venue">
-          {{card-tile business=business}}
-        </div>
-      {{/each}}
-    </div>
-
-
-  <h1 class="category">Activities</h1>
-  <div class="map__footer">
-    {{#each foursquareApi.foursquareArts as |business|}}
-      <div class="venue">
-        {{card-tile business=business}}
-      </div>
+  <div class="map__footer" id="2">
+    {{#each foursquareApi.foursquareDinners as |business|}}
+      {{card-tile business=business}}
     {{/each}}
+
   </div>
+
+  <h1 class="category">Art</h1>
+  <div class="map__footer" id="3">
+    {{#each foursquareApi.foursquareArts as |business|}}
+      {{card-tile business=business}}
+    {{/each}}
+
+  </div>
+
   <button id='spin' type="button" name="button">I'm feeling lucky</button>
 </section>
 
 
 </div>
 
+<footer>
+  <ul>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Contact</a></li>
+    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+  </ul>
+</footer>
+
 <!-- END of CONTENT -->
+</div>
