@@ -3,6 +3,8 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   map: Ember.inject.service('google-map'),
   meetupApi: Ember.inject.service(),
+  foursquareApi: Ember.inject.service(),
+
 
   init(){
     console.log("Got to init");
@@ -11,6 +13,9 @@ export default Ember.Component.extend({
     var map = this.get('map');
     var meetupApi = this.get('meetupApi')
     var self = this;
+
+
+
     var options = {
       zoom: 13,
       //center: {lat: -34.397, lng: 150.644}

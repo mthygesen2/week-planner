@@ -29,7 +29,8 @@
 
           <div class="aside__drop">
             <div class="venue">
-              <!-- <div class="venue__img">
+              {{#if selectedItems.favoriteDinner}}
+              <div class="venue__img">
                 <div class="venue__title">
                   <h1>This is a BAR</h1>
                   <h3>Neighborhood</h3>
@@ -44,7 +45,8 @@
               <div class="aside__drop__info">
                 <h3>Drinks before dinner</h3>
                 <i {{action "remove" business}} class="fa fa-times-circle"></i>
-              </div> -->
+              </div>
+              {{/if}}
             </div>
           </div>
 
