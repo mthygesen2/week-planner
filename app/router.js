@@ -8,6 +8,7 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('top-picks');
   this.route('main');
+  this.route('final');
 });
 
 export default Router;

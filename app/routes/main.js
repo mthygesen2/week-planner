@@ -30,5 +30,11 @@ export default Ember.Route.extend({
         slidesToShow: 1
       }
     }
-  ]
+  ],
+
+  actions: {
+    toFinalMap() {
+      this.transitionTo('final');
+    }
+  }
 });
