@@ -307,6 +307,9 @@ section {
       padding: 1em;
       margin: 0; } }
 
+.home {
+  height: 200px; }
+
 /**
  * Basic typography style for copy text
  */
@@ -418,6 +421,7 @@ video#bgvid {
   background-size: cover; }
 
 .nav {
+  background: #f3f3f3;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -474,10 +478,6 @@ video#bgvid {
     color: #5C4862; } }
 
 .home {
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -494,7 +494,7 @@ video#bgvid {
       -ms-flex-flow: column nowrap;
           flex-flow: column nowrap;
   width: 100%;
-  height: 100%;
+  height: calc(100vh - 175px);
   padding: 0;
   margin: 0;
   color: black; }
@@ -684,6 +684,7 @@ video#bgvid {
     margin: 0; }
 
 footer {
+  background: #f3f3f3;
   width: 100%;
   height: 75px;
   padding: 1em;

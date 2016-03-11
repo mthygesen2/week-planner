@@ -39,9 +39,12 @@ body {
 }
 
 section {
-
   @include container(100%,100%, 1em);
   @media screen and (min-width: 768px) {
     @include container(70%, 100%, 1em);
   }
+}
+
+.home{
+  height: 200px;
 }

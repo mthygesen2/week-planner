@@ -3,9 +3,8 @@
 // -----------------------------------------------------------------------------
 
 .home {
-  flex: 1;
   @include align-items(center, center, column nowrap);
-  @include container();
+  @include container(100%, calc(100vh - 175px));
   color: black;
   h1 {
     font-size: 4em;

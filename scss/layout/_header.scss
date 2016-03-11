@@ -5,6 +5,7 @@
 
 ///Nav height will effect the logo height ///
 .nav {
+  background: $light-grey;
   @include align-items(space-between, center);
   @include e("brand") {
     @extend %nav-brand;
