@@ -85,6 +85,7 @@
   <h1 class="category">Dinner</h1>
     <div class="map__footer">
       {{#each foursquareApi.foursquareDinners as |business|}}
+      {{log business.location}}
         <div class="venue">
           {{card-tile business=business}}
         </div>

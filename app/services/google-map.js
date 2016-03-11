@@ -52,7 +52,7 @@ setTimeout(function(){
       }
     })
   });
-}, 200);
+}, 700);
 
 
 

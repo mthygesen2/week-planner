@@ -43,6 +43,7 @@ export default Ember.Component.extend({
           self.get('foursquareApi').foursquareRequest('explore', paramsArts).then(function() {
             // console.log(options)
             container = self.$('.map__google')[0];
+            
               map.findAddress(container, options, location);
           });
         });
