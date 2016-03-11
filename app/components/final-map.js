@@ -5,33 +5,29 @@ export default Ember.Component.extend({
   userSelection: Ember.inject.service('selected-items'),
 
   init(){
-    console.log("Got to init");
     this._super(...arguments);
-    var results = '';
+    // var results = '';
     var map = this.get('map');
-    var choices = this.get('userSelection.businesses');
-    var self = this;
+    // var dinnerGeo = this.get('userSelection.dinner.location');
+    // var drinkGeo = this.get('userSelection.drink.location');
+    // var artGeo = this.get('userSelection.art.location');
+    // var location = this.get('userSelection.location');
+    // //console.log(this.get(artGeo));
+    // var self = this;
+    // var markerParams = {
+    //   map: this.get('map'),
+    //   position: {lat: location.lat, lng: location.lng},
+    //   places: dinner + drink + art,
+    //   log: console.log(this.get('places'))
+    // }
     var options = {
       zoom: 13,
     };
-    map.findAddress(options);
+    map.finalAddress(options);
+
   },
 
   actions: {
-    // showFinalMap() {
-    //   var address = this.get('userSelection.location');
-    //   console.log(address);
-    //   this.set('map.city', address);
-    //   var container = this.$('.final__google')[0];
-    //   var map = this.get('map');
-    //   var self = this;
-    //   var options = {
-    //     zoom: 13,
-    //     center: {lat: -34.397, lng: 150.644}
-    //   };
-    //   map.findAddress(container, options, address).then(function(values) {
-    //
-    //   })
-    // }
+
   }
 });

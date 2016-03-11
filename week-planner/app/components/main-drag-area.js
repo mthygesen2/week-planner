@@ -7,9 +7,6 @@ export default Ember.Component.extend({
 
 
   actions: {
-    toFinal() {
-      this.sendAction('toFinal');
-    },
     droppedDinner(businessId) {
       var business = this.get('foursquareApi.foursquareDrinks')
       var selectedItems = this.get('selectedItems.businesss');
@@ -66,35 +63,35 @@ export default Ember.Component.extend({
         $(current).find('.card').removeClass('flipped');
     });
     return false;
-});
-  $('.map__footer').slick({
-  centerMode: true,
-  infinite: true,
-  speed: 500,
-  prevArrow : '<button type="button" class="slick-prev"> <</button>',
-  nextArrow : '<button type="button" class="slick-next"> ></button>',
-  swipeToSlide: true,
-  slidesToShow: 3,
-  responsive: [
-    {
-      breakpoint: 1250,
-      settings: {
-        arrows: false,
-        centerMode: true,
-        slidesToShow: 2,
-        slidesToScroll: 2
-      }
-    },
-    {
-      breakpoint: 600,
-      settings: {
-        arrows: false,
-        centerMode: true,
-        slidesToShow: 1
-      }
-    }
-  ]
-});
+    });
+      $('.map__footer').slick({
+      centerMode: true,
+      infinite: true,
+      speed: 500,
+      prevArrow : '<button type="button" class="slick-prev"> <</button>',
+      nextArrow : '<button type="button" class="slick-next"> ></button>',
+      swipeToSlide: true,
+      slidesToShow: 3,
+      responsive: [
+        {
+          breakpoint: 1250,
+          settings: {
+            arrows: false,
+            centerMode: true,
+            slidesToShow: 2,
+            slidesToScroll: 2
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            arrows: false,
+            centerMode: true,
+            slidesToShow: 1
+          }
+        }
+      ]
+    });
     });
   }
 });
