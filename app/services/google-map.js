@@ -78,5 +78,30 @@ setTimeout(function(){
       });
     //}
     }
+  },
+
+  setUserMarkers(markerParams) {
+    var places = markerParams.places;
+    for(var i = 0; i < places.length; i++){
+      console.log(places[0]);
+      var place = places[i];
+      var marker = new google.maps.Marker({
+        map: markerParams.map,
+        log: console.log(markerParams.map),
+        position: {lat: place.lat, lng: place.lng},
+        icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
+        title: place[0],
+      });
+
+      marker.info = new google.maps.InfoWindow({
+        content: place[0] +
+        "<br>" +
+        place[3]
+      })
+      google.maps.event.addListener(marker, 'click', function() {
+        this.info.open(map, this);
+      });
+    //}
+    }
   }
 });
