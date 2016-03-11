@@ -508,16 +508,17 @@ video#bgvid {
     padding-bottom: 2em; }
   .home form {
     width: 75%;
-    height: auto;
+    height: 40px;
     padding: 0;
     margin: 0; }
     @media screen and (min-width: 1024px) {
       .home form {
         width: 50%;
-        height: auto;
+        height: 40px;
         padding: 0;
         margin: 0; } }
   .home input {
+    font-size: 0.7em;
     width: 75%;
     height: 40px;
     padding: 0;
@@ -598,7 +599,7 @@ video#bgvid {
   .aside__content {
     text-align: center; }
     .aside__content button {
-      margin: 3em auto; }
+      margin: 3em auto 0 auto; }
   .aside__drop {
     width: 100%;
     height: 250px;

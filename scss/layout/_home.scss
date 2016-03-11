@@ -18,15 +18,17 @@
     padding-bottom: 2em;
   }
   form {
-    @include container(75%, auto);
+    @include container(75%, 40px);
     @media screen and (min-width: 1024px) {
-      @include container(50%, auto);
+      @include container(50%, 40px);
     }
   }
   input {
+    font-size: 0.7em;
     @include container(75%, 40px);
   }
   button {
+
     @extend %button-search;
     margin-top: 1em;
     background-color: $mint-green;

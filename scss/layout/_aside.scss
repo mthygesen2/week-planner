@@ -43,7 +43,7 @@
   text-align: center;
     button {
       @extend %button-search;
-      margin: 3em auto;
+      margin: 3em auto 0 auto;
     }
   }
 

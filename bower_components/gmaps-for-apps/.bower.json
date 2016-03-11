@@ -1,0 +1,34 @@
+{
+  "name": "gmaps-for-apps",
+  "main": "gmaps.js",
+  "version": "0.5.9",
+  "homepage": "https://github.com/Matt-Jensen/gmaps-for-apps",
+  "authors": [
+    "Matt-Jensen"
+  ],
+  "description": "the easiest way to use Google Maps in your apps",
+  "keywords": [
+    "GMaps",
+    "google",
+    "maps",
+    "apps",
+    "SPA"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "0.5.9",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.5.9",
+    "commit": "b434b9232d9fb239695015c91e864b18950db841"
+  },
+  "_source": "git://github.com/Matt-Jensen/gmaps-for-apps.git",
+  "_target": "^0.5.9",
+  "_originalSource": "gmaps-for-apps"
+}
