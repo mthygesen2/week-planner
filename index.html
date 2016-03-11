@@ -427,13 +427,14 @@
       for (var i = 1; i < 4; i ++) {
         var current = '#' + i;
         $(current).slick('slickGoTo', Math.random() * 10);
-        // setTimeout(function(){ $(current).slick('slickPause')}, Math.random() * 3000);
       }
     });
 
-    $('.venue').click(function(){
-    $(this).find('.card').addClass('flipped').mouseleave(function(){
-        $(this).removeClass('flipped');
+    $('.venue__img').click(function(){
+      var current = $(this).parents('.venue').get(0);
+    $(current).find('.card').addClass('flipped')
+    .mouseleave(function(){
+        $(current).find('.card').removeClass('flipped');
     });
     return false;
 });
