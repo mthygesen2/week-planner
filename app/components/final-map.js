@@ -8,10 +8,11 @@ export default Ember.Component.extend({
     this._super(...arguments);
     var results = '';
     var map = this.get('map');
-    var dinner = this.get('userSelection.favoriteDinner');
-    var drink = this.get('userSelection.favoriteDrink');
-    var art = this.get('userSelection.favoriteArt');
+    var dinnerGeo = this.get('userSelection.dinner.location');
+    var drinkGeo = this.get('userSelection.drink.location');
+    var artGeo = this.get('userSelection.art.location');
     var location = this.get('userSelection.location');
+    console.log(this.get(artGeo));
     var self = this;
     var markerParams = {
       map: this.get('map'),

@@ -107,8 +107,8 @@ setTimeout(function(){
 
   setUserMarkers(markerParams) {
     console.log("I got to service *Nathan*")
+    console.log(markerParams);
     var places = markerParams.places;
-    console.log(markerParams.map);
     var self = this;
     var setMarker = self.setMarker(map);
     self.set('places', '');
