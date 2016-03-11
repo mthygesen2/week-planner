@@ -73,138 +73,213 @@
 
   <h1 class="category">Drinks</h1>
   <div class="map__footer">
-    {{log foursquareApi.foursquareDrinks}}
-
-    <!-- {{card-tile businesses=foursquareApi.foursquareDrinks}} -->
     {{#each foursquareApi.foursquareDrinks as |business|}}
-    <div class="venue">
-      {{#draggable-item content=business.id}}
+<div class="venue">
         {{card-tile business=business}}
-      {{/draggable-item}}
-    </div>
+      </div>
     {{/each}}
 
   </div>
 
   <h1 class="category">Dinner</h1>
-  <div class="map__footer">
-    <div class="venue">
-      <div class="venue__img">
-        <div class="venue__title">
-          <h1>This is a BAR</h1>
-          <h3>Neighborhood</h3>
-        </div>
-        <h4>3.4</h4>
-      </div>
-      <div class="venue__info">
-        <h3>Cuisines:</h3>
-        <h3>Info here.</h3>
-        <i class="fa fa-star"></i>
-      </div>
-    </div>
-    <div class="venue">
-      <div class="venue__img">
-        <div class="venue__title">
-          <h1>This is a BAR</h1>
-          <h3>Neighborhood</h3>
-        </div>
-        <h4>3.4</h4>
-      </div>
-      <div class="venue__info">
-        <h3>Cuisines:</h3>
-        <h3>Info here.</h3>
-        <i class="fa fa-star"></i>
-      </div>
-    </div>
-    <div class="venue">
-      <div class="venue__img">
-        <div class="venue__title">
-          <h1>This is a BAR</h1>
-          <h3>Neighborhood</h3>
-        </div>
-        <h4>3.4</h4>
-      </div>
-      <div class="venue__info">
-        <h3>Cuisines:</h3>
-        <h3>Info here.</h3>
-        <i class="fa fa-star"></i>
-      </div>
-    </div>
-    <div class="venue">
-      <div class="venue__img">
-        <div class="venue__title">
-          <h1>This is a BAR</h1>
-          <h3>Neighborhood</h3>
-        </div>
-        <h4>3.4</h4>
-      </div>
-      <div class="venue__info">
-        <h3>Cuisines:</h3>
-        <h3>Info here.</h3>
-        <i class="fa fa-star"></i>
-      </div>
-    </div>
-  </div>
+    <div class="map__footer" id="2">
+      <div class="venue">
+        <div class="card">
+          <div class="face front">
+            <div class="venue__img">
+              <div class="venue__title">
+                <h1>This is a BAR1</h1>
+                <h3>Neighborhood</h3>
+              </div>
+              <h4>3.4</h4>
+            </div>
+            <div class="venue__info">
+              <h3>Cuisines:</h3>
+              <h3>Info here.</h3>
+              <i class="fa fa-star"></i>
+            </div>
+          </div>
+          <div class="face back">
+            <p>
+              lorem ipusm
+            </p>
+          </div>
 
-  <h1 class="category">Dancing</h1>
-  <div class="map__footer">
-    <div class="venue">
-      <div class="venue__img">
-        <div class="venue__title">
-          <h1>This is a BAR</h1>
-          <h3>Neighborhood</h3>
         </div>
-        <h4>3.4</h4>
       </div>
-      <div class="venue__info">
-        <h3>Cuisines:</h3>
-        <h3>Info here.</h3>
-        <i class="fa fa-star"></i>
+      <div class="venue">
+        <div class="card">
+          <div class="face front">
+            <div class="venue__img">
+              <div class="venue__title">
+                <h1>This is a BAR1</h1>
+                <h3>Neighborhood</h3>
+              </div>
+              <h4>3.4</h4>
+            </div>
+            <div class="venue__info">
+              <h3>Cuisines:</h3>
+              <h3>Info here.</h3>
+              <i class="fa fa-star"></i>
+            </div>
+          </div>
+          <div class="face back">
+            <p>
+              lorem ipusm
+            </p>
+          </div>
+
+        </div>
+      </div>
+      <div class="venue">
+        <div class="card">
+          <div class="face front">
+            <div class="venue__img">
+              <div class="venue__title">
+                <h1>This is a BAR1</h1>
+                <h3>Neighborhood</h3>
+              </div>
+              <h4>3.4</h4>
+            </div>
+            <div class="venue__info">
+              <h3>Cuisines:</h3>
+              <h3>Info here.</h3>
+              <i class="fa fa-star"></i>
+            </div>
+          </div>
+          <div class="face back">
+            <p>
+              lorem ipusm
+            </p>
+          </div>
+
+        </div>
+      </div>
+      <div class="venue">
+        <div class="card">
+          <div class="face front">
+            <div class="venue__img">
+              <div class="venue__title">
+                <h1>This is a BAR1</h1>
+                <h3>Neighborhood</h3>
+              </div>
+              <h4>3.4</h4>
+            </div>
+            <div class="venue__info">
+              <h3>Cuisines:</h3>
+              <h3>Info here.</h3>
+              <i class="fa fa-star"></i>
+            </div>
+          </div>
+          <div class="face back">
+            <p>
+              lorem ipusm
+            </p>
+          </div>
+
+        </div>
       </div>
     </div>
-    <div class="venue">
-      <div class="venue__img">
-        <div class="venue__title">
-          <h1>This is a BAR</h1>
-          <h3>Neighborhood</h3>
+
+    <h1 class="category">Dancing</h1>
+    <div class="map__footer" id="3">
+      <div class="venue">
+        <div class="card">
+          <div class="face front">
+            <div class="venue__img">
+              <div class="venue__title">
+                <h1>This is a BAR1</h1>
+                <h3>Neighborhood</h3>
+              </div>
+              <h4>3.4</h4>
+            </div>
+            <div class="venue__info">
+              <h3>Cuisines:</h3>
+              <h3>Info here.</h3>
+              <i class="fa fa-star"></i>
+            </div>
+          </div>
+          <div class="face back">
+            <p>
+              lorem ipusm
+            </p>
+          </div>
+
         </div>
-        <h4>3.4</h4>
       </div>
-      <div class="venue__info">
-        <h3>Cuisines:</h3>
-        <h3>Info here.</h3>
-        <i class="fa fa-star"></i>
+      <div class="venue">
+        <div class="card">
+          <div class="face front">
+            <div class="venue__img">
+              <div class="venue__title">
+                <h1>This is a BAR1</h1>
+                <h3>Neighborhood</h3>
+              </div>
+              <h4>3.4</h4>
+            </div>
+            <div class="venue__info">
+              <h3>Cuisines:</h3>
+              <h3>Info here.</h3>
+              <i class="fa fa-star"></i>
+            </div>
+          </div>
+          <div class="face back">
+            <p>
+              lorem ipusm
+            </p>
+          </div>
+
+        </div>
+      </div>
+      <div class="venue">
+        <div class="card">
+          <div class="face front">
+            <div class="venue__img">
+              <div class="venue__title">
+                <h1>This is a BAR1</h1>
+                <h3>Neighborhood</h3>
+              </div>
+              <h4>3.4</h4>
+            </div>
+            <div class="venue__info">
+              <h3>Cuisines:</h3>
+              <h3>Info here.</h3>
+              <i class="fa fa-star"></i>
+            </div>
+          </div>
+          <div class="face back">
+            <p>
+              lorem ipusm
+            </p>
+          </div>
+
+        </div>
+      </div>
+      <div class="venue">
+        <div class="card">
+          <div class="face front">
+            <div class="venue__img">
+              <div class="venue__title">
+                <h1>This is a BAR1</h1>
+                <h3>Neighborhood</h3>
+              </div>
+              <h4>3.4</h4>
+            </div>
+            <div class="venue__info">
+              <h3>Cuisines:</h3>
+              <h3>Info here.</h3>
+              <i class="fa fa-star"></i>
+            </div>
+          </div>
+          <div class="face back">
+            <p>
+              lorem ipusm
+            </p>
+          </div>
+
+        </div>
       </div>
     </div>
-    <div class="venue">
-      <div class="venue__img">
-        <div class="venue__title">
-          <h1>This is a BAR</h1>
-          <h3>Neighborhood</h3>
-        </div>
-        <h4>3.4</h4>
-      </div>
-      <div class="venue__info">
-        <h3>Cuisines:</h3>
-        <h3>Info here.</h3>
-        <i class="fa fa-star"></i>
-      </div>
-    </div>
-    <div class="venue">
-      <div class="venue__img">
-        <div class="venue__title">
-          <h1>This is a BAR</h1>
-          <h3>Neighborhood</h3>
-        </div>
-        <h4>3.4</h4>
-      </div>
-      <div class="venue__info">
-        <h3>Cuisines:</h3>
-        <h3>Info here.</h3>
-        <i class="fa fa-star"></i>
-      </div>
-    </div>
-  </div>
   <button id='spin' type="button" name="button">I'm feeling lucky</button>
 </section>
 

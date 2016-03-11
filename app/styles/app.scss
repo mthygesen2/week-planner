@@ -7,13 +7,12 @@
   height: 40px;
   padding: 0.5em;
   margin: 0;
-  margin-top: 1em;
   border: none;
   background-color: #5C4862;
   color: white;
   border-radius: 10px; }
 
-.final__header, .map__header {
+.header, .final__header {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -29,24 +28,24 @@
   -webkit-flex-flow: column nowrap;
       -ms-flex-flow: column nowrap;
           flex-flow: column nowrap; }
-  .final__header h1, .map__header h1 {
+  .header h1, .final__header h1 {
     font-family: "Ultra", serif;
     font-size: 3.5em;
     color: #f3f3f3;
     text-align: center;
     line-height: 0.9;
-    text-shadow: 3px 3px #1b9c45; }
-  .final__header h3, .map__header h3 {
+    text-shadow: 1px 1px 2px black; }
+  .header h3, .final__header h3 {
     margin-top: 0.5em;
     font-size: 1.5em;
     color: #f3f3f3;
-    text-shadow: 2px 2px #1b9c45; }
+    text-shadow: 1px 1px 2px black; }
 
 .aside .venue, .map__footer .venue {
   box-shadow: 10px 10px 5px -4px #919191; }
 
 .venue__img {
-  background-image: url("../img/pips.jpg");
+  background-image: url("../img/drinks.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -128,10 +127,13 @@
     margin-right: 0; } }
 
 .venue {
+  outline: none;
   height: 250px;
   flex: 0 0 auto;
   width: calc(99.99% * 1/1 - (1em - 1em * 1/1));
   margin-bottom: 1em;
+  -webkit-perspective: 800;
+  position: relative;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -160,6 +162,8 @@
 .venue:nth-child(0n) {
   margin-right: 0; }
   .venue__title {
+    color: white;
+    text-shadow: 1px 1px 2px black;
     width: 75%; }
   .venue__info {
     display: -webkit-box;
@@ -188,6 +192,35 @@
               align-self: flex-end;
       font-size: 1.5em;
       color: orange; }
+
+.card.flipped {
+  -webkit-transform: rotatex(-180deg); }
+
+.card {
+  width: 100%;
+  height: 100%;
+  -webkit-transform-style: preserve-3d;
+  -webkit-transition: 0.5s; }
+
+.card .face {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+  z-index: 2; }
+
+.card .front {
+  position: absolute;
+  z-index: 1;
+  background: black;
+  cursor: pointer; }
+
+.card .back {
+  -webkit-transform: rotatex(-180deg);
+  background: #5C4862;
+  color: #f3f3f3;
+  cursor: pointer;
+  padding: 1em; }
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -260,7 +293,7 @@ a {
 body {
   color: #5C4862;
   font-family: "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-  background-color: #F9FCFF; }
+  background-color: #5C4862; }
 
 section {
   width: 100%;
@@ -347,16 +380,44 @@ body {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  min-height: 100vh;
   width: 100%;
-  max-width: 1500px;
-  -webkit-flex-flow: column wrap;
-      -ms-flex-flow: column wrap;
-          flex-flow: column wrap;
-  padding: 0; }
+  max-width: 1600px;
+  -webkit-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  padding: 0;
+  background: #f3f3f3;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+
+.header {
+  background-image: url("../img/date.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: auto;
+  padding: 3em;
+  margin: 0; }
+
+video#bgvid {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  opacity: 0.6;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  background: url(polina.jpg) no-repeat;
+  background-size: cover; }
 
 .nav {
-  border-bottom: 1px solid #5C4862;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -436,32 +497,35 @@ body {
   height: 100%;
   padding: 0;
   margin: 0;
-  color: #5C4862; }
+  color: black; }
   .home h1 {
     font-size: 4em;
     font-family: "Ultra", serif; }
+    .home h1 span {
+      color: #5C4862; }
   .home h3 {
     font-size: 1.5em;
     padding-bottom: 2em; }
+  .home form {
+    width: 75%;
+    height: auto;
+    padding: 0;
+    margin: 0; }
+    @media screen and (min-width: 1024px) {
+      .home form {
+        width: 50%;
+        height: auto;
+        padding: 0;
+        margin: 0; } }
   .home input {
-    width: 50%;
+    width: 75%;
     height: 40px;
     padding: 0;
     margin: 0; }
-
-.home::after {
-  content: "";
-  background-image: url("../img/home-background.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  opacity: 0.5;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  z-index: -1; }
+  .home button {
+    margin-top: 1em;
+    background-color: #77c9ad;
+    width: 20%; }
 
 .content {
   height: 100%;
@@ -533,13 +597,14 @@ body {
       font-family: "Ultra", serif; }
   .aside__content {
     text-align: center; }
+    .aside__content button {
+      margin: 3em auto; }
   .aside__drop {
     width: 100%;
     height: 250px;
     padding: 0;
     margin: 0;
-    border: 1px solid black;
-    margin-bottom: 4em; }
+    border: 1px solid black; }
     .aside__drop__info {
       width: 100%;
       height: auto;
@@ -662,15 +727,6 @@ footer {
       -ms-flex-flow: row wrap;
           flex-flow: row wrap;
   padding-bottom: 0; }
-  .map__header {
-    background-image: url("../img/drinks.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    width: 100%;
-    height: auto;
-    padding: 1em;
-    margin: 0; }
   .map__google {
     border: 1px solid black;
     width: 100%;
@@ -679,7 +735,7 @@ footer {
     margin: 0; }
   .map__footer {
     width: 100%;
-    height: auto;
+    height: 250px;
     padding: 0;
     margin: 0;
     display: -webkit-box;
@@ -698,6 +754,7 @@ footer {
         -ms-flex-flow: row nowrap;
             flex-flow: row nowrap; }
     .map__footer .slick-prev, .map__footer .slick-next {
+      outline: none;
       -webkit-align-self: center;
           -ms-flex-item-align: center;
               align-self: center;
@@ -706,7 +763,7 @@ footer {
       padding: .5em;
       border: none;
       background-color: transparent;
-      color: #77c9ad;
+      color: #5C4862;
       border-radius: 50%; }
     @media screen and (min-width: 600px) {
       .map__footer {
@@ -730,6 +787,7 @@ footer {
 
 #spin {
   margin: auto;
+  margin-top: 3em;
   border-radius: 10px; }
 
 /*# sourceMappingURL=main.css.map */
