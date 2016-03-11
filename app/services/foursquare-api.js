@@ -57,10 +57,13 @@ export default Ember.Service.extend({
 
             }
             if (params.section === 'drinks') {
+              venue.type = 'drink';
               self.get('foursquareDrinks').pushObject(venue);
             } else if (params.section === 'food'){
+              venue.type = 'dinner';
               self.get('foursquareDinners').pushObject(venue);
             } else {
+              venue.type = 'art';
               self.get('foursquareArts').pushObject(venue);
             }
           }

@@ -5,6 +5,7 @@ export default Ember.Component.extend({
   googleMaps: Ember.inject.service(),
   selectedItems: Ember.inject.service(),
 
+
   actions: {
     droppedDinner(businessId) {
       var business = this.get('foursquareApi.foursquareDrinks')
@@ -36,13 +37,19 @@ export default Ember.Component.extend({
       }
     },
 
+    resetFavorites() {
+      this.set('selectedItems.drink', '');
+      this.set('selectedItems.dinner', '');
+      this.set('selectedItems.art', '');
+    },
+
     remove(business) {
       return this.get('selectedItems.businesses').removeObject(business);
     }
   },
 
   didInsertElement: function() {
-    Ember.run.scheduleOnce('afterRender', this, function() {
+    Ember.run.schedule('afterRender', this, function() {
       $('#spin').click(function() {
       for (var i = 1; i < 4; i ++) {
         var current = '#' + i;
