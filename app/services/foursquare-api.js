@@ -6,6 +6,14 @@ export default Ember.Service.extend({
   foursquareDinners: [],
   foursquareArts: [],
 
+  fakeFunction(params) {
+    if (params) {
+      return true;
+    } else {
+      return false;
+    }
+  },
+
   foursquareRequest(queryType, params) {
     var url = 'https://api.foursquare.com/v2/venues/' + queryType;
     params.client_id = '5DRXWAUORRCB1B1PRICKG3B1ZYXRXGNWA3RKKTRGIARXJVZK';
