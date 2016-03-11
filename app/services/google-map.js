@@ -17,6 +17,8 @@ export default Ember.Service.extend({
   },
   findAddress(container, options, address) {
     var map = new this.googleMaps.Map(container, options);
+    console.log(container);
+    console.log(options);
     var geocoder = new this.googleMaps.Geocoder();
     var self = this;
     var setMarker = this.setMarker(map);
@@ -35,7 +37,8 @@ export default Ember.Service.extend({
       return new Promise(function() {
           return {
             lat: self.get('lat'),
-            lng: self.get('lng')
+            lng: self.get('lng'),
+            log: console.log(self.get('lat'))
           }
         })
     });
