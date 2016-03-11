@@ -7,6 +7,10 @@
     </div>
   </nav>
 <header class="header">
+  <!-- {{log selectedItems.foursquareDrinks}} -->
+  <!-- {{log selectedItems.location}} -->
+  <!-- {{selectedItems.foursquareDrinks.0.location.city}} -->
+  <!-- <h1>{{selectedItems.foursquareDrinks.0.location.city}}, {{selectedItems.foursquareDrinks.0.location.state}}, {{selectedItems.foursquareDrinks.0.location.country}}</h1> -->
   <h1>{{selectedItems.location}}</h1>
   <h3>Plan the perfect night</h3>
 </header>
@@ -31,7 +35,7 @@
 
         </div>
       <div class="aside__content">
-        <h1 class="category"><i class="fa fa-glass"></i>Your choices</h1>
+        <h1 class="category"><i class="fa fa-glass"></i></h1>
 
           <div class="aside__drop">
             {{aside-card business=selectedItems.drink}}
@@ -62,7 +66,7 @@
   <h1 class="category">Drinks</h1>
   <div class="map__footer" id="1">
     {{#each foursquareApi.foursquareDrinks as |business|}}
-    
+
       {{card-tile business=business}}
     {{/each}}
 

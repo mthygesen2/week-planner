@@ -5,7 +5,7 @@ export default Ember.Component.extend({
 
   actions: {
     clickEv() {
-      console.log('imgere')
+      // console.log('imgere')
       var category = this.get('business.type');
       if (category === drink) {
         this.set('selectedItems.drink', '');

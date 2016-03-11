@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Service.extend({
   // foursquareResult: [],
+  
   foursquareDrinks: [],
   foursquareDinners: [],
   foursquareArts: [],
@@ -29,7 +30,7 @@ export default Ember.Service.extend({
       jsonpCallback: 'mycallback',
       cache: true
     }).then(function(response) {
-      //console.log(response);
+      // console.log(response);
       if ('groups' in response.response) {
         if ('items' in response.response.groups[0]) {
           for (var item of response.response.groups[0].items){

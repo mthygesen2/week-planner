@@ -22,7 +22,7 @@ export default Ember.Service.extend({
     return new this.googleMaps.LatLng(latitude, longitude);
   },
   findAddress(options) {
-    console.log('somehow got to the service');
+    // console.log('somehow got to the service');
     var self = this;
     setTimeout(function(){
 
@@ -32,7 +32,7 @@ export default Ember.Service.extend({
       var container = document.getElementById('map');
 
 
-      console.log(document);
+      // console.log(document);
       var address = self.get('city');
       var map = new self.googleMaps.Map(container, options);
       self.set('map', map);
@@ -63,11 +63,11 @@ export default Ember.Service.extend({
   },
 
   finalAddress(options) {
-    console.log('somehow got to the service');
+    // console.log('somehow got to the service');
     var self = this;
     setTimeout(function(){
       var container = document.getElementById('map');
-      console.log(document);
+      // console.log(document);
       var address = self.get('city');
       var map = new self.googleMaps.Map(container, options);
       self.set('map', map);
@@ -101,7 +101,7 @@ export default Ember.Service.extend({
     var places = this.get('places');
     for(var i = 0; i < places.length; i++){
       var place = places[i];
-      console.log("This is a place in the setMarker loop")
+      // console.log("This is a place in the setMarker loop")
         var marker = new google.maps.Marker({
           map: map,
           position: {lat: place.location.lat, lng: place.location.lng},

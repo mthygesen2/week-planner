@@ -27,7 +27,7 @@ export default Ember.Service.extend({
       jsonpCallback: 'mycallback',
       cache: true
     }).then(function(responseJSON) {
-      console.log(responseJSON);
+      // console.log(responseJSON);
         var events = [];
         responseJSON.results.forEach(function(event) {
           events.push(event);

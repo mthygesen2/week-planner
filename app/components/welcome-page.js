@@ -38,7 +38,7 @@ export default Ember.Component.extend({
   //    var address = self.get(location);
       this.get('foursquareApi').foursquareRequest('explore', paramsDrinks).then(function(){
         self.get('foursquareApi').foursquareRequest('explore', paramsDinners).then(function() {
-          console.log("made it to promise")
+          // console.log("made it to promise")
           self.get('foursquareApi').foursquareRequest('explore', paramsArts).then(function() {
             var dinners = self.get('foursquareApi').foursquareDinners;
 
@@ -50,10 +50,10 @@ export default Ember.Component.extend({
             allPlaces.pushObjects(dinners);
             allPlaces.pushObjects(drinks);
             allPlaces.pushObjects(arts);
-            console.log('This is allPlaces:')
-            console.log(allPlaces);
+            // console.log('This is allPlaces:')
+            // console.log(allPlaces);
             self.get('map').places.pushObjects(allPlaces);
-            console.log(self.get('map').places)
+            // console.log(self.get('map').places)
             self.sendAction('getLocation');
 
           });
