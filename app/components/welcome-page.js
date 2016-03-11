@@ -35,16 +35,27 @@ export default Ember.Component.extend({
       var options = {
         zoom: 13,
       };
-      var address = self.get(location);
+  //    var address = self.get(location);
       this.get('foursquareApi').foursquareRequest('explore', paramsDrinks).then(function(){
         self.get('foursquareApi').foursquareRequest('explore', paramsDinners).then(function() {
-          self.sendAction('getLocation');
           console.log("made it to promise")
           self.get('foursquareApi').foursquareRequest('explore', paramsArts).then(function() {
-            // console.log(options)
-            container = self.$('.map__google')[0];
-            
-              map.findAddress(container, options, location);
+            var dinners = self.get('foursquareApi').foursquareDinners;
+
+            var drinks = self.get('foursquareApi').foursquareDrinks;
+
+            var arts = self.get('foursquareApi').foursquareArts;
+
+            var allPlaces = []
+            allPlaces.pushObjects(dinners);
+            allPlaces.pushObjects(drinks);
+            allPlaces.pushObjects(arts);
+            console.log('This is allPlaces:')
+            console.log(allPlaces);
+            self.get('map').places.pushObjects(allPlaces);
+            console.log(self.get('map').places)
+            self.sendAction('getLocation');
+
           });
         });
       });

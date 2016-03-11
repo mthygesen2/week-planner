@@ -1,7 +1,9 @@
 import Ember from 'ember';
 
 export default Ember.Service.extend({
-  businesses: [],
+  favoriteDinner: '',
+  favoriteDrink: '',
+  favoriteArt: '',
   location: '',
 
   add(business) {

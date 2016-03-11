@@ -13,8 +13,9 @@ export default Ember.Component.extend({
     var map = this.get('map');
     var meetupApi = this.get('meetupApi')
     var self = this;
-    var dinners = this.get('foursquareApi').foursquareDinners;
-    
+
+
+
     var options = {
       zoom: 13,
       //center: {lat: -34.397, lng: 150.644}
