@@ -17,23 +17,26 @@
       </p>
       <img class="aside__header__icon" src="img/icon.png">
     </div>
-    <!-- {{log "These are the places stored in googleMaps"}}
-    {{log this.googleMap.art}}
-    {{log googleMap.dinner}} -->
+
     <div class="aside__content">
       <h1 class="category"><i class="fa fa-glass"></i>Your choices</h1>
-      <!-- {{log selectedItems.drink}} -->
-      <div class="aside__drop">
-        {{final-aside-card business=googleMap.drink}}
-      </div>
+      {{#if googleMap.drink.name}}
+        <div class="aside__drop">
+          {{final-aside-card business=googleMap.drink}}
+        </div>
+      {{/if}}
       <h1 class="category"><i class="fa fa-cutlery"></i></h1>
-      <div class="aside__drop">
-        {{final-aside-card business=googleMap.dinner}}
-      </div>
+      {{#if googleMap.dinner.name}}
+        <div class="aside__drop">
+          {{final-aside-card business=googleMap.dinner}}
+        </div>
+      {{/if}}
       <h1 class="category"><i class="fa fa-users"></i></h1>
-      <div class="aside__drop">
-        {{final-aside-card business=googleMap.art}}
-      </div>
+      {{#if googleMap.art.name}}
+        <div class="aside__drop">
+          {{final-aside-card business=googleMap.art}}
+        </div>
+      {{/if}}
     </div>
   </aside>
 
