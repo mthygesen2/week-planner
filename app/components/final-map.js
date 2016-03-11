@@ -3,12 +3,6 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   map: Ember.inject.service('google-map'),
   userSelection: Ember.inject.service('selected-items'),
-  init() {
-    this._super(),
-    Ember.run.later((function() {
-      showFinalMap();
-    }), 1000);
-  },
 
   actions: {
     showFinalMap() {
