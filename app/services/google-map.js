@@ -83,11 +83,21 @@ setTimeout(function(){
           title: place.name
         });
 
-        marker.info = new google.maps.InfoWindow({
-          content: place[0] +
-          "<br>" +
-          place[3]
-        })
+        if (place.hoursStatus) {
+          marker.info = new google.maps.InfoWindow({
+            content: place.name + ' <br>' +
+            place.location.address + '<br>'
+            + place.hoursStatus + '<br>'
+            + place.category
+          })
+        } else {
+          marker.info = new google.maps.InfoWindow({
+            content:'<b>' + place.name + '</b> <br>' +
+            place.location.address + '<br>'
+            + place.category
+          })
+        }
+
         google.maps.event.addListener(marker, 'click', function() {
           this.info.open(map, this);
         });
