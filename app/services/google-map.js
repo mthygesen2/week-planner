@@ -9,6 +9,9 @@ export default Ember.Service.extend({
   map: '',
   places: [],
   city: '',
+  dinner: '',
+  drink: '',
+  art: '',
   // mapContainer: document.getElementById('#map'),
   // mapContainer: Ember.String.htmlSafe('<div class="map__google"></div>'),
 
@@ -21,61 +24,84 @@ export default Ember.Service.extend({
   findAddress(options) {
     console.log('somehow got to the service');
     var self = this;
-setTimeout(function(){
+    setTimeout(function(){
 
 
 
 
-  var container = document.getElementById('map');
+      var container = document.getElementById('map');
 
 
-  console.log(document);
-  var address = self.get('city');
-  var map = new self.googleMaps.Map(container, options);
-  self.set('map', map);
-  var geocoder = new self.googleMaps.Geocoder();
-  var setMarker = self.setMarker(map);
-  geocoder.geocode({'address': address}, function(geoResults, status) {
-    self.set('results', geoResults[0]);
-    if (status === google.maps.GeocoderStatus.OK) {
-      map.setCenter(geoResults[0].geometry.location)
-      setmarker;
-    } else {
-      alert('Whoops! Seems like there was a problem. According to Google Maps:' + status);
-    }
-    self.set('lat', ((self.get('results.geometry.bounds.R.R') + self.get('results.geometry.bounds.R.j')) / 2));
-    self.set('lng', ((self.get('results.geometry.bounds.j.R') + self.get('results.geometry.bounds.j.j')) / 2));
+      console.log(document);
+      var address = self.get('city');
+      var map = new self.googleMaps.Map(container, options);
+      self.set('map', map);
+      var geocoder = new self.googleMaps.Geocoder();
+      var setMarker = self.setMarker(map);
+      geocoder.geocode({'address': address}, function(geoResults, status) {
+        self.set('results', geoResults[0]);
+        if (status === google.maps.GeocoderStatus.OK) {
+          map.setCenter(geoResults[0].geometry.location)
+          setmarker;
+        } else {
+          alert('Whoops! Seems like there was a problem. According to Google Maps:' + status);
+        }
+        self.set('lat', ((self.get('results.geometry.bounds.R.R') + self.get('results.geometry.bounds.R.j')) / 2));
+        self.set('lng', ((self.get('results.geometry.bounds.j.R') + self.get('results.geometry.bounds.j.j')) / 2));
 
-    return new Promise(function() {
-      return {
-        lat: self.get('lat'),
-        lng: self.get('lng')
-      }
-    })
-  });
-}, 1200);
+        return new Promise(function() {
+          return {
+            lat: self.get('lat'),
+            lng: self.get('lng')
+          }
+        })
+      });
+    }, 200);
+
+
+
+  },
+
+  finalAddress(options) {
+    console.log('somehow got to the service');
+    var self = this;
+    setTimeout(function(){
+      var container = document.getElementById('map');
+      console.log(document);
+      var address = self.get('city');
+      var map = new self.googleMaps.Map(container, options);
+      self.set('map', map);
+      var geocoder = new self.googleMaps.Geocoder();
+      var setUserMarkers = self.setUserMarkers(map);
+      geocoder.geocode({'address': address}, function(geoResults, status) {
+        self.set('results', geoResults[0]);
+        if (status === google.maps.GeocoderStatus.OK) {
+          map.setCenter(geoResults[0].geometry.location)
+          setUserMarkers;
+        } else {
+          alert('Whoops! Seems like there was a problem. According to Google Maps:' + status);
+        }
+        self.set('lat', ((self.get('results.geometry.bounds.R.R') + self.get('results.geometry.bounds.R.j')) / 2));
+        self.set('lng', ((self.get('results.geometry.bounds.j.R') + self.get('results.geometry.bounds.j.j')) / 2));
+
+        return new Promise(function() {
+          return {
+            lat: self.get('lat'),
+            lng: self.get('lng')
+          }
+        })
+      });
+    }, 200);
 
 
 
   },
   setMarker(map) {
-    console.log('setMarker map object')
-    console.log(map)
-    console.log("Made it to setMarker")
+
     var places = this.get('places');
-    console.log(places)
-    var marker = new google.maps.Marker({
-      map: map,
-      position: {lat: 45.5200, lng: -122.6819},
-      icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
-      title: 'Portland'
-    });
     for(var i = 0; i < places.length; i++){
       var place = places[i];
       console.log("This is a place in the setMarker loop")
-      console.log(place)
-      console.log(place.location.lat)
-
         var marker = new google.maps.Marker({
           map: map,
           position: {lat: place.location.lat, lng: place.location.lng},
@@ -101,8 +127,56 @@ setTimeout(function(){
         google.maps.event.addListener(marker, 'click', function() {
           this.info.open(map, this);
         });
-
     }
     this.set('places', '');
+  },
+
+  setUserMarkers(map) {
+    var self = this;
+    var setMarker = self.setMarker(map);
+    var dinner = this.get('dinner');
+    var drink = this.get('drink');
+    var art = this.get('art');
+    var dinnerMarker = new google.maps.Marker({
+      map: map,
+      position: {lat: dinner.location.lat, lng: dinner.location.lng},
+      icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
+    });
+    var drinkMarker = new google.maps.Marker({
+      map: map,
+      position: {lat: drink.location.lat, lng: drink.location.lng},
+      icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
+    });
+    var artMarker = new google.maps.Marker({
+      map: map,
+      position: {lat: art.location.lat, lng: art.location.lng},
+      icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
+    });
+
+    dinnerMarker.info = new google.maps.InfoWindow({
+      content:'<b>' + dinner.name + '</b> <br>' +
+      dinner.location.address + '<br>'
+      + dinner.category
+    });
+
+    drinkMarker.info = new google.maps.InfoWindow({
+      content:'<b>' + drink.name + '</b> <br>' +
+      drink.location.address + '<br>'
+      + drink.category
+    });
+    artMarker.info = new google.maps.InfoWindow({
+      content:'<b>' + art.name + '</b> <br>' +
+      art.location.address + '<br>'
+      + art.category
+    });
+    google.maps.event.addListener(dinnerMarker, 'click', function() {
+      this.info.open(map, this);
+    });
+    google.maps.event.addListener(drinkMarker, 'click', function() {
+      this.info.open(map, this);
+    });
+    google.maps.event.addListener(artMarker, 'click', function() {
+      this.info.open(map, this);
+    });
   }
 });
