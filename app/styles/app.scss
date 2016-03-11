@@ -676,22 +676,23 @@ video#bgvid {
   -webkit-flex-flow: column nowrap;
       -ms-flex-flow: column nowrap;
           flex-flow: column nowrap; }
-    .final__header {
-      background-image: url("../img/final.jpg");
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: cover;
-      margin-bottom: 2em;
-      width: 100%;
-      height: 250px;
-      padding: 0;
-      margin: 0; }
-    .final__google {
-      border: 1px solid black;
-      width: 75vw;
-      height: 75vh;
-      padding: 0;
-      margin: 0; }
+  .final__header {
+    background-image: url("../img/final.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin-bottom: 2em;
+    width: 100%;
+    height: 250px;
+    padding: 0;
+    margin: 0; }
+  .final__google {
+    border: 1px solid black;
+    width: 75vw;
+    height: 75vh;
+    padding: 0;
+    margin: 0; }
+
 
 footer {
   background: #f3f3f3;
