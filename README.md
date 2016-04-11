@@ -11,16 +11,17 @@ _Week& is a date night planner that plans your night starting with drinks, dinne
 ## Setup/Installation Requirements
 
 * _Download from GitHub_
+* _<https://github.com/mthygesen2/week-planner.git>_
 * _Open in browser_
 
 
 ## Known Bugs
 
-_The navbar and footer links do not go anywhere. _
+The navbar and footer links do not go anywhere. 
 
 ## Support and contact details
 
-_Contact us through GitHub_
+Contact us through GitHub
 
 ## Technologies Used
 
